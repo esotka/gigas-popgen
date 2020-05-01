@@ -14,7 +14,7 @@ Description: 40 populations and their PopID, Abbreviation, Region, reg.code, Dat
 Description: We downsampled the Li et al. 2019 (Nature Ecology and Evolution 2: 1751) bam files and compiled these with our Samples. Using "samtools view -s", we pulled out 10% of Li et al reads to yield similar coverage (XX)
 
 ## Figure: Map
-Description: locations of sampling of C. gigas.
+Description: locations of sampling of C. gigas.  
 R/maps.R  
 output/maps.pdf  
 

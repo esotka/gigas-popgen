@@ -15,7 +15,7 @@ Description: We downsampled the Li et al. 2019 (Nature Ecology and Evolution 2: 
 
 ## Figure: Map
 Description: locations of sampling of C. gigas.  
-R/maps.R  
-output/maps.pdf  
+- R/maps.R  
+- output/maps.pdf  
 
 

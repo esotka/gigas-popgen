@@ -1,0 +1,41 @@
+﻿PopID,Abbreviation,Region,reg.code,Date_of_Collection,Latitude,Longitude,Collector
+AKK,Akkeshi,Japan,nat.hokk,17-Aug,43.02131,144.836622,Yorisue/Nakaoka
+ALB,Alamitos Bay LA County - 2nd street,soCal,non.soCal,NA,33.75858,-118.12977,Zacherl
+BAN,Banzu Tidalflat in Tokyo Bay (Kisarazu city),Japan,nat.SMainJapan,9-Jun-17,35.41246,139.902977,Kanaya
+BHH,Bahia Blanca Harbor (BB),Argentina,non.Argentina,NA,-38.78497,-62.29695,Schwindt
+BOI,"Waikare Inlet, Bay of Islands (from Oyster World)",New Zealand,non.NZ,10-Sep-17,-35.31,174.18,Taylor
+BOU,Boursefranc (Pertuis d’Antioche),France,non.France,11-Jul-17,45.85504,-1.170636,Pante
+CLE,Clevedon (from Clevedon Coast Oysters),New Zealand,non.NZ,4-Oct-17,-36.94,175.11,Taylor
+ESN,"Esnandes (Aiguillon Bay, Pertuis Breton)",France,non.France,11-Jul-17,46.236,-1.158506,Pante
+ESP,Espasante_Galicia,Spain,non.Spain,NA,43.72127,-7.814205,Couceiro
+GAN,Gandario,Spain,non.Spain,NA,43.34252,-8.23345,Couceiro
+GOS,GoseongBay,Korea,nat.kor+kag,1-Jun-17,34.9555,128.3257,Lee
+GRC,Grand Caribe San Diego Bay,soCal,non.soCal,NA,32.62674,-117.129703,Zacherl
+GWG,Gwanyang,Korea,nat.kor+kag,1-Jun-17,34.3396,127.7855,Lee
+HIR,Hiroshima_Japan,Japan,nat.SMainJapan,NA,34.27547,132.266519,Hori
+HOD,HoodCanal_HammaHammaRiver_NorthShore,NW America,non.NWAmerica,25-Jun-17,47.54666,-123.041383,Ruesink
+KOJ,Koje Bay,Korea,nat.kor+kag,1-Jun-17,34.7991,128.5829,Lee
+LDY,Ladysmith British Columbia,NW America,non.NWAmerica,8-Aug-17,48.99065,-123.808072,Ruesink
+LHE,LHerbe (Arcachon Bay),France,non.France,24-Jul-17,44.68641,-1.233772,Pante
+LOS,Lough Swill,Ireland,non.Ireland,year 2008,55.0206,-7.577,Strand
+MAH,"Dyers Creek, Mahurangi (from Matakana Oysters)",New Zealand,non.NZ,26-Sep-17,-36.46,174.71,Taylor
+MAL,Matsukawaura Lagoon (A branch Bay of Sendai Bay),Japan,nat.NWMainJapan,28-May-17,37.82314,140.954988,Kanaya
+MAT,Matsushima Bay (A branch Bay of Sendai Bay),Japan,nat.NWMainJapan,24-Jul-17,38.35186,141.058982,Kanaya
+MON,Nishi Mone Bay (A branch Bay of Kesennuma Bay),Japan,nat.NWMainJapan,30-May-17,38.90008,141.624736,Kanaya
+MUN,"Munakata, Mihama, Fukui",Japan,nat.SeaJapan,27-Apr-17,35.61256,135.913137,Kamiya
+NEW,NewportBay Orange County - 15th street,soCal,non.soCal,NA,33.60813,-117.92009,Zacherl
+OHK,Ohkamo River in Izu Peninsura (Shimoda city),Japan,nat.SMainJapan,6-Aug-17,34.65528,138.918478,Kanaya
+OKA,Okayama_Japan,Japan,nat.SMainJapan,NA,34.45628,133.896859,Hori
+OTA,Oita_Japan,Japan,nat.SMainJapan,NA,33.62537,131.193653,Hori
+PES,"Los Penasquitos Lagoon, Coast hwy",soCal,non.soCal,NA,32.93318,-117.259885,Crooks
+SAM,Same River in Iwaki City,Japan,nat.NWMainJapan,14-Jul-17,36.90936,140.816924,Kanaya
+SAR,Lake Saroma,Japan,nat.hokk,17-Aug,44.12084,143.966724,Yorisue/Nakaoka
+SBB,San Blas Bay (SB),Argentina,non.Argentina,NA,-40.5394,-62.252666,Schwindt
+SVA,Svallhagen,Sweden,non.Sweden,year 2013,58.8684,11.1551,Strand/Kochmann
+TJE,TJE Boca Rio,soCal,non.soCal,NA,32.5595,-117.129165,Crooks
+TRO,Tromlingene,Norway,non.Nor,year 2013,58.4748,8.9067,Strand
+WAD,Wadden Sea,Denmark,non.Denmark,year 2013,55.1859,8.6222,Strand
+WAK,Wakisaka_Takahama_FukuiPrefecture,Japan,nat.SeaJapan,27-Apr-17,35.50024,135.514476,Kamiya
+WLB,WillapaBay_Nahcotta,NW America,non.NWAmerica,20-May-17,46.46874,-124.023696,Ruesink
+YOJ,Yojiro Kagoshima,Japan,nat.SMainJapan,10-Aug-17,31.55863,130.562861,Terada/Endo
+YUR,Yura_Sumoto_HyogoPrefecture,Japan,nat.SMainJapan,8-May-17,34.27394,134.953667,Kamiya

@@ -3,7 +3,9 @@
 This is the archived dataset and Rscripts used to generate figures for Crassostrea gigas SNP dataset (sequenced November 2017).  
 
 TO DO
-- new downsampled Li without Japan, Korea or South Africa
+- new downsampled Li without Japan, Korea or South Africa. Make beagle file and generate PCA (1st axis, like in Sutherland)
+- where did we get the 14962 loci from?
+- 
 
 ## Data files
 
@@ -16,7 +18,7 @@ Description: We downsampled the Li et al. 2019 (Nature Ecology and Evolution 2: 
 ## Figures  
 1) Map  
 Description: locations of sampling of C. gigas.  
--- R/maps.R  
+-- R/map.R  
 -- output/maps.pdf  
 
 

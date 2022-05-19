@@ -1,0 +1,146 @@
+---
+title: "Gracilaria vermiculophylla microsatellites"
+output: pdf_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Krueger-Hadfield_et_al-2017-Ecology_and_Evolution.pdf
+
+```{r echo = F}
+rm(list=ls())
+library(readxl)
+library(spatstat) # marks, ppp, quadratcount
+library(scales) # alpha
+
+domain <- c(-130,180,-50,75) 
+load("../../output/df.globe.Rda")
+tmp <- read_xlsx("ece33001-sup-0002-tables1_EDITED.xlsx",sheet = 2)
+tmp <- tmp[!tmp$Subregion=="EUSA",]
+## find which quadrat each pop
+gridIDs.tmp <- c()
+for (i in 1:length(tmp$`Site abb.`))
+{
+  ppp.tmp <- ppp(x=tmp$Longitude[tmp$`Site abb.`==tmp$`Site abb.`[i]],y=tmp$Latitude[tmp$`Site abb.`==tmp$`Site abb.`[i]],xrange=domain[1:2],yrange=domain[3:4])
+  grid.tmp <- quadratcount(ppp.tmp, nx = abs(domain[1]-domain[2]), ny = abs(domain[3]-domain[4]))
+  df.tmp <- data.frame(grid.tmp,quadIDs=1:dim(df.globe)[1])
+  gridIDs.tmp <- c(gridIDs.tmp,df.tmp$quadIDs[df.tmp$Freq==1])
+}
+gridIDs.meta <- data.frame(gridIDs=gridIDs.tmp,pop=tmp$`Site abb.`)
+gridIDs.meta$vars <- df.globe[match(gridIDs.meta$gridIDs,df.globe$gridID),]
+
+plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
+
+points(gridIDs.meta$vars$plotted.Var1,gridIDs.meta$vars$plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gridIDs.meta$vars$reg)],.4))
+```
+
+## combine pops in that are within the same 1x1º block
+### fst
+
+```{r echo = F}
+library(strataG,warn.conflicts = F,quietly = T)
+library(poppr,warn.conflicts = F,quietly = T)
+dat <- read.csv('KruegerHadfieldetal_EcolEvol_diploidspsex_EDITED.csv',skip=2)[,1:22] # 10 usats
+nloci = 10
+
+dat$Pop <- gridIDs.meta$gridIDs[match(dat$Pop,gridIDs.meta$pop)]
+dat <- dat[!is.na(dat$Pop),] # remove NAs ==> populations not in these grids
+colnames(dat) <- c("Ind","Pop",paste(sort(rep(letters[1:nloci],2)),rep(1:2,nloci),sep=""))
+gi <- df2gtypes(dat, ploidy = 2, id.col = 1, strata.col = 2, loc.col = 3)
+fst <- pairwiseTest(gi,nrep = 1,by.locus = F,quietly=T) 
+
+fst2 <- pairwiseSummary(fst)
+colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
+colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
+fst.threshold <- ifelse(fst2$Fst_noNegs<=0.1,fst2$Fst_noNegs,NA) # threshold
+save(fst2,file = "gverm_usat_Fst.Rda")
+print(head(fst2))
+
+fst2$Fst_noNegs <- ifelse(fst2$Fst<0,0,fst2$Fst) # get rid of negatives
+fst.threshold <- ifelse(fst2$Fst_noNegs<=0.1,fst2$Fst_noNegs,NA) # threshold
+
+fst2$ax <- gridIDs.meta$vars$plotted.Var1[match(fst2$gridID.1,gridIDs.meta$gridIDs)]
+fst2$ay <- gridIDs.meta$vars$plotted.Var2[match(fst2$gridID.1,gridIDs.meta$gridIDs)]
+fst2$bx <- gridIDs.meta$vars$plotted.Var1[match(fst2$gridID.2,gridIDs.meta$gridIDs)]
+fst2$by <- gridIDs.meta$vars$plotted.Var2[match(fst2$gridID.2,gridIDs.meta$gridIDs)]
+
+plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
+
+points(gridIDs.meta$vars$plotted.Var1,gridIDs.meta$vars$plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gridIDs.meta$vars$reg)],.4))
+mtext("fst<0.1",side=3,line=-1)
+### only plot segments with Fst < 0.1
+segments(fst2$ax,fst2$ay,fst2$bx,fst2$by,col=alpha("black",.5),lwd=fst.threshold*20)
+
+#make a map with these same lines
+
+fst2$gridID.1.lon <- df.globe$lon[match(fst2$gridID.1,df.globe$gridID)]
+fst2$gridID.1.lat <- df.globe$lat[match(fst2$gridID.1,df.globe$gridID)]
+fst2$gridID.2.lon <- df.globe$lon[match(fst2$gridID.2,df.globe$gridID)]
+fst2$gridID.2.lat <- df.globe$lat[match(fst2$gridID.2,df.globe$gridID)]
+fst2$reg.1 <- df.globe$reg[match(fst2$gridID.1,df.globe$gridID)]
+fst2$reg.2 <- df.globe$reg[match(fst2$gridID.1,df.globe$gridID)]
+
+plot(df.globe[df.globe$coastline==1,c(2,1)],cex=.1,xlim=c(-130,145),ylim=c(30,60),pch=19)
+points(df.globe[df.globe$grid.for.model==1,c(2,1)],col="red",pch=20,cex=0.5)
+segments(fst2$gridID.1.lon,fst2$gridID.1.lat,fst2$gridID.2.lon,fst2$gridID.2.lat,col="black",lwd=fst.threshold*30)
+
+```
+\newpage
+
+### overall Fst
+
+```{r echo = F}
+overallFst <- overallTest(gi,quietly=T)$result
+save(overallFst,file = "gverm_usat_FstOverall.Rda")
+print(overallFst)
+
+```
+
+
+### 3 region Fst
+
+```{r echo = F}
+reg <- gridIDs.meta$vars$reg[match(dat$Pop,gridIDs.meta$gridIDs)]
+dat2 <- dat
+dat2$Pop <- reg
+gi <- df2gtypes(dat2, ploidy = 2, id.col = 1, strata.col = 2, loc.col = 3)
+fst <- pairwiseTest(gi,nrep = 1,by.locus = F,quietly=T) 
+fst2 <- pairwiseSummary(fst)
+colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
+colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
+save(fst2,file = "gverm_usat_FstNatNon.Rda")
+print(fst2)
+```
+
+### native vs non-native Fst
+
+```{r echo = F}
+reg <- gridIDs.meta$vars$reg[match(dat$Pop,gridIDs.meta$gridIDs)]
+reg <- ifelse(reg=="1_Asia","native","nonnative")
+dat2 <- dat
+dat2$Pop <- reg
+gi <- df2gtypes(dat2, ploidy = 2, id.col = 1, strata.col = 2, loc.col = 3)
+fst <- pairwiseTest(gi,nrep = 1,by.locus = F,quietly=T) 
+fst2 <- pairwiseSummary(fst)
+colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
+colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
+save(fst2,file = "gverm_usat_Fst3region.Rda")
+print(fst2)
+```
+
+\newpage
+
+### within pop Hexp
+
+```{r echo = F}
+out <- summarizeLoci(gi,by.strata = T)
+hexp <- aggregate(out$exptd.het,by=list(out$stratum),mean)
+colnames(hexp) <- c("gridID","Hexp")
+head(hexp)
+save(hexp,file = "gverm_usat_Hexp.Rda")
+```
+

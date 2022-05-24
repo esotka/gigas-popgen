@@ -16,9 +16,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r echo = F}
 rm(list=ls())
-library(readxl)
-library(spatstat) # marks, ppp, quadratcount
-library(scales) # alpha
+library(readxl,warn.conflicts = F,quietly = T)
+library(spatstat,warn.conflicts = F,quietly = T) # marks, ppp, quadratcount
+library(scales,warn.conflicts = F,quietly = T) # alpha
 
 domain <- c(-130,180,-50,75) 
 load("../../output/df.globe.Rda")
@@ -56,6 +56,7 @@ gridIDs.meta$vars <- df.globe[match(gridIDs.meta$gridIDs,df.globe$gridID),]
 plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
 
 points(gridIDs.meta$vars$plotted.Var1,gridIDs.meta$vars$plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gridIDs.meta$vars$reg)],.4))
+write.csv(gridIDs.meta,"cgiga_meta.csv",quote=F,row.names = F)
 ```
 
 ## combine pops in that are within the same 1x1º block
@@ -94,7 +95,7 @@ fst2 <- pairwiseSummary(fst)
 colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
 colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
 fst.threshold <- ifelse(fst2$Fst_noNegs<=0.1,fst2$Fst_noNegs,NA) # threshold
-save(fst2,file = "gverm_usat_Fst.Rda")
+save(fst2,file = "cgiga_usat_Fst.Rda")
 print(head(fst2))
 
 fst2$Fst_noNegs <- ifelse(fst2$Fst<0,0,fst2$Fst) # get rid of negatives
@@ -132,7 +133,7 @@ segments(fst2$gridID.1.lon,fst2$gridID.1.lat,fst2$gridID.2.lon,fst2$gridID.2.lat
 
 ```{r echo = F}
 overallFst <- overallTest(gi,quietly=T)$result
-save(overallFst,file = "gverm_usat_FstOverall.Rda")
+save(overallFst,file = "cgiga_usat_FstOverall.Rda")
 print(overallFst)
 
 ```
@@ -149,7 +150,7 @@ fst <- pairwiseTest(gi2,nrep = 1,by.locus = F,quietly=T)
 fst2 <- pairwiseSummary(fst)
 colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
 colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
-save(fst2,file = "gverm_usat_FstNatNon.Rda")
+save(fst2,file = "cgiga_usat_FstNatNon.Rda")
 print(fst2)
 ```
 
@@ -165,7 +166,7 @@ fst <- pairwiseTest(gi3,nrep = 1,by.locus = F,quietly=T)
 fst2 <- pairwiseSummary(fst)
 colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
 colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
-save(fst2,file = "gverm_usat_Fst3region.Rda")
+save(fst2,file = "cgiga_usat_Fst3region.Rda")
 print(fst2)
 ```
 
@@ -178,6 +179,6 @@ out <- summarizeLoci(gi,by.strata = T)
 hexp <- aggregate(out$exptd.het,by=list(out$stratum),mean)
 colnames(hexp) <- c("gridID","Hexp")
 head(hexp)
-save(hexp,file = "gverm_usat_Hexp.Rda")
+save(hexp,file = "cgiga_usat_Hexp.Rda")
 ```
 

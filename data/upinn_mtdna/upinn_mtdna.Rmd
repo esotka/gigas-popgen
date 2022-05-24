@@ -17,8 +17,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r echo = F}
 rm(list=ls())
 #library(readxl)
-library(spatstat) # marks, ppp, quadratcount
-library(scales) # alpha
+library(spatstat,warn.conflicts = F,quietly = T) # marks, ppp, quadratcount
+library(scales,warn.conflicts = F,quietly = T) # alpha
 
 domain <- c(-130,180,-50,75) 
 load("../../output/df.globe.Rda")
@@ -49,6 +49,7 @@ gridIDs.meta$vars <- df.globe[match(gridIDs.meta$gridIDs,df.globe$gridID),]
 plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
 
 points(gridIDs.meta$vars$plotted.Var1,gridIDs.meta$vars$plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gridIDs.meta$vars$reg)],.4))
+write.csv(gridIDs.meta,"upinn_meta.csv",quote=F,row.names = F)
 ```
 
 ## combine pops in that are within the same 1x1º block
@@ -147,19 +148,19 @@ print(fst2)
 
 \newpage
 
-### within pop nucleotide divergence
+### within pop nucleotide divergence (also saved between pop divergence)
 
 ```{r echo = F}
 nd <- nucleotideDivergence(gi)
 #hexp <- aggregate(out$exptd.het,by=list(out$stratum),mean)
 #colnames(hexp) <- c("gridID","Hexp")
-print(nd)
+print(nd$within)
 save(nd,file = "upinn_mtdna_nd.Rda")
 
 plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
 points(gridIDs.meta$vars$plotted.Var1,gridIDs.meta$vars$plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gridIDs.meta$vars$reg)],.4))
 
-nd.to.plot <- nd$mean[match(gridIDs.meta$vars$gridID,nd$stratum)]
+nd.to.plot <- nd$within$mean[match(gridIDs.meta$vars$gridID,nd$within$stratum)]
 points(gridIDs.meta$vars$plotted.Var1,gridIDs.meta$vars$plotted.Var2,pch=20,cex=2000*nd.to.plot,col=alpha(c("black","red","blue")[as.factor(gridIDs.meta$vars$reg)],.4))
 
 

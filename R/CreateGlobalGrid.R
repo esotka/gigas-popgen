@@ -81,6 +81,7 @@ df.globe$gridID <- 1:dim(df.globe)[1]
 # print map of grid for model
 df.coastline <- df.globe[df.globe$coastline==1,]
 df.onlyModelgrid <- df.coastline[df.coastline$grid.for.model==1,] # red points are model
+pdf("output/CreateGlobalGrid.pdf")
 plot(x=df.coastline$lon,y=df.coastline$lat,cex=.01,pch=20,xlab="",ylab="",main="red points = grid for model")
 points(x=df.onlyModelgrid$lon,y=df.onlyModelgrid$lat,col="red",pch=20,cex=0.1)
 
@@ -93,7 +94,7 @@ df.onlyModelgrid <- df.onlyModelgrid[order(df.onlyModelgrid$reg),]
 df.onlyModelgrid$plotted <- expand.grid(1:22,1:21)
 
 plot(df.onlyModelgrid$plotted$Var1,df.onlyModelgrid$plotted$Var2,pch=21,col=alpha(c("black","red","blue")[df.onlyModelgrid$reg],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
-
+dev.off()
 ## write grid for empirical data
 df.globe$plotted.Var1 <- df.onlyModelgrid$plotted$Var1[match(df.globe$gridID,df.onlyModelgrid$gridID)]
 df.globe$plotted.Var2 <- df.onlyModelgrid$plotted$Var2[match(df.globe$gridID,df.onlyModelgrid$gridID)]

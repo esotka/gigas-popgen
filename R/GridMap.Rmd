@@ -1,0 +1,83 @@
+---
+title: "Grid map"
+output: pdf_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Native range - Identify sources
+
+```{r echo = F}
+rm(list=ls())
+library(scales,warn.conflicts = F,quietly = T) # alpha
+load("../output/df.globe.Rda")
+library(maps,warn.conflicts = F,quietly = T)
+library(mapdata,warn.conflicts = F,quietly = T)
+library(maptools,warn.conflicts = F,quietly = T)
+data(wrld_simpl)
+plot(wrld_simpl, col = "grey", axes = T)
+all <- df.globe[df.globe$grid.for.model==1,]
+points(all$lon, all$lat, pch=19, col="red", cex=.1)  
+## asia
+map("worldHires",xlim=c(117.5,150),ylim=c(30,47),col="gainsboro",fill=TRUE)
+points(all$lon, all$lat, pch=19, col="red", cex=1)  
+mtext("Asia",side=3,line=1)
+box()
+## source populations
+hok <- all[all$lon<=145 & all$lon>=140&all$lat<=45&all$lat>=41,]
+points(hok$lon,hok$lat,cex=2,col="blue",lwd=2)
+hon <- all[all$lon<=143 & all$lon>=140&all$lat<=40&all$lat>=36,]
+points(hon$lon,hon$lat,cex=2,col="darkgreen",lwd=2)
+tok <- all[all$lon<=141 & all$lon>=137&all$lat<=36&all$lat>=34,]
+points(tok$lon,tok$lat,cex=2,col="black",lwd=2)
+sea <- all[all$lon<=135 & all$lon>=131&all$lat<=35&all$lat>=33,]
+points(sea$lon,sea$lat,cex=2,col="red",lwd=2)
+
+text(x=c(144.7672,143.0341,140.8678,134.6165), y=c(41.37038, 38.15945, 34.36471,32.56465),c("Hok","Hon","Tok","Sea"),col=c("blue","darkgreen","black","red"))
+
+
+source <- rbind(hok,hon,tok,sea)
+source$sourceID <- factor(c(rep("hok",nrow(hok)),
+                     rep("hon",nrow(hon)),
+                     rep("tok",nrow(tok)),
+                     rep("sea",nrow(sea))))
+source$sourceID <- factor(source$sourceID,levels=levels(source$sourceID)[c(1,2,4,3)])
+write.csv(source,"../output/df.globe_source.csv",quote=F,row.names = F)
+
+plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
+
+points(x=source$plotted.Var1,y=source$plotted.Var2,col=c("blue","darkgreen","black","red")[source$sourceID],lwd=2,cex=2)
+
+
+```
+
+
+
+# Crassostrea gigas - SNPs
+
+```{r echo = F}
+
+gigas <- read.csv("../data/gigas_snp/cgiga_meta.csv")
+plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
+points(gigas$vars.plotted.Var1,gigas$vars.plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gigas$vars.reg)],.4))
+
+points(x=source$plotted.Var1,y=source$plotted.Var2,col=c("blue","darkgreen","black","red")[source$sourceID],lwd=2,cex=2)
+
+
+
+```
+
+# Agarophyton vermiculophylla - usat
+
+```{r echo = F}
+gverm <- read.csv("../data/gverm_usat/gverm_meta.csv")
+plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
+points(gverm$vars.plotted.Var1,gverm$vars.plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gverm$vars.reg)],.4))
+points(x=source$plotted.Var1,y=source$plotted.Var2,col=c("blue","darkgreen","black","red")[source$sourceID],lwd=2,cex=2)
+
+```
+

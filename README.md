@@ -39,4 +39,12 @@ upinn_mtdna_FstNatNon.Rda
 upinn_mtdna_FstOverall.Rda  
 upinn_mtdna_nd.Rda = nucleotide diversity    
 
+## Sargassum muticum usat - LeCam et al 2020 Evolutionary Applications
+smuti_meta.csv
+smuti_usat_Fst.Rda
+smuti_usat_Fst3region.Rda
+smuti_usat_FstNatNon.Rda
+smuti_usat_FstOverall.Rda
+smuti_usat_Hexp.Rda
+
 

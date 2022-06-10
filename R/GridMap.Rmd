@@ -17,27 +17,41 @@ library(scales,warn.conflicts = F,quietly = T) # alpha
 load("../output/df.globe.Rda")
 library(maps,warn.conflicts = F,quietly = T)
 library(mapdata,warn.conflicts = F,quietly = T)
+library(sp,warn.conflicts=F,quietly=T)
 library(maptools,warn.conflicts = F,quietly = T)
 data(wrld_simpl)
 plot(wrld_simpl, col = "grey", axes = T)
 all <- df.globe[df.globe$grid.for.model==1,]
+## make 1 x 1 deg squares 
+all$lat.sq1 <- all$lat-.5
+all$lat.sq2 <- all$lat+.5
+all$lon.sq1 <- all$lon-.5
+all$lon.sq2 <- all$lon+.5
 points(all$lon, all$lat, pch=19, col="red", cex=.1)  
+
+```
+
+\newpage
+
+```{r echo = F}
 ## asia
 map("worldHires",xlim=c(117.5,150),ylim=c(30,47),col="gainsboro",fill=TRUE)
-points(all$lon, all$lat, pch=19, col="red", cex=1)  
+rect(all$lon.sq1,all$lat.sq2,all$lon.sq2,all$lat.sq1)
 mtext("Asia",side=3,line=1)
 box()
 ## source populations
-hok <- all[all$lon<=145 & all$lon>=140&all$lat<=45&all$lat>=41,]
-points(hok$lon,hok$lat,cex=2,col="blue",lwd=2)
+hok <- all[all$lon<=145 & all$lon>=138&all$lat<=46&all$lat>=41,]
+rect(hok$lon.sq1,hok$lat.sq2,hok$lon.sq2,hok$lat.sq1,col=alpha("blue",.5))
 hon <- all[all$lon<=143 & all$lon>=140&all$lat<=40&all$lat>=36,]
-points(hon$lon,hon$lat,cex=2,col="darkgreen",lwd=2)
+hon <- hon[!hon$gridID==33786,]
+rect(hon$lon.sq1,hon$lat.sq2,hon$lon.sq2,hon$lat.sq1,col=alpha("darkgreen",.5))
 tok <- all[all$lon<=141 & all$lon>=137&all$lat<=36&all$lat>=34,]
-points(tok$lon,tok$lat,cex=2,col="black",lwd=2)
+rect(tok$lon.sq1,tok$lat.sq2,tok$lon.sq2,tok$lat.sq1,col=alpha("black",.5))
 sea <- all[all$lon<=135 & all$lon>=131&all$lat<=35&all$lat>=33,]
-points(sea$lon,sea$lat,cex=2,col="red",lwd=2)
+sea <- sea[!sea$gridID==32666,]
+rect(sea$lon.sq1,sea$lat.sq2,sea$lon.sq2,sea$lat.sq1,col=alpha("red",.5))
 
-text(x=c(144.7672,143.0341,140.8678,134.6165), y=c(41.37038, 38.15945, 34.36471,32.56465),c("Hok","Hon","Tok","Sea"),col=c("blue","darkgreen","black","red"))
+text(x=c(144.7672,143.0341,140.8678,134.6165), y=c(41.37038, 38.15945, 34.36471,32),c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea"),col=c("blue","darkgreen","black","red"),pos=4,cex=.7)
 
 
 source <- rbind(hok,hon,tok,sea)
@@ -55,14 +69,33 @@ points(x=source$plotted.Var1,y=source$plotted.Var2,col=c("blue","darkgreen","bla
 
 ```
 
-
+\newpage
 
 # Crassostrea gigas - SNPs
 
 ```{r echo = F}
 
-gigas <- read.csv("../data/gigas_snp/cgiga_meta.csv")
+gigas <- read.csv("../data/cgiga_snp/cgiga_meta.csv")
+
+map("worldHires",xlim=c(117.5,150),ylim=c(30,47),col="gainsboro",fill=TRUE)
+rect(all$lon.sq1,all$lat.sq2,all$lon.sq2,all$lat.sq1)
+mtext("C gigas",side=3,line=1)
+box()
+## source populations
+hok <- all[all$lon<=145 & all$lon>=138&all$lat<=46&all$lat>=41,]
+rect(hok$lon.sq1,hok$lat.sq2,hok$lon.sq2,hok$lat.sq1,col=alpha("blue",.5))
+hon <- all[all$lon<=143 & all$lon>=140&all$lat<=40&all$lat>=36,]
+hon <- hon[!hon$gridID==33786,]
+rect(hon$lon.sq1,hon$lat.sq2,hon$lon.sq2,hon$lat.sq1,col=alpha("darkgreen",.5))
+tok <- all[all$lon<=141 & all$lon>=137&all$lat<=36&all$lat>=34,]
+rect(tok$lon.sq1,tok$lat.sq2,tok$lon.sq2,tok$lat.sq1,col=alpha("black",.5))
+sea <- all[all$lon<=135 & all$lon>=131&all$lat<=35&all$lat>=33,]
+sea <- sea[!sea$gridID==32666,]
+rect(sea$lon.sq1,sea$lat.sq2,sea$lon.sq2,sea$lat.sq1,col=alpha("red",.5))
+points(gigas$vars.lon,gigas$vars.lat,pch=20,cex=2)
+
 plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
+
 points(gigas$vars.plotted.Var1,gigas$vars.plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gigas$vars.reg)],.4))
 
 points(x=source$plotted.Var1,y=source$plotted.Var2,col=c("blue","darkgreen","black","red")[source$sourceID],lwd=2,cex=2)
@@ -70,11 +103,29 @@ points(x=source$plotted.Var1,y=source$plotted.Var2,col=c("blue","darkgreen","bla
 
 
 ```
-
-# Agarophyton vermiculophylla - usat
+\newpage
+# Gracilaria vermiculophylla - usat
 
 ```{r echo = F}
 gverm <- read.csv("../data/gverm_usat/gverm_meta.csv")
+
+map("worldHires",xlim=c(117.5,150),ylim=c(30,47),col="gainsboro",fill=TRUE)
+rect(all$lon.sq1,all$lat.sq2,all$lon.sq2,all$lat.sq1)
+mtext("G verm",side=3,line=1)
+box()
+## source populations
+hok <- all[all$lon<=145 & all$lon>=138&all$lat<=46&all$lat>=41,]
+rect(hok$lon.sq1,hok$lat.sq2,hok$lon.sq2,hok$lat.sq1,col=alpha("blue",.5))
+hon <- all[all$lon<=143 & all$lon>=140&all$lat<=40&all$lat>=36,]
+hon <- hon[!hon$gridID==33786,]
+rect(hon$lon.sq1,hon$lat.sq2,hon$lon.sq2,hon$lat.sq1,col=alpha("darkgreen",.5))
+tok <- all[all$lon<=141 & all$lon>=137&all$lat<=36&all$lat>=34,]
+rect(tok$lon.sq1,tok$lat.sq2,tok$lon.sq2,tok$lat.sq1,col=alpha("black",.5))
+sea <- all[all$lon<=135 & all$lon>=131&all$lat<=35&all$lat>=33,]
+sea <- sea[!sea$gridID==32666,]
+rect(sea$lon.sq1,sea$lat.sq2,sea$lon.sq2,sea$lat.sq1,col=alpha("red",.5))
+points(gverm$vars.lon,gverm$vars.lat,pch=20,cex=2)
+
 plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
 points(gverm$vars.plotted.Var1,gverm$vars.plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gverm$vars.reg)],.4))
 points(x=source$plotted.Var1,y=source$plotted.Var2,col=c("blue","darkgreen","black","red")[source$sourceID],lwd=2,cex=2)

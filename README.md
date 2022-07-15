@@ -3,8 +3,9 @@
 ## The following are gigas population genomics analyses
 
 ### mtDNA 
-NADH+NCR_fromNCBI.fas = two mitochondrial loci from whole mitochondrial genomes of 11 Crassostrea species at GenBank  
-
+data/NADH+NCR_fromNCBI.fas = two mitochondrial loci from whole mitochondrial genomes of 11 Crassostrea species at GenBank  
+R/Blast_tree.R = Make NJ phylogeny  
+output/Blast_tree.pdf = NJ phylogeny  
 
 ## The following are associated with the ABC analyses  
 ## Global grid (output/df.globe.Rda)  

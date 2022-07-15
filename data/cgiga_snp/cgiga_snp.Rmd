@@ -95,7 +95,7 @@ fst2 <- pairwiseSummary(fst)
 colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
 colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
 fst.threshold <- ifelse(fst2$Fst_noNegs<=0.1,fst2$Fst_noNegs,NA) # threshold
-save(fst2,file = "cgiga_usat_Fst.Rda")
+save(fst2,file = "cgiga_snp_Fst.Rda")
 print(head(fst2))
 
 fst2$Fst_noNegs <- ifelse(fst2$Fst<0,0,fst2$Fst) # get rid of negatives
@@ -133,7 +133,7 @@ segments(fst2$gridID.1.lon,fst2$gridID.1.lat,fst2$gridID.2.lon,fst2$gridID.2.lat
 
 ```{r echo = F}
 overallFst <- overallTest(gi,quietly=T)$result
-save(overallFst,file = "cgiga_usat_FstOverall.Rda")
+save(overallFst,file = "cgiga_snp_FstOverall.Rda")
 print(overallFst)
 
 ```
@@ -150,7 +150,7 @@ fst <- pairwiseTest(gi2,nrep = 1,by.locus = F,quietly=T)
 fst2 <- pairwiseSummary(fst)
 colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
 colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
-save(fst2,file = "cgiga_usat_FstNatNon.Rda")
+save(fst2,file = "cgiga_snp_FstNatNon.Rda")
 print(fst2)
 ```
 

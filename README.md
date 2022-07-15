@@ -1,5 +1,12 @@
-# gigas-popgen
+# Crassostrea gigas population genomics
 
+## The following are gigas population genomics analyses
+
+### mtDNA 
+NADH+NCR_fromNCBI.fas = two mitochondrial loci from whole mitochondrial genomes of 11 Crassostrea species at GenBank  
+
+
+## The following are associated with the ABC analyses  
 ## Global grid (output/df.globe.Rda)  
 lat = latitudinal midpoint of global 1º x 1º grid  
 lon = longitudinal midpoint of global 1º x 1º grid  

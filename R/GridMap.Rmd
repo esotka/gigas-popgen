@@ -55,7 +55,7 @@ out$sourceID <- factor(c(rep("hok",nrow(hok)),
                      rep("kag",nrow(kag)),
                      rep("nonSource",nrow(nonSource))))
 out$sourceID <- factor(out$sourceID,levels=levels(out$sourceID)[c(1,2,6,5,3,4)])
-write.csv(source,"../output/df.globe_source.csv",quote=F,row.names = F)
+write.csv(out,"../output/df.globe_source.csv",quote=F,row.names = F)
 
 map1 <- function() {
   map("worldHires",xlim=c(117.5,150),ylim=c(30,47),col="gainsboro",fill=TRUE)

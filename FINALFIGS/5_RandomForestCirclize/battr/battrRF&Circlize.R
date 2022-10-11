@@ -119,6 +119,7 @@ chordDiagram(x = mat,
              link.arr.length =  0.15,
              diffHeight = -0.001,
              preAllocateTracks = list(track.height = max(strwidth(unlist(dimnames(mat))))))
+mtext("Batt",line=-5,cex=2)
 circos.track(track.index = 1, panel.fun = function(x, y) {
   xlim = get.cell.meta.data("xlim")
   xplot = get.cell.meta.data("xplot")

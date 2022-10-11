@@ -46,7 +46,7 @@ intro_data =  tab.pred[!(pop %in% meta$pop[meta$NatNon=="Native"]),]
 intro_pops =  as.factor(pop[!(pop %in% meta$pop[meta$NatNon=="Native"])])
 
 rf = randomForest(x=native_data,y=native_pops)
-pdf("FINALFIGS/5_circlize/cgiga/random_forest.pdf")
+pdf("FINALFIGS/5_RandomForestCirclize/cgiga/random_forest.pdf")
 plt=data.frame(pred=predict(rf,newdata=intro_data),pop=intro_pops)
 tbl=with(plt,table(pred,pop))
 par(mar=c(7,4,4,4)+0.1)
@@ -54,7 +54,7 @@ heatmap(tbl,cexCol=1.7,cexRow=1.7)
 heatmap(tbl[rowSums(tbl)>0,],cexCol=1.7,cexRow=1.7)
 dev.off()
 
-write.csv(tbl,"FINALFIGS/5_circlize/cgiga/RFprediction.csv",quote=F)
+write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/cgiga/RFprediction.csv",quote=F)
 
 ### 3) make circlize plot
 rowReg <- meta$sourceID[match(rownames(tbl),meta$pop)]
@@ -103,14 +103,7 @@ cols.to.use <- c(blue2red(5),"black",rep("grey",ncol(mat)))
 rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
 
 
-df = data.frame(from = rep(rownames(mat), times = ncol(mat)),
-                to = rep(colnames(mat), each = nrow(mat)),
-                value = as.vector(mat),
-                stringsAsFactors = FALSE)
-
-
-
-pdf("FINALFIGS/5_circlize/cgiga/circlize.pdf",width=10,height=10)
+pdf("FINALFIGS/5_RandomForestCirclize/cgiga/circlize.pdf",width=10,height=10)
 circos.clear()
 circos.par(gap.after = c(rep(5,5),15,rep(5,5),15),start.degree = 90, gap.degree = 4)
 

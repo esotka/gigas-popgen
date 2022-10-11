@@ -119,6 +119,7 @@ chordDiagram(x = mat,
              link.arr.length =  0.15,
              diffHeight = -0.001,
              preAllocateTracks = list(track.height = max(strwidth(unlist(dimnames(mat))))))
+mtext("C gigas",line=-5,cex=2)
 # we go back to the first track and customize sector labels
 #circos.track(track.index = 1, panel.fun = function(x, y) {
 #  circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5))

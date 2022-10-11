@@ -5,6 +5,7 @@ library(spatstat,warn.conflicts = F,quietly = T) # marks, ppp, quadratcount
 library(scales,warn.conflicts = F,quietly = T) # alpha
 library(circlize)
 library(colorRamps)
+library(reshape)
 
 domain <- c(-130,180,-50,75) 
 load("FINALFIGS/0_globalGrid/df.globe.Rda")
@@ -36,15 +37,21 @@ meta$sourceID <- ifelse(is.na(tmpreg2),meta$sourceID,tmpreg2)
 
 ### 2) generate the random forest - native pops vs introduced pops
 dat <- as.data.frame(read_xlsx('FINALFIGS/5_RandomForestCirclize/battr/Miura2006haplotypes_haps.xlsx',sheet=1))
-rownames(dat) <- dat$Haplotype; dat <- dat[,-1]
-mat <- as.matrix(dat)
-mat[is.na(mat)] <- 0
-mat <- t(mat) ### row = pop; col = haplo
+md <- melt(dat,id="Haplotype")
+md <- md[complete.cases(md),]
+popID <- rep(as.character(md$variable),md$value)
+hapInd <- rep(md$Haplotype,md$value)
+indID <- paste(popID,1:length(hapInd),sep="_")
+#country <- ifelse(lonInd>0,"1_Asia","2_wNA")
+metaInd <- data.frame(indID,hapInd)
+md2 <- as.matrix(table(metaInd))
+md2_pop <- unlist(lapply(strsplit(rownames(md2),"_"),"[[",1))
+md2_source <- meta$sourceID[match(md2_pop,meta$Site)]
 
-native_data = mat[1:14,]
-native_pops = as.factor(rownames(mat)[1:14])
-intro_data =  mat[15:18,]
-intro_pops =  as.factor(rownames(mat)[15:18])
+native_data = md2[!md2_source%in%c("Cali","PNW"),]
+native_pops = as.factor(md2_pop[!md2_source%in%c("Cali","PNW")])
+intro_data =  md2[md2_source%in%c("Cali","PNW"),]
+intro_pops =  as.factor(md2_pop[md2_source%in%c("Cali","PNW")])
 
 
 rf = randomForest(x=native_data,y=native_pops)
@@ -91,7 +98,7 @@ colnames(datByReg2) <- levels(colReg)
 rownames(datByReg2) <- c("Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / westernJapan")
 mat <- as.matrix(datByReg2)
 mat <- mat+0.01
-cols.to.use <- c(blue2red(5)[2],rep("white",3),"white",rep("grey",ncol(mat)))
+cols.to.use <- c(blue2red(5),rep("grey",ncol(mat)))
 
 pdf("FINALFIGS/5_RandomForestCirclize/battr/circlize.pdf",width=10,height=10)
 circos.clear()

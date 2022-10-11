@@ -60,10 +60,87 @@ write.csv(tbl,"FINALFIGS/5_circlize/cgiga/RFprediction.csv",quote=F)
 rowReg <- meta$sourceID[match(rownames(tbl),meta$pop)]
 rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels(rowReg)[c(1,2,6,5,3,4)])
 colReg <- meta$sourceID[match(colnames(tbl),meta$pop)]
-colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(1:2,6,9,8,10,4,3,5,7,11)])
+colReg[colReg%in%c("France","Spain","Ireland","Sweden","Norway","Denmark")] <- "Europe"
+colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(4,1:2,6,5,3)])
 
 dat2 <- as.matrix(tbl[order(rowReg),order(colReg)])
 df = data.frame(from = rep(rownames(dat2), times = ncol(dat2)),
                 to = rep(colnames(dat2), each = nrow(dat2)),
                 value = as.vector(dat2),
                 stringsAsFactors = FALSE)
+## by reg
+
+
+datByReg <- c()
+for (i in 1:length(levels(rowReg))) # native
+{
+  tmp <- tbl[rowReg==levels(rowReg)[i],]
+  if(is.null(nrow(tmp)))
+  {datByReg <- rbind(datByReg,tmp)}
+  else{
+    datByReg <- rbind(datByReg,colSums(tbl[rowReg==levels(rowReg)[i],]))
+  }}
+datByReg2 <- c()
+for(j in 1:length(levels(colReg)))
+{  
+  tmp <- datByReg[,colReg==levels(colReg)[j]]
+  if(is.null(ncol(tmp)))
+  {datByReg2 <- cbind(datByReg2,tmp)}
+  else{
+    datByReg2 <- cbind(datByReg2,rowSums(tmp))
+  }}
+
+rownames(datByReg2) <- levels(rowReg)
+colnames(datByReg2) <- levels(colReg)
+#datByReg2 <- datByReg2[,c(2:7,1)]
+#datByReg2 <- rbind(datByReg2,rep(0,ncol(datByReg2))) # add dummy region
+mat <- as.matrix(datByReg2)
+mat <- mat+.01
+
+#cols.to.use <- c(meta2$pc1.cols[match(rownames(mat),meta2$GeneticRegions)],rep("grey",ncol(mat)))# rows first,  cols second
+cols.to.use <- c(blue2red(5),"black",rep("grey",ncol(mat)))
+#cols.to.use[is.na(cols.to.use)] <- "red"
+rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
+
+
+df = data.frame(from = rep(rownames(mat), times = ncol(mat)),
+                to = rep(colnames(mat), each = nrow(mat)),
+                value = as.vector(mat),
+                stringsAsFactors = FALSE)
+
+
+
+pdf("FINALFIGS/5_circlize/cgiga/circlize.pdf",width=10,height=10)
+circos.clear()
+circos.par(gap.after = c(rep(5,5),15,rep(5,5),15),start.degree = 90, gap.degree = 4)
+
+chordDiagram(x = mat, 
+             directional = 1,
+             grid.col = cols.to.use,
+             annotationTrack = "grid", 
+             transparency = 0.25,  
+             annotationTrackHeight = c(0.1, 0.1),
+             #diffHeight  = -0.04,
+             direction.type = c("arrows", "diffHeight"),
+             link.arr.type = "big.arrow",
+             link.arr.length =  0.15,
+             diffHeight = -0.001,
+             preAllocateTracks = list(track.height = max(strwidth(unlist(dimnames(mat))))))
+# we go back to the first track and customize sector labels
+#circos.track(track.index = 1, panel.fun = function(x, y) {
+#  circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5))
+#}, bg.border = NA) # here set bg.border to NA is important
+circos.track(track.index = 1, panel.fun = function(x, y) {
+  xlim = get.cell.meta.data("xlim")
+  xplot = get.cell.meta.data("xplot")
+  ylim = get.cell.meta.data("ylim")
+  sector.name = get.cell.meta.data("sector.index")
+  
+  if(abs(xplot[2] - xplot[1]) < 10) {
+    circos.text(mean(xlim), ylim[1], sector.name, facing = "clockwise",niceFacing = TRUE, adj = c(0, 0.5), col = "black",cex=1.5)
+  } else {
+    circos.text(mean(xlim), ylim[1], sector.name, facing = "inside", niceFacing = TRUE, adj = c(0.5, 0), col= "black",cex=1.5)
+  }
+}, bg.border = NA)
+
+dev.off()

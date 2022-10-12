@@ -10,7 +10,7 @@ library(reshape)
 domain <- c(-130,180,-50,75) 
 load("FINALFIGS/0_globalGrid/df.globe.Rda")
 meta_source <- read.csv("FINALFIGS/0_globalGrid/df.globe_source.csv")
-meta <- read.csv("FINALFIGS/5_RandomForestCirclize/upinn/Uwai_141inds.meta.csv")
+meta <- read.csv("FINALFIGS/5_RandomForestCirclize/upinn/Uwai_211inds.meta.csv")
 meta <- unique(meta[,c("popID","lonInd","latInd","country")])
 ## 1) find which 1º by 1º quadrat for each pop
 tmp <- as.data.frame(meta)
@@ -37,7 +37,7 @@ meta$sourceID <- ifelse(is.na(meta$sourceID),meta$country,meta$sourceID)
 
 
 ### 2) generate the random forest - native pops vs introduced pops
-dat <- read.csv("FINALFIGS/5_RandomForestCirclize/upinn/Uwai_141inds.meta.csv")
+dat <- read.csv("FINALFIGS/5_RandomForestCirclize/upinn/Uwai_211inds.meta.csv")
 #md <- melt(dat,id="hapInd")
 #md <- md[complete.cases(md),]
 #popID <- rep(as.character(md$variable),md$value)
@@ -49,10 +49,10 @@ md2 <- as.matrix(table(metaInd))
 md2_pop <- dat$popID[match(rownames(md2),dat$indID)]#unlist(lapply(strsplit(rownames(md2),"_"),"[[",1))
 md2_source <- meta$sourceID[match(md2_pop,meta$popID)]
 
-native_data = md2[!md2_source%in%c("Mexico","France","USA"),]
-native_pops = as.factor(md2_pop[!md2_source%in%c("Mexico","France","USA")])
-intro_data =  md2[md2_source%in%c("Mexico","France","USA"),]
-intro_pops =  as.factor(md2_pop[md2_source%in%c("Mexico","France","USA")])
+native_data = md2[!md2_source%in%c("New Zealand","France","USA"),]
+native_pops = as.factor(md2_pop[!md2_source%in%c("New Zealand","France","USA")])
+intro_data =  md2[md2_source%in%c("New Zealand","France","USA"),]
+intro_pops =  as.factor(md2_pop[md2_source%in%c("New Zealand","France","USA")])
 
 
 rf = randomForest(x=native_data,y=native_pops)
@@ -137,3 +137,4 @@ circos.track(track.index = 1, panel.fun = function(x, y) {
 }, bg.border = NA)
 
 dev.off()
+write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/upinnByReg.csv")

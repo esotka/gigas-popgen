@@ -134,3 +134,4 @@ circos.track(track.index = 1, panel.fun = function(x, y) {
 }, bg.border = NA)
 
 dev.off()
+write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battrByReg.csv")

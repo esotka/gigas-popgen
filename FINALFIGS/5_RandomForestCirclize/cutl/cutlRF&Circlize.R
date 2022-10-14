@@ -10,33 +10,29 @@ library(reshape)
 domain <- c(-130,180,-50,75) 
 load("FINALFIGS/0_globalGrid/df.globe.Rda")
 meta_source <- read.csv("FINALFIGS/0_globalGrid/df.globe_source.csv")
-meta <- as.data.frame(read_xlsx("FINALFIGS/5_RandomForestCirclize/battr/Miura2006haplotypes_meta.xlsx",sheet = 1))
+meta <- read_xlsx("FINALFIGS/5_RandomForestCirclize/cutl/Kogishi et al. - 2010 Table 1.xlsx")
 ## 1) find which 1º by 1º quadrat for each pop
 tmp <- as.data.frame(meta)
 gridIDs.tmp <- c()
-for (i in 1:length(tmp$Site))
+for (i in 1:length(tmp$PopID))
 {
-  ppp.tmp <- ppp(x=tmp$longitude[tmp$Site==tmp$Site[i]],y=tmp$latitude[tmp$Site==tmp$Site[i]],xrange=domain[1:2],yrange=domain[3:4])
+  ppp.tmp <- ppp(x=tmp$Longitude[tmp$PopID==tmp$PopID[i]],y=tmp$Latitude[tmp$PopID==tmp$PopID[i]],xrange=domain[1:2],yrange=domain[3:4])
   grid.tmp <- quadratcount(ppp.tmp, nx = abs(domain[1]-domain[2]), ny = abs(domain[3]-domain[4]))
   df.tmp <- data.frame(grid.tmp,quadIDs=1:dim(df.globe)[1])
   gridIDs.tmp <- c(gridIDs.tmp,df.tmp$quadIDs[df.tmp$Freq==1])
 }
-gridIDs.meta <- data.frame(gridIDs=gridIDs.tmp,pop=tmp$Site)
+gridIDs.meta <- data.frame(gridIDs=gridIDs.tmp,pop=tmp$PopID)
 gridIDs.meta$vars <- df.globe[match(gridIDs.meta$gridIDs,df.globe$gridID),]
 
-meta$gridIDs <- gridIDs.meta$gridIDs[match(meta$Site,gridIDs.meta$pop)]
+meta$gridIDs <- gridIDs.meta$gridIDs[match(meta$PopID,gridIDs.meta$pop)]
 meta$sourceID <- meta_source$sourceID[match(meta$gridIDs,meta_source$gridID)]
-tmpreg <- matrix(c(
-  "Boundary","NAm_north",
-  "Padila","NAm_north",
-  "Bolinus","NAm_south",
-  "Elkhorn","NAm_south"),nrow=4,ncol=2,byrow = T)
-tmpreg2 <-tmpreg[match(meta$Site,tmpreg[,1]),2]
-meta$sourceID <- ifelse(is.na(tmpreg2),meta$sourceID,tmpreg2)
-
+meta$sourceID[meta$PopID=="pop14"] <- "Cali"
 
 ### 2) generate the random forest - native pops vs introduced pops
-dat <- as.data.frame(read_xlsx('FINALFIGS/5_RandomForestCirclize/battr/Miura2006haplotypes_haps.xlsx',sheet=1))
+#dat <- read.csv("FINALFIGS/5_RandomForestCirclize/upinn/Uwai_211inds.meta.csv")
+dat <- t(tmp[,colnames(tmp)%in%LETTERS[1:24]]) # hap = row; pop=col
+colnames(dat) <- tmp$PopID
+dat <- data.frame(Haplotype=rownames(dat),dat)
 md <- melt(dat,id="Haplotype")
 md <- md[complete.cases(md),]
 popID <- rep(as.character(md$variable),md$value)
@@ -46,12 +42,12 @@ indID <- paste(popID,1:length(hapInd),sep="_")
 metaInd <- data.frame(indID,hapInd)
 md2 <- as.matrix(table(metaInd))
 md2_pop <- unlist(lapply(strsplit(rownames(md2),"_"),"[[",1))
-md2_source <- meta$sourceID[match(md2_pop,meta$Site)]
+md2_source <- meta$sourceID[match(md2_pop,meta$PopID)]
 
-native_data = md2[!md2_source%in%c("NAm_south","NAm_north"),]
-native_pops = as.factor(md2_pop[!md2_source%in%c("NAm_south","NAm_north")])
-intro_data =  md2[md2_source%in%c("NAm_south","NAm_north"),]
-intro_pops =  as.factor(md2_pop[md2_source%in%c("NAm_south","NAm_north")])
+native_data = md2[!md2_source=="Cali",]
+native_pops = as.factor(md2_pop[!md2_source=="Cali"])
+intro_data =  md2[md2_source=="Cali",]
+intro_pops =  as.factor(md2_pop[md2_source=="Cali"])
 
 
 rf = randomForest(x=native_data,y=native_pops)
@@ -59,48 +55,35 @@ rf = randomForest(x=native_data,y=native_pops)
 plt=data.frame(pred=predict(rf,newdata=intro_data),pop=intro_pops)
 tbl=with(plt,table(pred,pop))
 
-pdf("FINALFIGS/5_RandomForestCirclize/battr/random_forest.pdf")
+#pdf("FINALFIGS/5_RandomForestCirclize/battr/random_forest.pdf")
 #par(mar=c(7,4,4,4)+0.1)
-heatmap(tbl)#,cexCol=1.7,cexRow=1.7)
-heatmap(tbl[rowSums(tbl)>0,])#,cexCol=1.7,cexRow=1.7)
-dev.off()
+#heatmap(tbl)#,cexCol=1.7,cexRow=1.7)
+#heatmap(tbl[rowSums(tbl)>0,])#,cexCol=1.7,cexRow=1.7)
+#dev.off()
 
-write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/battr/RFprediction.csv",quote=F)
+write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/cutl/RFprediction.csv",quote=F)
+
+
+
+
+
 
 ### 3) make circlize plot
-rowReg <- meta$sourceID[match(rownames(tbl),meta$Site)]
+#tbl <- read.csv("FINALFIGS/5_RandomForestCirclize/upinn/RFprediction.csv")
+rowReg <- meta$sourceID[match(rownames(tbl),meta$PopID)]
 rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels(rowReg)[c(1,5,4,2,3)])
-colReg <- meta$sourceID[match(colnames(tbl),meta$Site)]
-colReg <- factor(colReg)#; colReg <- factor(colReg,levels(colReg)[c()])
+colReg <- meta$sourceID[match(colnames(tbl),meta$PopID)]
+#colReg[colReg=="USA"] <- "NAm_south"
+#colReg <- factor(colReg)#; colReg <- factor(colReg,levels(colReg)[c()])
 
 #dat <- as.data.frame(tbl[order(rowReg),order(colReg)])
-datByReg <- c()
-for (i in 1:length(levels(rowReg))) # native
-{
-  tmp <- tbl[rowReg==levels(rowReg)[i],]
-  if(is.null(nrow(tmp)))
-  {datByReg <- rbind(datByReg,tmp)}
-  else{
-    datByReg <- rbind(datByReg,colSums(tbl[rowReg==levels(rowReg)[i],]))
-  }}
-datByReg2 <- c()
-for(j in 1:length(levels(colReg)))
-{  
-  tmp <- datByReg[,colReg==levels(colReg)[j]]
-  if(is.null(ncol(tmp)))
-  {datByReg2 <- cbind(datByReg2,tmp)}
-  else{
-    datByReg2 <- cbind(datByReg2,rowSums(tmp))
-  }}
-rownames(datByReg2) <- levels(rowReg)
-colnames(datByReg2) <- levels(colReg)
-
-rownames(datByReg2) <- c("Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / westernJapan")
+datByReg2 <- as.matrix(data.frame(Cal=tapply(c(tbl),rowReg,sum)))
+rownames(datByReg2) <- c("Hokkaido","Tokyo","Seto Inland Sea","Kagoshima","Korea / wJapan / China")
 mat <- as.matrix(datByReg2)
 mat <- mat+0.01
-cols.to.use <- c(blue2red(5),rep("grey",ncol(mat)))
+cols.to.use <- c(blue2red(5)[-2],"black",rep("grey",ncol(mat)))
 
-pdf("FINALFIGS/5_RandomForestCirclize/battr/circlize.pdf",width=10,height=10)
+pdf("FINALFIGS/5_RandomForestCirclize/cutl/circlize.pdf",width=10,height=10)
 circos.clear()
 circos.par(gap.after = c(rep(5,5),15,rep(5,5),15),start.degree = 90, gap.degree = 4)
 
@@ -119,7 +102,7 @@ chordDiagram(x = mat,
              link.arr.length =  0.15,
              diffHeight = -0.001,
              preAllocateTracks = list(track.height = max(strwidth(unlist(dimnames(mat))))))
-mtext("Batt",line=-5,cex=2)
+mtext("Cutleria",line=-5,cex=2)
 circos.track(track.index = 1, panel.fun = function(x, y) {
   xlim = get.cell.meta.data("xlim")
   xplot = get.cell.meta.data("xplot")
@@ -134,4 +117,4 @@ circos.track(track.index = 1, panel.fun = function(x, y) {
 }, bg.border = NA)
 
 dev.off()
-write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battrByReg.csv")
+write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cutlByReg.csv")

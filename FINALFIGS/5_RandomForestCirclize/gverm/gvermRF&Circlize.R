@@ -38,6 +38,9 @@ tmpreg <- matrix(c(
   "tmb","Cali"),nrow=8,ncol=2,byrow = T)
 tmpreg2 <-tmpreg[match(meta$`Site abb.`,tmpreg[,1]),2]
 meta$sourceID <- ifelse(is.na(tmpreg2),meta$sourceID,tmpreg2)
+meta$country <- unlist(lapply(strsplit(meta$Site,", "),"[[",2))
+meta$sourceID <- ifelse(meta$country%in%c("E","F","PT","MR"),"EuropeSouth",meta$sourceID)
+meta$sourceID <- ifelse(meta$country%in%c("D","DK","IRE","UK"),"EuropeNorth",meta$sourceID)
 
 ### 2) generate the random forest - native pops vs introduced pops
 dat <- read.csv('FINALFIGS/5_RandomForestCirclize/gverm/KruegerHadfieldetal_EcolEvol_diploidspsex_EDITED.csv',skip=2)[,1:22] # 10 usats
@@ -46,7 +49,7 @@ colnames(dat) <- c("Ind","Pop",paste(sort(rep(letters[1:nloci],2)),rep(1:2,nloci
 dat$Ind <- paste(1:nrow(dat),dat$Pop,sep="")
 dat <- dat[dat$Pop%in%meta$`Site abb.`,] # remove east coast
 sch = data.frame(pop=dat$Pop,source=meta$sourceID[match(dat$Pop,meta$`Site abb.`)])
-sch$intro <- sch$source%in%c("EU","PNW","Cali")
+sch$intro <- sch$source%in%c("EuropeNorth","EuropeSouth","PNW","Cali")
 
 native_data = dat[!sch$intro,]
 native_pops = as.factor(native_data$Pop)
@@ -70,7 +73,7 @@ write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/gverm/RFprediction.csv",quote=F)
 rowReg <- meta$sourceID[match(rownames(tbl),meta$`Site abb.`)]
 rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels(rowReg)[c(1,2,6,5,3,4)])
 colReg <- meta$sourceID[match(colnames(tbl),meta$`Site abb.`)]
-colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(1,3,2)])
+colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(1,4,2,3)])
 
 dat2 <- as.matrix(tbl[order(rowReg),order(colReg)])
 df = data.frame(from = rep(rownames(dat2), times = ncol(dat2)),
@@ -103,7 +106,7 @@ colnames(datByReg2) <- levels(colReg)
 #datByReg2 <- datByReg2[,c(2:7,1)]
 #datByReg2 <- rbind(datByReg2,rep(0,ncol(datByReg2))) # add dummy region
 mat <- as.matrix(datByReg2)
-mat <- mat+.01
+#mat <- mat+.01
 
 #cols.to.use <- c(meta2$pc1.cols[match(rownames(mat),meta2$GeneticRegions)],rep("grey",ncol(mat)))# rows first,  cols second
 cols.to.use <- c(blue2red(5),"black",rep("grey",ncol(mat)))

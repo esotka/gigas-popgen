@@ -1,13 +1,15 @@
 # make a PDF with all chordDiagrams
+library(circlize)
 rm(list=ls())
 #pdf("FINALFIGS/5_RandomForestCirclize/RandomForestCirclizePlots.pdf",height=10,width=10)
-giga <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cgigasByReg.csv"); rownames(giga) <- giga[,1]; giga <- as.matrix(giga[,-1])
+giga <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cgigasByReg.csv"); rownames(giga) <- giga[,1]; giga <- as.matrix(giga[,-1]) 
 gverm <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/gvermByReg.csv"); rownames(gverm) <- gverm[,1]; gverm <- as.matrix(gverm[,-1])
 batt <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battrByReg.csv"); rownames(batt) <- batt[,1]; batt <- as.matrix(batt[,-1])
 batt_HL1 <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battr_HL1_ByReg.csv"); rownames(batt_HL1) <- batt_HL1[,1]; batt_HL1 <- as.matrix(batt_HL1[,-1])
 batt_HL6 <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battr_HL6_ByReg.csv"); rownames(batt_HL6) <- batt_HL6[,1]; batt_HL6 <- as.matrix(batt_HL6[,-1])
 upinn <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/upinnByReg.csv"); rownames(upinn) <- upinn[,1]; upinn <- as.matrix(upinn[,-1]); # remove Mexico
 smuti <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/smutiByReg.csv"); rownames(smuti) <- smuti[,1]; smuti <- as.matrix(smuti[,-1])
+cutl.tmp <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cutlByReg.csv"); cutl <- as.matrix(cutl.tmp[,-1]); rownames(cutl) <- cutl.tmp[,1]; colnames(cutl) <- colnames(cutl.tmp)[-1]
 
 
 spp <- list(giga=giga,
@@ -16,7 +18,8 @@ spp <- list(giga=giga,
             batt_HL1=batt_HL1,
             batt_HL6=batt_HL6,
             upinn=upinn,
-            smuti=smuti)
+            smuti=smuti,
+            cutl=cutl)
 cols.to.use <- list(
   giga=c(blue2red(5),"black",rep("grey",ncol(spp[["giga"]]))),
   gverm=c(blue2red(5),"black",rep("grey",ncol(spp[["gverm"]]))),
@@ -24,7 +27,8 @@ cols.to.use <- list(
   batt_HL1=c(blue2red(5)[-1],"black",rep("grey",ncol(spp[["batt_HL1"]]))),
   batt_HL6=c(blue2red(5)[-1],"black",rep("grey",ncol(spp[["batt_HL6"]]))),
   upinn=c(blue2red(5),"black",rep("grey",ncol(spp[["upinn"]]))),
-  smuti=c(blue2red(5)[c(1,3,4)],rep("grey",ncol(spp[["smuti"]]))))
+  smuti=c(blue2red(5)[c(1,3,4)],rep("grey",ncol(spp[["smuti"]]))),
+  cutl=c(blue2red(5)[-2],"black",rep("grey",ncol(spp[["cutl"]]))))
 
 pdf("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/RandomForestCirclizePlots.pdf",height=30,width=30)
 par(mfrow=c(3,3))
@@ -53,11 +57,11 @@ dev.off()
 
 ##### western North America ####
 
-wNA <- spp
+wNA <- spp[c("giga","gverm","batt","batt_HL1","batt_HL6","upinn","smuti","cutl")]
 wNA[["giga"]] <- wNA[["giga"]][,c("soCal","NW.America")]
 wNA[["gverm"]] <- wNA[["gverm"]][,c("Cali","PNW")]
-wNA[["upinn"]] <- wNA[["upinn"]][,c("USA","USA")]; colnames(wNA[["upinn"]]) <- c("USA","USA2")
-wNA[["smuti"]] <- wNA[["smuti"]][,c("Cali","PNW")]
+wNA[["upinn"]] <- as.matrix(data.frame(NAm_south=wNA[["upinn"]][,c("NAm_south")])) 
+wNA[["smuti"]] <- wNA[["smuti"]][,c("Cali","PNW")]; 
 
 cols.to.use <- list(
   giga=c(blue2red(5),"black",rep("grey",ncol(wNA[["giga"]]))),
@@ -66,7 +70,8 @@ cols.to.use <- list(
   batt_HL1=c(blue2red(5)[-1],"black",rep("grey",ncol(wNA[["batt_HL1"]]))),
   batt_HL6=c(blue2red(5)[-1],"black",rep("grey",ncol(wNA[["batt_HL6"]]))),
   upinn=c(blue2red(5),"black",rep("grey",ncol(wNA[["upinn"]]))),
-  smuti=c(blue2red(5)[c(1,3,4)],rep("grey",ncol(wNA[["smuti"]]))))
+  smuti=c(blue2red(5)[c(1,3,4)],rep("grey",ncol(wNA[["smuti"]]))),
+  cutl=c(blue2red(5)[-2],"black",rep("grey",ncol(spp[["cutl"]]))))
 
 pdf("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/RandomForestCirclizePlots_wNA.pdf",height=30,width=30)
 par(mfrow=c(3,3))
@@ -95,10 +100,10 @@ dev.off()
 ##### Europe ####
 
 Eur <- spp[c("giga","gverm","upinn","smuti")]
-Eur[["giga"]] <- Eur[["giga"]][,c("Europe","Europe")];colnames(Eur[["giga"]]) <- c("Eur","Eur2")
-Eur[["gverm"]] <- Eur[["gverm"]][,c("EU","EU")];colnames(Eur[["gverm"]]) <- c("Eur","Eur2")
-Eur[["upinn"]] <- Eur[["upinn"]][,c("France","France")]; colnames(Eur[["upinn"]]) <- c("France","France2")
-Eur[["smuti"]] <- Eur[["smuti"]][,c("Europe","Europe")];colnames(Eur[["smuti"]]) <- c("Eur","Eur2")
+Eur[["giga"]] <- Eur[["giga"]][,c("EuropeNorth","EuropeSouth")]
+Eur[["gverm"]] <- Eur[["gverm"]][,c("EuropeNorth","EuropeSouth")]
+Eur[["upinn"]] <- Eur[["gverm"]][,c("EuropeNorth","EuropeSouth")]
+Eur[["smuti"]] <- Eur[["smuti"]][,c("EuropeNorth","EuropeSouth")]; Eur[["smuti"]] <- Eur[["smuti"]]+0.09 # to see it.
 
 cols.to.use <- list(
   giga=c(blue2red(5),"black",rep("grey",ncol(Eur[["giga"]]))),

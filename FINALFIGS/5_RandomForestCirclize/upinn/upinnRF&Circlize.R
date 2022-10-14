@@ -74,6 +74,7 @@ rowReg <- meta$sourceID[match(rownames(tbl),meta$popID)]
 rowReg[rowReg%in%c("China Japan")] <- "nonSource"
 rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels(rowReg)[c(1,2,6,5,3,4)])
 colReg <- meta$sourceID[match(colnames(tbl),meta$popID)]
+colReg[colReg=="USA"] <- "NAm_south"
 colReg <- factor(colReg)#; colReg <- factor(colReg,levels(colReg)[c()])
 
 #dat <- as.data.frame(tbl[order(rowReg),order(colReg)])

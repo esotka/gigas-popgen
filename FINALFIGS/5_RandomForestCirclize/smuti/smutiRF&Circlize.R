@@ -35,15 +35,16 @@ tmpreg <- matrix(c(
   "USA,CA","Cali",
   "USA CA","Cali",
   "USA WA","PNW",
-  "UK","Europe",
-  "Spain","Europe",
-  "Portugal","Europe",
-  "Norway","Europe",
-  "Ireland","Europe",
-  "France","Europe",
-  "Belgium","Europe"),nrow=10,ncol=2,byrow = T)
+  "UK","EuropeNorth",
+  "Spain","EuropeSouth",
+  "Portugal","EuropeSouth",
+  "Norway","EuropeNorth",
+  "Ireland","EuropeNorth",
+  "France","EuropeSouth",
+  "Belgium","EuropeNorth"),nrow=10,ncol=2,byrow = T)
 tmpreg2 <-tmpreg[match(meta$sourceID,tmpreg[,1]),2]
 meta$sourceID <- ifelse(is.na(tmpreg2),meta$sourceID,tmpreg2)
+
 
 ### 2) generate the random forest - native pops vs introduced pops
 dat <- read.delim('FINALFIGS/5_RandomForestCirclize/smuti/LeCam et al._Sargassum_Data&Microsatellite_edited.txt',skip=2) # 14 usats
@@ -54,7 +55,7 @@ colnames(dat) <- c("Ind","Pop",paste(sort(rep(letters[1:nloci],2)),rep(1:2,nloci
 dat <- dat[!is.na(meta$sourceID[match(dat$Pop,meta$gridIDs)]),]
 dat <- dat[complete.cases(dat),]
 sch = data.frame(pop=dat$Pop,source=meta$sourceID[match(dat$Pop,meta$gridIDs)])
-sch$intro <- sch$source%in%c("Europe","PNW","Cali")
+sch$intro <- sch$source%in%c("EuropeNorth","EuropeSouth","PNW","Cali")
 
 native_data = dat[!sch$intro,]
 native_pops = as.factor(native_data$Pop)
@@ -78,7 +79,7 @@ write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/smuti/RFprediction.csv",quote=F)
 rowReg <- meta$sourceID[match(rownames(tbl),meta$gridIDs)]
 rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels(rowReg)[c(1,3,2)])
 colReg <- meta$sourceID[match(colnames(tbl),meta$gridIDs)]
-colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(1,3,2)])
+colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(1,4,2,3)])
 
 dat2 <- as.matrix(tbl[order(rowReg),order(colReg)])
 df = data.frame(from = rep(rownames(dat2), times = ncol(dat2)),

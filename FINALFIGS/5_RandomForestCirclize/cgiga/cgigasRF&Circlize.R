@@ -60,8 +60,10 @@ write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/cgiga/RFprediction.csv",quote=F)
 rowReg <- meta$sourceID[match(rownames(tbl),meta$pop)]
 rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels(rowReg)[c(1,2,6,5,3,4)])
 colReg <- meta$sourceID[match(colnames(tbl),meta$pop)]
-colReg[colReg%in%c("France","Spain","Ireland","Sweden","Norway","Denmark")] <- "Europe"
-colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(4,1:2,6,5,3)])
+colReg[colReg%in%c("France","Spain")] <- "EuropeSouth"
+colReg[colReg%in%c("Ireland","Sweden","Norway","Denmark")] <- "EuropeNorth"
+
+colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(5,1:2,7,6,3,4)])
 
 dat2 <- as.matrix(tbl[order(rowReg),order(colReg)])
 df = data.frame(from = rep(rownames(dat2), times = ncol(dat2)),

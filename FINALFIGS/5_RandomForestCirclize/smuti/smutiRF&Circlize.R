@@ -82,10 +82,6 @@ colReg <- meta$sourceID[match(colnames(tbl),meta$gridIDs)]
 colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(1,4,2,3)])
 
 dat2 <- as.matrix(tbl[order(rowReg),order(colReg)])
-df = data.frame(from = rep(rownames(dat2), times = ncol(dat2)),
-                to = rep(colnames(dat2), each = nrow(dat2)),
-                value = as.vector(dat2),
-                stringsAsFactors = FALSE)
 
 ## by reg
 datByReg <- c()

@@ -10,6 +10,7 @@ batt_HL6 <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battr_HL6_ByRe
 upinn <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/upinnByReg.csv"); rownames(upinn) <- upinn[,1]; upinn <- as.matrix(upinn[,-1]); # remove Mexico
 smuti <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/smutiByReg.csv"); rownames(smuti) <- smuti[,1]; smuti <- as.matrix(smuti[,-1])
 cutl.tmp <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cutlByReg.csv"); cutl <- as.matrix(cutl.tmp[,-1]); rownames(cutl) <- cutl.tmp[,1]; colnames(cutl) <- colnames(cutl.tmp)[-1]
+codi.tmp <- read.csv("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/codiByReg.csv"); codi <- as.matrix(codi.tmp[,-1]); rownames(codi) <- codi.tmp[,1]; colnames(codi) <- colnames(codi.tmp)[-1]
 
 
 spp <- list(giga=giga,
@@ -19,7 +20,8 @@ spp <- list(giga=giga,
             batt_HL6=batt_HL6,
             upinn=upinn,
             smuti=smuti,
-            cutl=cutl)
+            cutl=cutl,
+            codi=codi)
 cols.to.use <- list(
   giga=c(blue2red(5),"black",rep("grey",ncol(spp[["giga"]]))),
   gverm=c(blue2red(5),"black",rep("grey",ncol(spp[["gverm"]]))),
@@ -28,7 +30,8 @@ cols.to.use <- list(
   batt_HL6=c(blue2red(5)[-1],"black",rep("grey",ncol(spp[["batt_HL6"]]))),
   upinn=c(blue2red(5),"black",rep("grey",ncol(spp[["upinn"]]))),
   smuti=c(blue2red(5)[c(1,3,4)],rep("grey",ncol(spp[["smuti"]]))),
-  cutl=c(blue2red(5)[-2],"black",rep("grey",ncol(spp[["cutl"]]))))
+  cutl=c(blue2red(5)[-2],"black",rep("grey",ncol(spp[["cutl"]]))),
+  c(blue2red(5)[-c(2,4)],"black",rep("grey",ncol(spp[["codi"]]))))
 
 pdf("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/RandomForestCirclizePlots.pdf",height=30,width=30)
 par(mfrow=c(3,3))
@@ -57,7 +60,7 @@ dev.off()
 
 ##### western North America ####
 
-wNA <- spp[c("giga","gverm","batt","batt_HL1","batt_HL6","upinn","smuti","cutl")]
+wNA <- spp[c("giga","gverm","batt","batt_HL1","batt_HL6","upinn","smuti","cutl","codi")]
 wNA[["giga"]] <- wNA[["giga"]][,c("soCal","NW.America")]
 wNA[["gverm"]] <- wNA[["gverm"]][,c("Cali","PNW")]
 wNA[["upinn"]] <- as.matrix(data.frame(NAm_south=wNA[["upinn"]][,c("NAm_south")])) 
@@ -71,7 +74,8 @@ cols.to.use <- list(
   batt_HL6=c(blue2red(5)[-1],"black",rep("grey",ncol(wNA[["batt_HL6"]]))),
   upinn=c(blue2red(5),"black",rep("grey",ncol(wNA[["upinn"]]))),
   smuti=c(blue2red(5)[c(1,3,4)],rep("grey",ncol(wNA[["smuti"]]))),
-  cutl=c(blue2red(5)[-2],"black",rep("grey",ncol(spp[["cutl"]]))))
+  cutl=c(blue2red(5)[-2],"black",rep("grey",ncol(spp[["cutl"]]))),
+  codi=c(blue2red(5)[-c(2,4)],"black",rep("grey",ncol(spp[["codi"]]))))
 
 pdf("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/RandomForestCirclizePlots_wNA.pdf",height=30,width=30)
 par(mfrow=c(3,3))

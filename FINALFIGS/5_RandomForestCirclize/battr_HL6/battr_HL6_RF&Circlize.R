@@ -136,3 +136,7 @@ circos.track(track.index = 1, panel.fun = function(x, y) {
 
 dev.off()
 write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battr_HL6_ByReg.csv")
+
+n <- data.frame(n=c(table(native_pops),table(intro_pops)))
+n$reg <- c(rowReg,colReg)
+write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battr_HL6_sampleSize.csv",quote=F)

@@ -10,7 +10,7 @@ library(reshape)
 domain <- c(-130,180,-50,75) 
 load("FINALFIGS/0_globalGrid/df.globe.Rda")
 meta_source <- read.csv("FINALFIGS/0_globalGrid/df.globe_source.csv")
-meta <- read_xlsx("FINALFIGS/5_RandomForestCirclize/codi/YangTable1.xlsx")
+meta <- read_xlsx("FINALFIGS/5_RandomForestCirclize/cera/YangTable1.xlsx")
 ### all of Table 1 except Alaska and Russia
 ## 1) find which 1º by 1º quadrat for each pop
 tmp <- as.data.frame(meta)
@@ -63,7 +63,7 @@ tbl=with(plt,table(pred,pop))
 #heatmap(tbl[rowSums(tbl)>0,])#,cexCol=1.7,cexRow=1.7)
 #dev.off()
 
-write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/codi/RFprediction.csv",quote=F)
+write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/cera/RFprediction.csv",quote=F)
 
 
 
@@ -95,7 +95,7 @@ mat <- as.matrix(datByReg2)
 mat <- mat+0.01
 cols.to.use <- c(blue2red(5)[-c(2,4)],"black",rep("grey",ncol(mat)))
 
-pdf("FINALFIGS/5_RandomForestCirclize/codi/circlize.pdf",width=10,height=10)
+pdf("FINALFIGS/5_RandomForestCirclize/cera/circlize.pdf",width=10,height=10)
 circos.clear()
 circos.par(gap.after = c(rep(5,5),15,rep(5,5),15),start.degree = 90, gap.degree = 4)
 
@@ -114,7 +114,7 @@ chordDiagram(x = mat,
              link.arr.length =  0.15,
              diffHeight = -0.001,
              preAllocateTracks = list(track.height = max(strwidth(unlist(dimnames(mat))))))
-mtext("Codium",line=-5,cex=2)
+mtext("Ceramium",line=-5,cex=2)
 circos.track(track.index = 1, panel.fun = function(x, y) {
   xlim = get.cell.meta.data("xlim")
   xplot = get.cell.meta.data("xplot")
@@ -129,4 +129,9 @@ circos.track(track.index = 1, panel.fun = function(x, y) {
 }, bg.border = NA)
 
 dev.off()
-write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/codiByReg.csv")
+write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/ceraByReg.csv")
+
+## write sample sizes for summary
+n <- data.frame(n=c(table(native_pops),table(intro_pops)))
+n$reg <- c(as.character(rowReg),as.character(colReg))
+write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cera_sampleSize.csv",quote=F)

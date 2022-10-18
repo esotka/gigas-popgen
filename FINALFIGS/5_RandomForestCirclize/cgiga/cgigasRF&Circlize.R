@@ -45,6 +45,7 @@ native_pops = as.factor(pop[pop %in% meta$pop[meta$NatNon=="Native"]])
 intro_data =  tab.pred[!(pop %in% meta$pop[meta$NatNon=="Native"]),]
 intro_pops =  as.factor(pop[!(pop %in% meta$pop[meta$NatNon=="Native"])])
 
+
 rf = randomForest(x=native_data,y=native_pops)
 pdf("FINALFIGS/5_RandomForestCirclize/cgiga/random_forest.pdf")
 plt=data.frame(pred=predict(rf,newdata=intro_data),pop=intro_pops)
@@ -60,14 +61,11 @@ write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/cgiga/RFprediction.csv",quote=F)
 rowReg <- meta$sourceID[match(rownames(tbl),meta$pop)]
 rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels(rowReg)[c(1,2,6,5,3,4)])
 colReg <- meta$sourceID[match(colnames(tbl),meta$pop)]
-colReg[colReg%in%c("France","Spain","Ireland","Sweden","Norway","Denmark")] <- "Europe"
-colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(4,1:2,6,5,3)])
+colReg[colReg%in%c("France","Spain")] <- "EuropeSouth"
+colReg[colReg%in%c("Ireland","Sweden","Norway","Denmark")] <- "EuropeNorth"
 
-dat2 <- as.matrix(tbl[order(rowReg),order(colReg)])
-df = data.frame(from = rep(rownames(dat2), times = ncol(dat2)),
-                to = rep(colnames(dat2), each = nrow(dat2)),
-                value = as.vector(dat2),
-                stringsAsFactors = FALSE)
+colReg <- factor(colReg); colReg <- factor(colReg,levels(colReg)[c(5,1:2,7,6,3,4)])
+
 ## by reg
 
 
@@ -92,14 +90,10 @@ for(j in 1:length(levels(colReg)))
 
 rownames(datByReg2) <- levels(rowReg)
 colnames(datByReg2) <- levels(colReg)
-#datByReg2 <- datByReg2[,c(2:7,1)]
-#datByReg2 <- rbind(datByReg2,rep(0,ncol(datByReg2))) # add dummy region
 mat <- as.matrix(datByReg2)
 mat <- mat+.01
 
-#cols.to.use <- c(meta2$pc1.cols[match(rownames(mat),meta2$GeneticRegions)],rep("grey",ncol(mat)))# rows first,  cols second
 cols.to.use <- c(blue2red(5),"black",rep("grey",ncol(mat)))
-#cols.to.use[is.na(cols.to.use)] <- "red"
 rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
 
 
@@ -120,10 +114,6 @@ chordDiagram(x = mat,
              diffHeight = -0.001,
              preAllocateTracks = list(track.height = max(strwidth(unlist(dimnames(mat))))))
 mtext("C gigas",line=-5,cex=2)
-# we go back to the first track and customize sector labels
-#circos.track(track.index = 1, panel.fun = function(x, y) {
-#  circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5))
-#}, bg.border = NA) # here set bg.border to NA is important
 circos.track(track.index = 1, panel.fun = function(x, y) {
   xlim = get.cell.meta.data("xlim")
   xplot = get.cell.meta.data("xplot")
@@ -138,3 +128,9 @@ circos.track(track.index = 1, panel.fun = function(x, y) {
 }, bg.border = NA)
 
 dev.off()
+write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cgigasByReg.csv")
+
+## write sample sizes for summary
+n <- data.frame(n=c(table(native_pops),table(intro_pops)))
+n$reg <- c(rowReg,colReg)
+write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cgigas_sampleSize.csv",quote=F)

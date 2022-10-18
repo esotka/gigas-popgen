@@ -27,10 +27,10 @@ gridIDs.meta$vars <- df.globe[match(gridIDs.meta$gridIDs,df.globe$gridID),]
 meta$gridIDs <- gridIDs.meta$gridIDs[match(meta$Site,gridIDs.meta$pop)]
 meta$sourceID <- meta_source$sourceID[match(meta$gridIDs,meta_source$gridID)]
 tmpreg <- matrix(c(
-  "Boundary","PNW",
-  "Padila","PNW",
-  "Bolinus","Cali",
-  "Elkhorn","Cali"),nrow=4,ncol=2,byrow = T)
+  "Boundary","NAm_north",
+  "Padila","NAm_north",
+  "Bolinus","NAm_south",
+  "Elkhorn","NAm_south"),nrow=4,ncol=2,byrow = T)
 tmpreg2 <-tmpreg[match(meta$Site,tmpreg[,1]),2]
 meta$sourceID <- ifelse(is.na(tmpreg2),meta$sourceID,tmpreg2)
 
@@ -48,10 +48,10 @@ md2 <- as.matrix(table(metaInd))
 md2_pop <- unlist(lapply(strsplit(rownames(md2),"_"),"[[",1))
 md2_source <- meta$sourceID[match(md2_pop,meta$Site)]
 
-native_data = md2[!md2_source%in%c("Cali","PNW"),]
-native_pops = as.factor(md2_pop[!md2_source%in%c("Cali","PNW")])
-intro_data =  md2[md2_source%in%c("Cali","PNW"),]
-intro_pops =  as.factor(md2_pop[md2_source%in%c("Cali","PNW")])
+native_data = md2[!md2_source%in%c("NAm_south","NAm_north"),]
+native_pops = as.factor(md2_pop[!md2_source%in%c("NAm_south","NAm_north")])
+intro_data =  md2[md2_source%in%c("NAm_south","NAm_north"),]
+intro_pops =  as.factor(md2_pop[md2_source%in%c("NAm_south","NAm_north")])
 
 
 rf = randomForest(x=native_data,y=native_pops)
@@ -134,3 +134,9 @@ circos.track(track.index = 1, panel.fun = function(x, y) {
 }, bg.border = NA)
 
 dev.off()
+write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battrByReg.csv")
+
+## write sample sizes for summary
+n <- data.frame(n=c(table(native_pops),table(intro_pops)))
+n$reg <- c(rowReg,colReg)
+write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/battr_sampleSize.csv",quote=F)

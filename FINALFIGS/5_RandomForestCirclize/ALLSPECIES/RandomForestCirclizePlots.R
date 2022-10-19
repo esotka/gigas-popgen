@@ -208,7 +208,7 @@ dev.off()
 Eur <- spp[c("giga","gverm","upinn","smuti","rudi","ulva")]
 Eur[["giga"]] <- Eur[["giga"]][,c("EuropeNorth","EuropeSouth")]
 Eur[["gverm"]] <- Eur[["gverm"]][,c("EuropeNorth","EuropeSouth")]
-Eur[["upinn"]] <- Eur[["gverm"]][,c("EuropeNorth","EuropeSouth")]
+Eur[["upinn"]] <- as.matrix(data.frame(EuropeSouth=Eur[["upinn"]][,c("France")]))
 Eur[["smuti"]] <- Eur[["smuti"]][,c("EuropeNorth","EuropeSouth")]; Eur[["smuti"]] <- Eur[["smuti"]]+0.09 # to see it.
 Eur[["rudi"]] <- as.matrix(data.frame(NAm_north=Eur[["rudi"]][,c("EuropeSouth")]))
 Eur[["ulva"]] <- Eur[["ulva"]][,c("EuropeNorth","EuropeSouth")]

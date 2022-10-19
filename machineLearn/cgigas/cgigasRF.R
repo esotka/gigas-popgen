@@ -2,14 +2,19 @@ library(randomForest)
 #library(caret)
 
 metaname="cgiga_meta.csv"
-species = "Gverm"
+species = "Cgigas"
 meta = read.csv(metaname)
 tab = read.table("SNPs_noZeros.txt",header=T)
 rownames(tab)=tab[,1]
 tab=tab[,-1]
+gigas_newick=read.tree("~/GoogleDrive/data/Oyster/introduced/newickTrees/gigas_snp.tr")
 
 pc = prcomp(tab)
 tab.pred=predict(pc)
+
+###comment out the following to use pca transform on data
+tab.predict = tab
+###
 
 pop=sapply(strsplit(rownames(tab),"_"),function(x)x[1])
 

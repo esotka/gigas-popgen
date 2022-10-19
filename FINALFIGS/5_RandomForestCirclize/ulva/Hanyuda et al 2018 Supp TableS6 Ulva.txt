@@ -1,6 +1,6 @@
 Locality codea	Collection locality (collection date)	Origin	"Haplotyes (No. samples, Accession No.b)"	Haplotype	Number	Name1	Name2	Country	lat	lon
 1	"Gorishoek, Netherlands (Oct, 2005)"	"Hanyuda et al., 2016"	"H5 (1, AB607177/AB607804)"	H5	1	Gorishoek	NA	Netherlands	51.5259855	4.0761281
-2	"Berghse Diepsluis, Netherlands (Oct, 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Berghse Diepsluis	NA	Netherlands	-23.2335499	17.3231107
+2	"Berghse Diepsluis, Netherlands (Oct, 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Berghse Diepsluis	NA	Netherlands	51.510006	4.174968
 3	"Roscoff, France (Nov, 2005)"	"Hanyuda et al., 2016"	"H42 (1, AB607185/AB607826)"	H42	1	Roscoff	NA	France	48.7255816	-3.9828983
 4	"Thau Lagoon, France (s Apr. 2002)"	"Hanyuda et al., 2016"	H42 (2)	H42	2	Thau Lagoon	NA	France	24.4699187	54.3809072
 5	"Melbourne, Australia (21 Jul. 2004, 22 Jul. 2004)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Melbourne	NA	Australia	-37.8142176	144.9631608

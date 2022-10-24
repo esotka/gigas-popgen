@@ -15,7 +15,7 @@ meta <- unique(meta[,c("Name1","lat","lon","Country")])
 ## 1) find which 1º by 1º quadrat for each pop
 tmp <- as.data.frame(meta)
 gridIDs.tmp <- c()
-for (i in 1:length(tmp$Locality.codea))
+for (i in 1:length(tmp$Name1))
 {
   ppp.tmp <- ppp(x=tmp$lon[i],y=tmp$lat[i],xrange=domain[1:2],yrange=domain[3:4])
   if(ppp.tmp$n==0){gridIDs.tmp <- c(gridIDs.tmp,NA)}
@@ -39,6 +39,8 @@ meta$sourceID[meta$sourceID%in%c("Netherlands")] <- "EuropeNorth"
 
 ### 2) generate the random forest - native pops vs introduced pops
 dat <- read.delim("FINALFIGS/5_RandomForestCirclize/ulva/Hanyuda et al 2018 Supp TableS6 Ulva.txt")[,c("Name1","Haplotype","Number")]
+#dat$sourceID <- meta$sourceID[match(dat$Name1,meta$Name1)]
+dat <- dat[dat$Name1%in%meta$Name1,]
 #md <- melt(dat,id="Haplotype")
 md <- melt(dat,id=c("Name1","Haplotype"))
 #md2 <- cast(md,Haplotype~Locality.codea) # hap = row; pop=col
@@ -49,9 +51,9 @@ md <- melt(dat,id=c("Name1","Haplotype"))
 popID <- rep(as.character(md$Name1),md$value)
 hapInd <- rep(md$Haplotype,md$value)
 indID <- paste(popID,1:length(hapInd),sep="_")
-metaInd <- data.frame(indID,hapInd)
+metaInd <- data.frame(popID,hapInd)
 md2 <- as.matrix(table(metaInd))
-md2_pop <- unlist(lapply(strsplit(rownames(md2),"_"),"[[",1))
+md2_pop <- rownames(md2)#unlist(lapply(strsplit(rownames(md2),"_"),"[[",1))
 md2_source <- meta$sourceID[match(md2_pop,meta$Name1)]
 
 native_data = md2[!md2_source%in%c("NZ","USA","EuropeNorth","EuropeSouth"),]
@@ -75,13 +77,12 @@ write.csv(tbl,"FINALFIGS/5_RandomForestCirclize/ulva/RFprediction.csv",quote=F)
 
 ### 3) make circlize plot
 rowReg <- meta$sourceID[match(rownames(tbl),meta$Name1)]
-#rowReg[rowReg%in%c("China Japan")] <- "nonSource"
-rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels(rowReg)[c(1,2,6,5,4)])
-colReg <- meta$sourceID[match(colnames(tbl),meta$Locality.codea)]
+rowReg <- factor(rowReg); rowReg <- factor(rowReg,levels=levels(rowReg)[c(1,2,6,5,3,4)])
+colReg <- meta$sourceID[match(colnames(tbl),meta$Name1)]
 colReg[colReg=="USA"] <- "NAm_south"
 colReg <- factor(colReg)#; colReg <- factor(colReg,levels(colReg)[c()])
 
-#dat <- as.data.frame(tbl[order(rowReg),order(colReg)])
+#tbl <- tbl[order(rowReg),order(colReg)]
 datByReg <- c()
 for (i in 1:length(levels(rowReg))) # native
 {
@@ -103,12 +104,12 @@ for(j in 1:length(levels(colReg)))
 rownames(datByReg2) <- levels(rowReg)
 colnames(datByReg2) <- levels(colReg)
 
-rownames(datByReg2) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / wJapan / China")
+rownames(datByReg2) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / wJapan")
 mat <- as.matrix(datByReg2)
 mat <- mat+0.01
 cols.to.use <- c(blue2red(5),"black",rep("grey",ncol(mat)))
 
-pdf("FINALFIGS/5_RandomForestCirclize/upinn/circlize.pdf",width=10,height=10)
+pdf("FINALFIGS/5_RandomForestCirclize/ulva/circlize.pdf",width=10,height=10)
 circos.clear()
 circos.par(gap.after = c(rep(5,5),15,rep(5,5),15),start.degree = 90, gap.degree = 4)
 
@@ -127,7 +128,7 @@ chordDiagram(x = mat,
              link.arr.length =  0.15,
              diffHeight = -0.001,
              preAllocateTracks = list(track.height = max(strwidth(unlist(dimnames(mat))))))
-mtext("U pinn",line=-5,cex=2)
+mtext("Ulva",line=-5,cex=2)
 circos.track(track.index = 1, panel.fun = function(x, y) {
   xlim = get.cell.meta.data("xlim")
   xplot = get.cell.meta.data("xplot")
@@ -142,9 +143,9 @@ circos.track(track.index = 1, panel.fun = function(x, y) {
 }, bg.border = NA)
 
 dev.off()
-write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/upinnByReg.csv")
+write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/ulvaByReg.csv")
 
 ## write sample sizes for summary
 n <- data.frame(n=c(table(native_pops),table(intro_pops)))
 n$reg <- c(as.character(rowReg),as.character(colReg))
-write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/upinn_sampleSize.csv",quote=F)
+write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/ulva_sampleSize.csv",quote=F)

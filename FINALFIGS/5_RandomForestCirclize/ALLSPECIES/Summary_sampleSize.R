@@ -15,9 +15,10 @@ filenames <- c(
   "gverm_sampleSize.csv",
   "rudi_sampleSize.csv",
   "smuti_sampleSize.csv",
-  "upinn_sampleSize.csv"
+  "upinn_sampleSize.csv",
+  "ulva_sampleSize.csv"
 )
-spp <- c("Crassostrea gigas","Batillaria attr","Battr_HL1","Battr_HL6","Ceramium kondoi","Cutleria cylindrica","Gracilaria vermiculophylla","Ruditapes philippinarum","Sargassum muticum","Undaria pinnitifida")
+spp <- c("Crassostrea gigas","Batillaria attr","Battr_HL1","Battr_HL6","Ceramium kondoi","Cutleria cylindrica","Gracilaria vermiculophylla","Ruditapes philippinarum","Sargassum muticum","Undaria pinnitifida","Ulva pertusa")
 out <- c()
 for (i in 1:length(filenames))
 {

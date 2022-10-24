@@ -1,0 +1,36 @@
+Locality codea	"Collection information (Locality, collection date)"	Origin	"Haplotypes (No. samples, Accession No.b)"	Haplotype	Number	Name1	Name2	Country	lat	lon
+1	"Santa Catalina Island, California, USA (16, 21, 23, 24 Apr. 2006)"	"Kogishi et al., 2010"	"HK (15, AB499628/AB499651)"	HK	15	Santa Catalina Island	NA	USA	33.38890375	-118.4239288
+2	"Netanai / Ohma, Aomori Pref., Japan (15 Jun. 2006)"	"Kogishi et al., 2010"	"HE (2, AB499622/AB499645), HG (1, AB499624/AB499647), HK (6), HL (1, AB499629/AB499652)"	HE	2	Netanai	Ohma	Japan	41.526416	140.89993
+2	"Netanai / Ohma, Aomori Pref., Japan (15 Jun. 2006)"	"Kogishi et al., 2010"	"HE (2, AB499622/AB499645), HG (1, AB499624/AB499647), HK (6), HL (1, AB499629/AB499652)"	HG	1	Netanai	Ohma	Japan	41.526416	140.89993
+2	"Netanai / Ohma, Aomori Pref., Japan (15 Jun. 2006)"	"Kogishi et al., 2010"	"HE (2, AB499622/AB499645), HG (1, AB499624/AB499647), HK (6), HL (1, AB499629/AB499652)"	HK	6	Netanai	Ohma	Japan	41.526416	140.89993
+2	"Netanai / Ohma, Aomori Pref., Japan (15 Jun. 2006)"	"Kogishi et al., 2010"	"HE (2, AB499622/AB499645), HG (1, AB499624/AB499647), HK (6), HL (1, AB499629/AB499652)"	HL	1	Netanai	Ohma	Japan	41.526416	140.89993
+3	"Senjyoujiki, Sado Island, Niigata Pref., Japan (12 Jun. 2005)"	"Kogishi et al., 2010"	"HA (6, AB499618/AB499641), HJ (1, AB499627/AB499650)"	HA	6	Senjyoujiki	Sado Island	Japan	38.109547	138.467984
+3	"Senjyoujiki, Sado Island, Niigata Pref., Japan (12 Jun. 2005)"	"Kogishi et al., 2010"	"HA (6, AB499618/AB499641), HJ (1, AB499627/AB499650)"	HA	6	Senjyoujiki	Sado Island	Japan	38.109547	138.467984
+4	"Nagasaki, Iwaki, Fukushima Pref., Japan (10 Dec. 2012)"	Present study	HG (1)	HG	1	Nagasaki	Iwaki	Japan	36.953541	140.943319
+5	"Miura Peninsula, Kanagawa Pref., Japan (27, 28 Apr. 2005)"	"Kogishi et al., 2010"	"HE (4), HG (4)"	HE	4	Miura Peninsula	Kanagawa Pref.	Japan	35.4474589	139.6416053
+5	"Miura Peninsula, Kanagawa Pref., Japan (27, 28 Apr. 2005)"	"Kogishi et al., 2010"	"HE (4), HG (4)"	HG	4	Miura Peninsula	Kanagawa Pref.	Japan	35.4474589	139.6416053
+6	"Shimoda, Shizuoka Pref., Japan (29 Apr. 2005)"	"Kogishi et al., 2010"	"HA (2), HE (7), HH (1, AB499625/AB499648), HI (1, AB499626/AB499649), HN (1, AB499631/AB499654)"	HA	2	Shimoda	Shizuoka Pref.	Japan	34.679545	138.945379
+6	"Shimoda, Shizuoka Pref., Japan (29 Apr. 2005)"	"Kogishi et al., 2010"	"HA (2), HE (7), HH (1, AB499625/AB499648), HI (1, AB499626/AB499649), HN (1, AB499631/AB499654)"	HE	7	Shimoda	Shizuoka Pref.	Japan	34.679545	138.945379
+6	"Shimoda, Shizuoka Pref., Japan (29 Apr. 2005)"	"Kogishi et al., 2010"	"HA (2), HE (7), HH (1, AB499625/AB499648), HI (1, AB499626/AB499649), HN (1, AB499631/AB499654)"	HH	1	Shimoda	Shizuoka Pref.	Japan	34.679545	138.945379
+6	"Shimoda, Shizuoka Pref., Japan (29 Apr. 2005)"	"Kogishi et al., 2010"	"HA (2), HE (7), HH (1, AB499625/AB499648), HI (1, AB499626/AB499649), HN (1, AB499631/AB499654)"	HI	1	Shimoda	Shizuoka Pref.	Japan	34.679545	138.945379
+6	"Shimoda, Shizuoka Pref., Japan (29 Apr. 2005)"	"Kogishi et al., 2010"	"HA (2), HE (7), HH (1, AB499625/AB499648), HI (1, AB499626/AB499649), HN (1, AB499631/AB499654)"	HN	1	Shimoda	Shizuoka Pref.	Japan	34.679545	138.945379
+7	"Maiko, Kobe, Hyogo Pref., Japan (23 Mar. 2006)"	"Kogishi et al., 2010"	"HM (2, AB499630/AB499653), HN (2)"	HM	2	Maiko	Kobe	Japan	34.634081	135.019251
+7	"Maiko, Kobe, Hyogo Pref., Japan (23 Mar. 2006)"	"Kogishi et al., 2010"	"HM (2, AB499630/AB499653), HN (2)"	HN	2	Maiko	Kobe	Japan	34.634081	135.019251
+8	"Awaji Island, Hyogo Pref., Japan (1, 12, 22 Apr. 2005)"	"Kogishi et al., 2010"	"HD (1, AB499621/AB499644), HM (8), HN (1), HR (1, AB499635/AB499658), HT (2, AB499637/AB499660)"	HD	1	Awaji Island	Hyogo Pref.	Japan	34.3653794	134.8261495
+8	"Awaji Island, Hyogo Pref., Japan (1, 12, 22 Apr. 2005)"	"Kogishi et al., 2010"	"HD (1, AB499621/AB499644), HM (8), HN (1), HR (1, AB499635/AB499658), HT (2, AB499637/AB499660)"	HM	8	Awaji Island	Hyogo Pref.	Japan	34.3653794	134.8261495
+8	"Awaji Island, Hyogo Pref., Japan (1, 12, 22 Apr. 2005)"	"Kogishi et al., 2010"	"HD (1, AB499621/AB499644), HM (8), HN (1), HR (1, AB499635/AB499658), HT (2, AB499637/AB499660)"	HN	1	Awaji Island	Hyogo Pref.	Japan	34.3653794	134.8261495
+8	"Awaji Island, Hyogo Pref., Japan (1, 12, 22 Apr. 2005)"	"Kogishi et al., 2010"	"HD (1, AB499621/AB499644), HM (8), HN (1), HR (1, AB499635/AB499658), HT (2, AB499637/AB499660)"	HR	1	Awaji Island	Hyogo Pref.	Japan	34.3653794	134.8261495
+8	"Awaji Island, Hyogo Pref., Japan (1, 12, 22 Apr. 2005)"	"Kogishi et al., 2010"	"HD (1, AB499621/AB499644), HM (8), HN (1), HR (1, AB499635/AB499658), HT (2, AB499637/AB499660)"	HT	2	Awaji Island	Hyogo Pref.	Japan	34.3653794	134.8261495
+9	"Shishikui, Tokushima Pref., Japan (4 Jun. 2005)"	"Kogishi et al., 2010"	"HB (3, AB499619/AB499642), HC (1, AB499620/AB499643)"	HB	3	Shishikui	Tokushima Pref.	Japan	33.5665502	134.3005836
+9	"Shishikui, Tokushima Pref., Japan (4 Jun. 2005)"	"Kogishi et al., 2010"	"HB (3, AB499619/AB499642), HC (1, AB499620/AB499643)"	HC	1	Shishikui	Tokushima Pref.	Japan	33.5665502	134.3005836
+10	"Suouoshima, Yamaguchi Pref., Japan (22 Jun. 2005)"	"Kogishi et al., 2010"	"HS (1, AB499636/AB499659)"	HS	1	Suouoshima	Yamaguchi Pref.	Japan	33.966396	132.205534
+11	"Onyu Island, Oita Pref., Japan (15 Mar. 2006)"	"Kogishi et al., 2010"	"HP (1, AB499633/AB499656), HQ (1, AB499634/AB499657)"	HP	1	Onyu Island	Oita Pref.	Japan	35.496164	135.3435984
+11	"Onyu Island, Oita Pref., Japan (15 Mar. 2006)"	"Kogishi et al., 2010"	"HP (1, AB499633/AB499656), HQ (1, AB499634/AB499657)"	HQ	1	Onyu Island	Oita Pref.	Japan	35.496164	135.3435984
+12	"Shikanoshima, Fukuoka Pref., Japan (25 Apr. 2005)"	"Kogishi et al., 2010"	"HK (2), HN (1), HO (1, AB499632/AB499655)"	HK	2	Shikanoshima	Fukuoka Pref.	Japan	33.66505755	130.3176677
+12	"Shikanoshima, Fukuoka Pref., Japan (25 Apr. 2005)"	"Kogishi et al., 2010"	"HK (2), HN (1), HO (1, AB499632/AB499655)"	HN	1	Shikanoshima	Fukuoka Pref.	Japan	33.66505755	130.3176677
+12	"Shikanoshima, Fukuoka Pref., Japan (25 Apr. 2005)"	"Kogishi et al., 2010"	"HK (2), HN (1), HO (1, AB499632/AB499655)"	HO	1	Shikanoshima	Fukuoka Pref.	Japan	33.66505755	130.3176677
+13	"Otsuku Island, Kumamoto Pref., Japan (Mar. 2005)"	"Kogishi et al., 2010"	"HW (1, AB499640/AB499663)"	HW	1	Otsuku Island	Kumamoto Pref.	Japan	32.487335	130.498497
+14	"Miyazaki, Miyazaki Pref., Japan (6 May 2005)"	"Kogishi et al., 2010"	"HU (1, AB499638/AB499661), HV (1, AB499639/AB499662)"	HU	1	Miyazaki	Miyazaki Pref.	Japan	32.097681	131.294542
+14	"Miyazaki, Miyazaki Pref., Japan (6 May 2005)"	"Kogishi et al., 2010"	"HU (1, AB499638/AB499661), HV (1, AB499639/AB499662)"	HV	1	Miyazaki	Miyazaki Pref.	Japan	32.097681	131.294542
+15	"Dadaepo, Pusan, Korea (11 Mar. 2006)"	"Kogishi et al., 2010"	"HF (1, AB499623/AB499646), HK (1)"	HF	1	Dadaepo	Pusan	Korea	35.0480653	128.9662119
+15	"Dadaepo, Pusan, Korea (11 Mar. 2006)"	"Kogishi et al., 2010"	"HF (1, AB499623/AB499646), HK (1)"	HK	1	Dadaepo	Pusan	Korea	35.0480653	128.9662119

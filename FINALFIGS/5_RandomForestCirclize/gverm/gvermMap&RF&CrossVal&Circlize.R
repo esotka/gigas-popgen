@@ -95,7 +95,7 @@ save(native,file="FINALFIGS/5_RandomForestCirclize/crossValidation/GvermforRange
 #rangerGrid = expand.grid(mtry = round(seq(1000,2000,length=5)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
 #rangerGrid = expand.grid(mtry = round(seq(2,20,length=10)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
 
-rangerGrid = expand.grid(mtry = 20,splitrule=c("extratrees"),min.node.size=c(1) )
+rangerGrid = expand.grid(mtry = 150,splitrule=c("extratrees"),min.node.size=c(1) )
 
 #control = list(ranger=list(method="ranger",tuneGrid=rangerGrid))
 

@@ -1,7 +1,7 @@
-"","Cali","PNW","EuropeNorth","EuropeSouth"
-"Hokkaido",39,28,50,18
-"Miyagi",23,3,41,140
-"Tokyo",11,17,0,1
-"Seto Inland Sea",0,0,0,1
-"Kagoshima",0,0,35,3
-"Korea / western Japan",7,2,2,0
+"","Cali","EuropeNorth","EuropeSouth","PNW"
+"hok",8.01,111.01,50.01,6.01
+"hon",53.01,2.01,49.01,14.01
+"tok",0.01,0.01,1.01,13.01
+"sea",0.01,0.01,0.01,11.01
+"kag",0.01,5.01,30.01,3.01
+"nonSource",19.01,10.01,33.01,3.01

@@ -78,9 +78,7 @@ intro_reg = meta$sourceID[match(intro_pops,meta$`Site abb.`)]
 intro_reg <- as.factor(intro_reg)
 
 native = data.frame(cbind(native_reg,native_data[,-(1:2)]))
-introduced = data.frame(cbind(intro_reg,intro_data[,-(1:2)]))
 names(native)[1]="reg"
-names(introduced)[1]="reg"
 
 
 ### RF ####

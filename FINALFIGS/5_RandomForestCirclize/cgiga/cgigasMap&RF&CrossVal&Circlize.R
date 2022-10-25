@@ -66,19 +66,17 @@ intro_reg[intro_reg%in%c("Ireland","Sweden","Norway","Denmark")] <- "EuropeNorth
 intro_reg <- as.factor(intro_reg)
 
 native = data.frame(cbind(native_reg,native_data))
-introduced = data.frame(cbind(intro_reg,intro_data))
 names(native)[1]="reg"
-names(introduced)[1]="reg"
 
 ### RF ####
 ########################## training and testing
 
-intrain = createDataPartition(native_reg,p=0.8,list=F)
+intrain = createDataPartition(native$reg,p=0.8,list=F)
 
-train=native_data[intrain,]
-test =native_data[-intrain,]
+train=native[intrain,]
+test =native[-intrain,]
 
-save(train,test,file="FINALFIGS/5_RandomForestCirclize/gverm/GvermforRangerCrossValidation.rda")
+save(train,test,file="FINALFIGS/5_RandomForestCirclize/cgiga/cgigaforRangerCrossValidation.rda")
 
 fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
 #rangerGrid = expand.grid(mtry = round(seq(1000,2000,length=5)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
@@ -97,7 +95,7 @@ rangerGrid = expand.grid(mtry = 1250,splitrule=c("extratrees"),min.node.size=c(1
 #           splitrule=rfits[[1]]$bestTune$splitrule,
 #            min.node.size=rfits[[1]]$bestTune$min.node.size)
 
-rf = ranger(native_reg~.,data=native_data, mtry=rangerGrid[[1]],
+rf = ranger(native$reg~.,data=native, mtry=rangerGrid[[1]],
               splitrule=rangerGrid[[2]],
               min.node.size=rangerGrid[[3]])
             
@@ -118,7 +116,7 @@ mat <- as.matrix(tbl)
 mat <- mat+.01
 
 cols.to.use <- c(blue2red(5),"black",rep("grey",ncol(mat)))
-#rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
+rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
 
 
 pdf("FINALFIGS/5_RandomForestCirclize/cgiga/region_assignment_circlize.pdf",width=10,height=10)

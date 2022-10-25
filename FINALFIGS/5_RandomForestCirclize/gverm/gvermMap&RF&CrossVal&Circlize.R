@@ -9,6 +9,7 @@ library(mapdata)
 library(maptools)
 library(ranger)
 library(caret)
+library(strataG)
 
 domain <- c(-130,180,-50,75) 
 load("FINALFIGS/0_globalGrid/df.globe.Rda")
@@ -68,34 +69,33 @@ dat <- dat[dat$Pop%in%meta$`Site abb.`,] # remove east coast
 sch = data.frame(pop=dat$Pop,source=meta$sourceID[match(dat$Pop,meta$`Site abb.`)])
 sch$intro <- sch$source%in%c("EuropeNorth","EuropeSouth","PNW","Cali")
 
-native_data = dat[!sch$intro,]
-native_pops = as.factor(native_data$Pop)
+gi <- df2gtypes(dat, ploidy = 2, id.col = 1, strata.col = 2, loc.col = 3)
+all_mat = as.data.frame(gtypes2genind(gi)@tab)
+native_data = all_mat[!sch$intro,]
+native_pops = sch$pop[!sch$intro]
 native_reg = as.factor(meta$sourceID[match(native_pops,meta$`Site abb.`)])
 native_reg = factor(native_reg,levels=levels(native_reg)[c(1,2,6,5,3,4)])
-intro_data =  dat[sch$intro,]
-intro_pops =  as.factor(intro_data$Pop)
+intro_data = all_mat[sch$intro,]
+intro_pops = sch$pop[sch$intro]
 intro_reg = meta$sourceID[match(intro_pops,meta$`Site abb.`)]
 intro_reg <- as.factor(intro_reg)
 
-native = data.frame(cbind(native_reg,native_data[,-(1:2)]))
+native = data.frame(cbind(native_reg,native_data))
 names(native)[1]="reg"
+intro = data.frame(cbind(intro_pops,intro_data))
+names(intro)[1]="pop"
 
 
 ### RF ####
 ########################## training and testing
 
-intrain = createDataPartition(native$reg,p=0.8,list=F)
+save(native,file="FINALFIGS/5_RandomForestCirclize/crossValidation/GvermforRangerCrossValidation.rda")
 
-train=native[intrain,]
-test =native[-intrain,]
-
-save(train,test,file="FINALFIGS/5_RandomForestCirclize/gverm/GvermforRangerCrossValidation.rda")
-
-fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
+#fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
 #rangerGrid = expand.grid(mtry = round(seq(1000,2000,length=5)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
 #rangerGrid = expand.grid(mtry = round(seq(2,20,length=10)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
 
-rangerGrid = expand.grid(mtry = 2,splitrule=c("extratrees"),min.node.size=c(1) )
+rangerGrid = expand.grid(mtry = 20,splitrule=c("extratrees"),min.node.size=c(1) )
 
 #control = list(ranger=list(method="ranger",tuneGrid=rangerGrid))
 
@@ -110,12 +110,12 @@ rangerGrid = expand.grid(mtry = 2,splitrule=c("extratrees"),min.node.size=c(1) )
 #           splitrule=rfits[[1]]$bestTune$splitrule,
 #            min.node.size=rfits[[1]]$bestTune$min.node.size)
 
-rf = ranger(native$reg~.,data=native, mtry=rangerGrid[[1]],
+rf = ranger(reg~.,data=native, mtry=rangerGrid[[1]],
             splitrule=rangerGrid[[2]],
             min.node.size=rangerGrid[[3]])
 
 
-pred = predict(rf,data=intro_data)$predictions
+pred = predict(rf,data=intro)$predictions
 actual=intro_reg
 
 tbl = table(pred,actual)

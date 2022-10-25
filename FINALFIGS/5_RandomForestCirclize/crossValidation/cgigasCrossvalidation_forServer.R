@@ -1,0 +1,21 @@
+### do crossvalidation
+rm(list=ls())
+library(caret)
+library(ggplot2)
+load("cgigaforRangerCrossValidation.rda")
+
+fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
+rangerGrid = expand.grid(mtry = round(seq(1000,2000,length=5)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
+control = list(ranger=list(method="ranger",tuneGrid=rangerGrid))
+
+rfits = lapply(control,function(x)
+{
+  print(x$method)
+  train(native$reg~., data=native, method=x$method,
+        tuneGrid=x$tuneGrid, trControl=fitControl)
+})
+
+save(rfits,"cgiga_Ranger_out.rda")
+rf = ranger(reg~.,data=native, mtry=rfits[[1]]$bestTune$mtry,
+           splitrule=rfits[[1]]$bestTune$splitrule,
+            min.node.size=rfits[[1]]$bestTune$min.node.size)

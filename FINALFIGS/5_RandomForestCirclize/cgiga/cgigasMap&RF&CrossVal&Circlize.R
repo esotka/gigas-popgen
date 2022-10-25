@@ -76,9 +76,9 @@ intrain = createDataPartition(native$reg,p=0.8,list=F)
 train=native[intrain,]
 test =native[-intrain,]
 
-save(train,test,file="FINALFIGS/5_RandomForestCirclize/cgiga/cgigaforRangerCrossValidation.rda")
+save(native,file="FINALFIGS/5_RandomForestCirclize/crossValidation/cgigaforRangerCrossValidation.rda")
 
-fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
+#fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
 #rangerGrid = expand.grid(mtry = round(seq(1000,2000,length=5)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
 rangerGrid = expand.grid(mtry = 1250,splitrule=c("extratrees"),min.node.size=c(10) )
 

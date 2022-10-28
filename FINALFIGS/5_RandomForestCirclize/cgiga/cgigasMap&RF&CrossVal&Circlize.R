@@ -37,8 +37,10 @@ meta$sourceID <- ifelse(is.na(meta$sourceID),meta$Region,meta$sourceID)
 map1 <- function() {
   map("worldHires",xlim=c(117.5,150),ylim=c(30,47),col="gainsboro",fill=TRUE)
   tmp <- meta_source[!meta_source$sourceID=="nonSource",]
-  rect(tmp$lon.sq1,tmp$lat.sq2,tmp$lon.sq2,tmp$lat.sq1,col=alpha(blue2red(5),.5)[factor(tmp$sourceID)])
-  text(x=c(144.7672,143.0341,140.8678,134.6165,122.67), y=c(41.37038, 38.15945, 34.36471,32,31),c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima"),col=blue2red(5)[c(1,2,5,4,3)],pos=4,cex=.7)
+  tmp$sourceID <- factor(tmp$sourceID)
+  tmp$sourceID <- factor(tmp$sourceID,levels=levels(tmp$sourceID)[c(1,2,5,4,3)])
+  rect(tmp$lon.sq1,tmp$lat.sq2,tmp$lon.sq2,tmp$lat.sq1,col=alpha(blue2red(5),.5)[tmp$sourceID])
+  text(x=c(144.7672,143.0341,140.8678,134.6165,122.67), y=c(41.37038, 38.15945, 34.36471,32,31),c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima"),col=blue2red(5),pos=4,cex=.7)
   box()
   points(meta$Longitude,meta$Latitude,pch=20,cex=2)
 }

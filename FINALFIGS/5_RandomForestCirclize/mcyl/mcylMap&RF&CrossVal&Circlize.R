@@ -64,8 +64,6 @@ native_reg = factor(native_reg,levels=levels(native_reg)[c(1,2,6,5,3,4)])
 intro_data = md2[md2_source=="USA",]
 intro_pops <- md2_pop[md2_source=="USA"]
 intro_reg = factor(md2_source[md2_source=="USA"])
-#intro_data =  hapTableByReg[rownames(hapTableByReg)%in%c("USA"),]
-#intro_pops =  as.factor(rownames(hapTableByReg)[rownames(hapTableByReg)%in%c("USA")])
 
 native = data.frame(reg=native_reg,cbind(native_data))
 colnames(native)[1]="reg"

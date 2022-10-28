@@ -4,8 +4,6 @@ Pop10,1,nonSource
 Pop11,1,nonSource
 Pop12,1,nonSource
 Pop13,1,nonSource
-Pop14,7,nonSource
-Pop15,6,nonSource
 Pop16,4,hok
 Pop17,5,hok
 Pop18,7,hok
@@ -36,9 +34,9 @@ Pop6,1,nonSource
 Pop7,1,nonSource
 Pop8,1,nonSource
 Pop9,1,nonSource
-Pop38,4,NAm_south
-Pop39,5,NAm_south
-Pop40,2,NAm_south
+Pop38,4,USA
+Pop39,5,USA
+Pop40,2,USA
 Pop42,2,New Zealand
 Pop43,2,New Zealand
 Pop44,1,New Zealand

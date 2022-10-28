@@ -1,8 +1,16 @@
 ,n,reg
-hok,1,hok
-hon,1,hon
-kag,1,kag
-nonSource,1,nonSource
-sea,1,sea
-tok,1,tok
-USA,1,NAm_south
+Awaji Island,13,sea
+Dadaepo,2,nonSource
+Maiko,4,sea
+Miura Peninsula,8,tok
+Miyazaki,2,kag
+Nagasaki,1,hon
+Netanai,10,hok
+Onyu Island,2,nonSource
+Otsuku Island,1,kag
+Senjyoujiki,12,nonSource
+Shikanoshima,4,kag
+Shimoda,12,tok
+Shishikui,4,sea
+Suouoshima,1,sea
+Santa Catalina Island,15,USA

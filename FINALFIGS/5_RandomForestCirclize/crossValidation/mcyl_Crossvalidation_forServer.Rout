@@ -1,0 +1,46 @@
+
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ### do crossvalidation
+> rm(list=ls())
+> library(caret)
+Loading required package: ggplot2
+Loading required package: lattice
+> library(ggplot2)
+> library(ranger)
+> load("mcylforRangerCrossValidation.rda")
+> fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
+> rangerGrid = expand.grid(mtry = round(seq(5,0.95*ncol(native),length=5)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
+> control = list(ranger=list(method="ranger",tuneGrid=rangerGrid))
+> 
+> rfits = lapply(control,function(x)
++ {
++   print(x$method)
++   train(reg~., data=native, method=x$method,
++         tuneGrid=x$tuneGrid, trControl=fitControl)
++ })
+[1] "ranger"
+There were 50 or more warnings (use warnings() to see the first 50)
+> 
+> save(rfits,file="mcyl_Ranger_out.rda")
+> 
+> 
+> proc.time()
+   user  system elapsed 
+ 27.753   5.878  24.834 

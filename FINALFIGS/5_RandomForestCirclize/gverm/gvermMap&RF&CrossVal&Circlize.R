@@ -66,11 +66,12 @@ nloci = 10
 colnames(dat) <- c("Ind","Pop",paste(sort(rep(letters[1:nloci],2)),rep(1:2,nloci),sep=""))
 dat$Ind <- paste(1:nrow(dat),dat$Pop,sep="")
 dat <- dat[dat$Pop%in%meta$`Site abb.`,] # remove east coast
-sch = data.frame(pop=dat$Pop,source=meta$sourceID[match(dat$Pop,meta$`Site abb.`)])
-sch$intro <- sch$source%in%c("EuropeNorth","EuropeSouth","PNW","Cali")
-
 gi <- df2gtypes(dat, ploidy = 2, id.col = 1, strata.col = 2, loc.col = 3)
 all_mat = as.data.frame(gtypes2genind(gi)@tab)
+all_mat_pops <- substr(rownames(all_mat),nchar(rownames(all_mat))-2,nchar(rownames(all_mat)))
+sch = data.frame(pop=all_mat_pops,source=meta$sourceID[match(all_mat_pops,meta$`Site abb.`)])
+sch$intro <- sch$source%in%c("EuropeNorth","EuropeSouth","PNW","Cali")
+
 native_data = all_mat[!sch$intro,]
 native_pops = sch$pop[!sch$intro]
 native_reg = as.factor(meta$sourceID[match(native_pops,meta$`Site abb.`)])
@@ -91,29 +92,14 @@ names(intro)[1]="pop"
 
 save(native,file="FINALFIGS/5_RandomForestCirclize/crossValidation/GvermforRangerCrossValidation.rda")
 
-#fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
-#rangerGrid = expand.grid(mtry = round(seq(1000,2000,length=5)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
-#rangerGrid = expand.grid(mtry = round(seq(2,20,length=10)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
+### ran on "XXXXCrossvalidation_forServer.R" separately 
+load(file="FINALFIGS/5_RandomForestCirclize/crossValidation/gverm_Ranger_out.rda")
 
-rangerGrid = expand.grid(mtry = 150,splitrule=c("extratrees"),min.node.size=c(1) )
-
-#control = list(ranger=list(method="ranger",tuneGrid=rangerGrid))
-
-#rfits = lapply(control,function(x)
-#{
-#  print(x$method)
-#  train(reg~., data=train, method=x$method,
-#        tuneGrid=x$tuneGrid, trControl=fitControl)
-#})
-
-#rf = ranger(pop~.,data=native, mtry=rfits[[1]]$bestTune$mtry,
-#           splitrule=rfits[[1]]$bestTune$splitrule,
-#            min.node.size=rfits[[1]]$bestTune$min.node.size)
-
-rf = ranger(reg~.,data=native, mtry=rangerGrid[[1]],
-            splitrule=rangerGrid[[2]],
-            min.node.size=rangerGrid[[3]])
-
+rf = ranger(reg~.,data=native, mtry=rfits[[1]]$bestTune$mtry,
+            splitrule=rfits[[1]]$bestTune$splitrule,
+            min.node.size=rfits[[1]]$bestTune$min.node.size)
+print(rfits[[1]]$bestTune)
+print(accuracy <- rfits[[1]]$results$Accuracy[as.numeric(rownames(rfits[[1]]$bestTune))])
 
 pred = predict(rf,data=intro)$predictions
 actual=intro_reg
@@ -169,5 +155,5 @@ write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/gvermByReg.csv")
 
 ## write sample sizes for summary
 n <- data.frame(n=c(table(native_pops),table(intro_pops)))
-n$reg <- meta$sourceID[match(rownames(n),meta$pop)]
+n$reg <- meta$sourceID[match(rownames(n),meta$`Site abb.`)]
 write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/cgigas_sampleSize.csv",quote=F)

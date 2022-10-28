@@ -37,8 +37,8 @@ meta$sourceID <- ifelse(is.na(meta$sourceID),meta$Region,meta$sourceID)
 map1 <- function() {
   map("worldHires",xlim=c(117.5,150),ylim=c(30,47),col="gainsboro",fill=TRUE)
   tmp <- meta_source[!meta_source$sourceID=="nonSource",]
-  rect(tmp$lon.sq1,tmp$lat.sq2,tmp$lon.sq2,tmp$lat.sq1,col=alpha(c("blue","darkgreen","lightgreen","red","black"),.5)[factor(tmp$sourceID)])
-  text(x=c(144.7672,143.0341,140.8678,134.6165,122.67), y=c(41.37038, 38.15945, 34.36471,32,31),c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima"),col=c("blue","darkgreen","black","red","lightgreen"),pos=4,cex=.7)
+  rect(tmp$lon.sq1,tmp$lat.sq2,tmp$lon.sq2,tmp$lat.sq1,col=alpha(blue2red(5),.5)[factor(tmp$sourceID)])
+  text(x=c(144.7672,143.0341,140.8678,134.6165,122.67), y=c(41.37038, 38.15945, 34.36471,32,31),c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima"),col=blue2red(5)[c(1,2,5,4,3)],pos=4,cex=.7)
   box()
   points(meta$Longitude,meta$Latitude,pch=20,cex=2)
 }
@@ -71,34 +71,16 @@ names(native)[1]="reg"
 ### RF ####
 ########################## training and testing
 
-intrain = createDataPartition(native$reg,p=0.8,list=F)
-
-train=native[intrain,]
-test =native[-intrain,]
-
 save(native,file="FINALFIGS/5_RandomForestCirclize/crossValidation/cgigaforRangerCrossValidation.rda")
 
-#fitControl=trainControl(method="repeatedcv", number=10,repeats=10) #10-fold cv repeated 10 times
-#rangerGrid = expand.grid(mtry = round(seq(1000,2000,length=5)),splitrule=c("gini","extratrees"),min.node.size=c(1,3,5,10) )
-rangerGrid = expand.grid(mtry = 1250,splitrule=c("extratrees"),min.node.size=c(10) )
+### ran on "XXXXCrossvalidation_forServer.R" separately 
+load(file="FINALFIGS/5_RandomForestCirclize/crossValidation/cgiga_Ranger_out.rda")
 
-#control = list(ranger=list(method="ranger",tuneGrid=rangerGrid))
-
-#rfits = lapply(control,function(x)
-#{
-#  print(x$method)
-#  train(native_reg~., data=native_data, method=x$method,
-#        tuneGrid=x$tuneGrid, trControl=fitControl)
-#})
-
-#rf = ranger(pop~.,data=native, mtry=rfits[[1]]$bestTune$mtry,
-#           splitrule=rfits[[1]]$bestTune$splitrule,
-#            min.node.size=rfits[[1]]$bestTune$min.node.size)
-
-rf = ranger(native$reg~.,data=native, mtry=rangerGrid[[1]],
-              splitrule=rangerGrid[[2]],
-              min.node.size=rangerGrid[[3]])
-            
+rf = ranger(reg~.,data=native, mtry=rfits[[1]]$bestTune$mtry,
+            splitrule=rfits[[1]]$bestTune$splitrule,
+            min.node.size=rfits[[1]]$bestTune$min.node.size)
+print(rfits[[1]]$bestTune)
+print(accuracy <- rfits[[1]]$results$Accuracy[as.numeric(rownames(rfits[[1]]$bestTune))])
 
 pred = predict(rf,data=intro_data)$predictions
 actual=intro_reg
@@ -116,7 +98,7 @@ mat <- as.matrix(tbl)
 mat <- mat+.01
 
 cols.to.use <- c(blue2red(5),"black",rep("grey",ncol(mat)))
-rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
+#rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
 
 
 pdf("FINALFIGS/5_RandomForestCirclize/cgiga/region_assignment_circlize.pdf",width=10,height=10)

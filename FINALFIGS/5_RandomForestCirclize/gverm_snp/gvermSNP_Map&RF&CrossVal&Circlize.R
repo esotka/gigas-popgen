@@ -63,6 +63,7 @@ native_reg = factor(native_reg,levels=levels(native_reg)[c(1,2,5,3,4)])
 intro_data =  tab.pred[pop %in% meta$Site.Abb[meta$Region%in%c("EUR","WNA")],]
 intro_pops =  as.factor(pop[pop %in% meta$Site.Abb[meta$Region%in%c("EUR","WNA")]])
 intro_reg = meta$sourceID[match(intro_pops,meta$Site.Abb)]
+intro_reg[intro_pops%in%c("tmb","bob")] <- "soCal"
 
 intro_reg[intro_pops%in%c("dhh","dhd","dns")] <- "EuropeNorth"
 intro_reg[intro_reg=="EUR"] <- "EuropeSouth"
@@ -142,3 +143,4 @@ write.csv(mat,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/gvermSNPByReg.csv")
 n <- data.frame(n=c(table(native_pops),table(intro_pops)))
 n$reg <- meta$sourceID[match(rownames(n),meta$Site.Abb)]
 write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/gvermSNP_sampleSize.csv",quote=F)
+

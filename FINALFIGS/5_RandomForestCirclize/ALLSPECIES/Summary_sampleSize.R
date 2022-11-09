@@ -7,18 +7,22 @@ library(reshape)
 rm(list=ls())
 filenames <- c(
   "cgigas_sampleSize.csv",
-  "battr_sampleSize.csv",
+  "gvermSNP_sampleSize.csv",
+  "upinn_sampleSize.csv",
+  "mcyl_sampleSize.csv",
   "battr_HL1_sampleSize.csv",
   "battr_HL6_sampleSize.csv",
-  "cera_sampleSize.csv",
-  "cutl_sampleSize.csv",
-  "gverm_sampleSize.csv",
-  "rudi_sampleSize.csv",
-  "smuti_sampleSize.csv",
-  "upinn_sampleSize.csv",
-  "ulva_sampleSize.csv"
+  "battr_sampleSize.csv")
+
+spp <- c(
+  "Crassostrea_gigas",
+  "Gracilaria_vermiculophylla",
+  "Undaria_pinnitifida",
+  "Mutimo_cylindricus",
+  "Trematode_HL1",
+  "Trematode_HL6",
+  "Batillaria_attramentria"
 )
-spp <- c("Crassostrea gigas","Batillaria attr","Battr_HL1","Battr_HL6","Ceramium kondoi","Cutleria cylindrica","Gracilaria vermiculophylla","Ruditapes philippinarum","Sargassum muticum","Undaria pinnitifida","Ulva pertusa")
 out <- c()
 for (i in 1:length(filenames))
 {
@@ -26,8 +30,8 @@ for (i in 1:length(filenames))
                               read.csv(paste("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/",filenames[i],sep=""))))
 }
 colnames(out) <- c("spp","pop","n","Region")
-out$Region[out$Region%in%c("Cali","soCal")] <- "NAm_south"
-out$Region[out$Region%in%c("PNW","NW America")] <- "NAm_north"
+#out$Region[out$Region%in%c("Cali","soCal")] <- "NAm_south"
+#out$Region[out$Region%in%c("PNW","NW America")] <- "NAm_north"
 NatNon <- ifelse(out$Region%in%c("hok","hon","kag","sea","tok","nonSource"),"Native","Introduced")
 out$Region <- paste(NatNon,out$Region,sep="_")
 
@@ -43,7 +47,7 @@ b2 <- round(as.matrix(b),1)
 
 b2[is.na(b2)] <- 0
 
-pdf(paste("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/Summary_sampleSize.pdf"),width=11,height=8)
+pdf(paste("FINALFIGS/5_RandomForestCirclize/ALLSPECIES/Summary_sampleSize.pdf"),width=11,height=25)
 
 tt = ttheme_default(colhead=list(fg_params=list(rot=90)))
 

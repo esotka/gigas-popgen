@@ -88,7 +88,7 @@ pred = predict(rf,data=intro_data)$predictions
 actual=intro_reg
 
 tbl = table(pred,actual)
-save(file="FINALFIGS/5_RandomForestCirclize/cgiga/region_assignment.rda",tbl)
+save(file="FINALFIGS/5_RandomForestCirclize/mcyl/region_assignment.rda",tbl)
 
 ### 3) make circlize plot
 #rowReg <- meta$sourceID[match(rownames(tbl),meta$Name1)]

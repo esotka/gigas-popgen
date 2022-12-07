@@ -1,5 +1,6 @@
 rm(list=ls())
 library(randomForest)
+library(ranger)
 library(readxl,warn.conflicts = F,quietly = T)
 library(spatstat,warn.conflicts = F,quietly = T) # marks, ppp, quadratcount
 library(scales,warn.conflicts = F,quietly = T) # alpha

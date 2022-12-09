@@ -1,0 +1,180 @@
+Locality codea	Collection locality (collection date)	Origin	"Haplotyes (No. samples, Accession No.b)"	Haplotype	Number	Name1	Name2	Country	lat	lon
+1	"Gorishoek, Netherlands (Oct, 2005)"	"Hanyuda et al., 2016"	"H5 (1, AB607177/AB607804)"	H5	1	Gorishoek	NA	Netherlands	51.5259855	4.0761281
+2	"Berghse Diepsluis, Netherlands (Oct, 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Berghse Diepsluis	NA	Netherlands	51.510006	4.174968
+3	"Roscoff, France (Nov, 2005)"	"Hanyuda et al., 2016"	"H42 (1, AB607185/AB607826)"	H42	1	Roscoff	NA	France	48.7255816	-3.9828983
+4	"Thau Lagoon, France (s Apr. 2002)"	"Hanyuda et al., 2016"	H42 (2)	H42	2	Thau Lagoon	NA	France	24.4699187	54.3809072
+5	"Melbourne, Australia (21 Jul. 2004, 22 Jul. 2004)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Melbourne	NA	Australia	-37.8142176	144.9631608
+6	"Hobart, Tasmania, Austalia (10 Feb. 2005)"	"Hanyuda et al., 2016"	H5 (3)	H5	3	Hobart	Tasmania	Austalia	-42.8825088	147.3281233
+7	"Newcastle, Australia (8 Feb. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Newcastle	NA	Australia	54.9738474	-1.6131572
+8	"Vancouver, Australia (16 Jul. 2006)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Vancouver	NA	Australia	49.2608724	-123.113952
+9	"West Port, Grays Harbor, Washington, USA (27 Mar. 2015)"	Present study	"H10 (1, AB607184/AB607804)"	H10	1	Grays Harbor	Washington	USA	47.1744169	-123.8658829
+10	"Port of Peninsula, Washington, USA (17 Jun. 2015)"	Present study	H5 (1)	H5	1	Port of Peninsula	Washington	USA	49.1951976	-122.9217901
+11	"Bird Rock, La Jolla, San Diego, California, USA (14 Jun. 1999)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	La Jolla	San Diego	USA	32.8401623	-117.2740777
+12	"Perto Montt, Mexico (2 Jan. 2007)"	"Hanyuda et al., 2016"	H5 (4)	H5	4	Perto Montt	NA	Mexico	-23.2335499	17.3231107
+13	"Lake Notoro, Abashiri, Hokkaido, Japan (21 Sep. 2005)"	"Hanyuda et al., 2016"	"H33 (2, AB607185/AB607823), H44 (1, AB607185/AB607827)"	H33	2	Lake Notoro	Abashiri	Japan	44.05796015	144.1504122
+13	"Lake Notoro, Abashiri, Hokkaido, Japan (21 Sep. 2005)"	"Hanyuda et al., 2016"	"H33 (2, AB607185/AB607823), H44 (1, AB607185/AB607827)"	H44	1	Lake Notoro	Abashiri	Japan	44.05796015	144.1504122
+14	"Lake Akkeshi, Akkeshi, Hokkaido, Japan (22 Sep. 2005)"	"Hanyuda et al., 2016"	"H26 (1, AB607185/AB607813)"	H26	1	Lake Akkeshi	Akkeshi	Japan	43.0461882	144.8967318
+15	"Zenibako, Otaru, Hokkaido, Japan (20 Sep. 2005)"	"Hanyuda et al., 2016"	"H16 (2, AB607176/AB607818), H47 (1, AB607176/AB607825)"	H16	2	Zenibako	Otaru	Japan	43.1434795	141.1597171
+15	"Zenibako, Otaru, Hokkaido, Japan (20 Sep. 2005)"	"Hanyuda et al., 2016"	"H16 (2, AB607176/AB607818), H47 (1, AB607176/AB607825)"	H47	1	Zenibako	Otaru	Japan	43.1434795	141.1597171
+16	"Kikonai, Hokkaido, Japan (3 Jul. 2000)"	"Hanyuda et al., 2016"	"H20 (1, AB607185/AB607817)"	H20	1	Kikonai	Hokkaido	Japan	41.6784387	140.43763
+17	"Asamushi, Aomori Pref., Japan (19 Sep. 2005)"	"Hanyuda et al., 2016"	"H9 (3, AB607179/AB607804)"	H9	3	Asamushi	Aomori Pref.	Japan	40.8895447	140.8656119
+18	"Shiriya, Aomori Pref., Japan (9 Aug. 2014)"	Present study	"H50 (3, AB607185/ LC217737)"	H50	3	Shiriya	Aomori Pref.	Japan	12.6693903	75.0856619
+19	"Ahigezaki, Hachinohe, Aomori Pref., Japan (25 Fe. 2015)"	Present study	H50 (2)	H50	2	Ahigezaki	Hachinohe	Japan	40.5122388	141.4882959
+20	"Nakano, Iwate Pref., Japan (24 Feb. 2015)"	Present study	H9 (1)	H9	1	Nakano	Iwate Pref.	Japan	35.718123	139.664468
+21	"Hiraiga, Iwate Pref., Japan (22 Apr. 2015)"	Present study	H9 (3)	H9	3	Hiraiga	Iwate Pref.	Japan	39.698323	142.028678
+22	"Sanouiwa, Iwate Pref., Japan (7 Jun. 2015)"	Present study	H10 (2)	H10	2	Sanouiwa	Iwate Pref.	Japan	39.867747	141.9827
+23	"Koujin Beach, Iwate Pref., Japan (21 Apr. 2015)"	Present study	"H9 (1), H49 (1, AB607181/AB607804)"	H9	1	Koujin Beach	Iwate Pref.	Japan	39.870912	141.978199
+23	"Koujin Beach, Iwate Pref., Japan (21 Apr. 2015)"	Present study	"H9 (1), H49 (1, AB607181/AB607804)"	H49	1	Koujin Beach	Iwate Pref.	Japan	39.870912	141.978199
+24	"Kirikiri, Iwate Pref., Japan (21 Apr. 2015)"	Present study	H9 (2)	H9	2	Kirikiri	Iwate Pref.	Japan	12.845056	1.040959
+25	"Ainohama, Iwate Pref., Japan (21 Apr. 2015)"	Present study	H49 (2)	H49	2	Ainohama	Iwate Pref.	Japan	34.9247898	139.8316843
+26	"Shidugawa, Miyagi Pref., Japan (21 May 2015)"	Present study	"H5 (1), H9 (2)"	H5	1	Shidugawa	Miyagi Pref.	Japan	38.6915285	141.2772712
+26	"Shidugawa, Miyagi Pref., Japan (21 May 2015)"	Present study	"H5 (1), H9 (2)"	H9	2	Shidugawa	Miyagi Pref.	Japan	38.6915285	141.2772712
+27	"Ogatsu, Ishinomaki, Miyagi Pref., Japan (20 Jul. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Ogatsu	Ishinomaki	Japan	35.658158	139.5119656
+28	"Souma, Fukushima Pref., Japan (21 Feb. 2005)"	"Hanyuda et al., 2016"	H10 (1)	H10	1	Souma	Fukushima Pref.	Japan	14.12338	14.036015
+29	"Ouse, Hitachi, Ibaraki Pref., Japan (16 Nov. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Ouse	Hitachi	Japan	50.9867123	0.0065386
+30	"Kanazawa, Yokohama, Konagwa Pref., Japan (5 Jun. 2005)"	"Hanyuda et al., 2016"	"H6 (2, AB607177/AB607802)"	H6	2	Kanazawa	Yokohama	Japan	36.5780499	136.6480247
+31	"Hayama, Kanagawa Pref., Japan (28 Apr. 2005)"	"Hanyuda et al., 2016"	"H7 (1, AB607177/AB607803)"	H7	1	Hayama	Kanagawa Pref.	Japan	35.2729088	139.5931769
+32	"Futamachiya, Miura, Kanagawa Pref., Japan (16 Sep. 2005)"	"Hanyuda et al., 2016"	H6 (1)	H6	1	Futamachiya	Miura	Japan	35.2731663	139.6018863
+33	"Oura, Shimoda, Shizuoka Pref., Japan (17 Sep. 2005)"	"Hanyuda et al., 2016"	H6 (1)	H6	1	Oura	Shimoda	Japan	41.6158467	-7.5683924
+34	"Touji, Shimoda, Shizuoka Pref., Japan (29 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Touji	Shimoda	Japan	34.9806311	135.7477192
+35	"Gamagori, Aichi Pref., Japan (8 Jun. 2005)"	"Hanyuda et al., 2016"	H7 (1)	H7	1	Gamagori	Aichi Pref.	Japan	34.833929	137.225163
+36	"Toba, Mie Pref., Japan (12 Jun. 2005)"	"Hanyuda et al., 2016"	H6 (3)	H6	3	Toba	Mie Pref.	Japan	34.4714464	136.8293576
+37	"Benten Cape, Sado, Niigata Pref., Japan (12 Jun. 2005)"	"Hanyuda et al., 2016"	"H34 (1, AB607187/AB607823)"	H34	1	Benten Cape	Sado	Japan	38.0076668	138.5466233
+38	"Tamasaki, Sado, Niigata Pref., Japan (13 Jun. 2005)"	"Hanyuda et al., 2016"	"H37 (1, AB607187/AB607824), H44 (1)"	H37	1	Tamasaki	Sado	Japan	35.5307615	140.0716478
+38	"Tamasaki, Sado, Niigata Pref., Japan (13 Jun. 2005)"	"Hanyuda et al., 2016"	"H37 (1, AB607187/AB607824), H44 (1)"	H44	1	Tamasaki	Sado	Japan	35.5307615	140.0716478
+39	"Maze, Niigata, Niigata Pref., Japan (2 Jan. 2006)"	"Hanyuda et al., 2016"	"H35 (1, AB607188/AB607822), H36 (1, AB607188/AB607824)"	H35	1	Maze	Niigata	Japan	47.4576317	-0.289374904
+39	"Maze, Niigata, Niigata Pref., Japan (2 Jan. 2006)"	"Hanyuda et al., 2016"	"H35 (1, AB607188/AB607822), H36 (1, AB607188/AB607824)"	H36	1	Maze	Niigata	Japan	47.4576317	-0.289374904
+40	"Nakai, Anamizu, Ishikawa Pref., Japan (20 Jun. 2006)"	"Hanyuda et al., 2016"	"H45 (1, AB607185/AB607828)"	H45	1	Nakai	Anamizu	Japan	35.334473	139.220648
+41	"Akazumi, Shik, Ishikawa Pref., Japan (Sep. 2005)"	"Hanyuda et al., 2016"	"H43 (1, AB607181/AB607827)"	H43	1	Akazumi	Shik	Japan	29.6414426	129.684273
+42	"Obama, Fukui Pref., Japan (9 Jun. 2005)"	"Hanyuda et al., 2016"	H44 (2)	H44	2	Obama	Fukui Pref.	Japan	35.4938281	135.7446614
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H12	1	Takeno	Hyogo Pref.	Japan	35.6499609	134.7563763
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H15	1	Takeno	Hyogo Pref.	Japan	35.6499609	134.7563763
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H17	1	Takeno	Hyogo Pref.	Japan	35.6499609	134.7563763
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H21	1	Takeno	Hyogo Pref.	Japan	35.6499609	134.7563763
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H38	1	Takeno	Hyogo Pref.	Japan	35.6499609	134.7563763
+44	"Amagasaki, Hyogo Pref., Japan (Mar. 2005)"	"Hanyuda et al., 2016"	"H41 (1, AB607185/AB607825)"	H41	1	Amagasaki	Hyogo Pref.	Japan	34.7288995	135.412989
+45	"Kobe Port, Hyogo Pref., Japan (17 Nov. 2005, 25 may 2005)"	"Hanyuda et al., 2016"	"H30 (2, AB607185/AB607820), H33 (1)"	H30	2	Kobe Port	Hyogo Pref.	Japan	34.6662787	135.2188868
+46	"Iwaya, Awaji I., Hyogo Pref., Japan (26 May 2005, 28 Apr. 2005)"	"Hanyuda et al., 2016"	"H32 (1, AB607185/AB607822), H33 (1), H41 (1)"	H32	1	Iwaya	Awaji I.	Japan	6.504167	3.391944
+46	"Iwaya, Awaji I., Hyogo Pref., Japan (26 May 2005, 28 Apr. 2005)"	"Hanyuda et al., 2016"	"H32 (1, AB607185/AB607822), H33 (1), H41 (1)"	H33	1	Iwaya	Awaji I.	Japan	6.504167	3.391944
+46	"Iwaya, Awaji I., Hyogo Pref., Japan (26 May 2005, 28 Apr. 2005)"	"Hanyuda et al., 2016"	"H32 (1, AB607185/AB607822), H33 (1), H41 (1)"	H41	1	Iwaya	Awaji I.	Japan	6.504167	3.391944
+47	"Akashi, Hyogo Pref., Japan (28 Apr. 2005)"	"Hanyuda et al., 2016"	H32 (1)	H32	1	Akashi	Hyogo Pref.	Japan	34.6832635	134.9476925
+48	"Yura, Sumoto, Hyogo Pref., Japan (25 Apr. 2005)"	"Hanyuda et al., 2016"	H7 (2)	H7	1	Yura	Sumoto	Japan	46.7833625	5.783285726
+49	"Maruyama, Minamiawaji, Hyogo Pref., Japan (25 Apr. 2005, 12 May 2005)"	"Hanyuda et al., 2016"	"H30 (1), H42 (1)"	H30	2	Maruyama	Minamiawaji	Japan	43.0472847	141.3165501
+50	"Ie-shima, Himeji, Hyogo Pref., Japan (10 May 2005)"	"Hanyuda et al., 2016"	H32 (1)	H42	1	Ie-shima	Himeji	Japan	26.7257576	127.7649002
+50	"Ie-shima, Himeji, Hyogo Pref., Japan (10 May 2005)"	"Hanyuda et al., 2016"	H32 (1)	H32	1	Ie-shima	Himeji	Japan	26.7257576	127.7649002
+51	"Oki Island, Shimane Pref., Japan (Aug. 2006)"	"Hanyuda et al., 2016"	"H11 (1, AB607180/AB607811), H14 (1, AB607180/AB607818), H40 (1, AB607180/AB607825)"	H11	1	Oki Island	Shimane Pref.	Japan	6.4641088	3.388541
+51	"Oki Island, Shimane Pref., Japan (Aug. 2006)"	"Hanyuda et al., 2016"	"H11 (1, AB607180/AB607811), H14 (1, AB607180/AB607818), H40 (1, AB607180/AB607825)"	H14	1	Oki Island	Shimane Pref.	Japan	6.4641088	3.388541
+51	"Oki Island, Shimane Pref., Japan (Aug. 2006)"	"Hanyuda et al., 2016"	"H11 (1, AB607180/AB607811), H14 (1, AB607180/AB607818), H40 (1, AB607180/AB607825)"	H40	1	Oki Island	Shimane Pref.	Japan	6.4641088	3.388541
+52	"Nakaumi, Matsue, Shimane Pref., Japan (13 Jun. 2006)"	"Hanyuda et al., 2016"	H12 (3)	H12	3	Nakaumi	Matsue	Japan	35.4746298	133.1943939
+53	"Izumo, Shimane Pref., Japan (30 Mar. 2006)"	"Hanyuda et al., 2016"	H12 (1)	H12	1	Izumo	Shimane Pref.	Japan	35.3668891	132.7548827
+54	"Tonoura, Hamada, Shimane Pref., Japan (30 Mar. 2006)"	"Hanyuda et al., 2016"	"H13 (1, AB607180/AB607816), H17 (1), H30 (1)"	H13	1	Tonoura	Hamada	Japan	34.40393675	133.2038509
+54	"Tonoura, Hamada, Shimane Pref., Japan (30 Mar. 2006)"	"Hanyuda et al., 2016"	"H13 (1, AB607180/AB607816), H17 (1), H30 (1)"	H17	1	Tonoura	Hamada	Japan	34.40393675	133.2038509
+54	"Tonoura, Hamada, Shimane Pref., Japan (30 Mar. 2006)"	"Hanyuda et al., 2016"	"H13 (1, AB607180/AB607816), H17 (1), H30 (1)"	H30	1	Tonoura	Hamada	Japan	34.40393675	133.2038509
+55	"Yashiro Is., Yamaguchi Pref., Japan (12 Jun. 2005)"	"Hanyuda et al., 2016"	H38 (1)	H38	1	Yashiro Is.	Yamaguchi Pref.	Japan	33.912194	132.2490724
+56	"Onyu Is., Saeki, Oita Pref., Japan (6 Jun. 2005)"	"Hanyuda et al., 2016"	"H46 (1, AB607177/AB607828)"	H46	1	Onyu Is.	Saeki	Japan	34.43825	132.302395
+57	"Tsuyazaki, Fukutsu, Fukuoka Pref., Japan (27 Apr. 2006, 13 Jul. 2006)"	"Hanyuda et al., 2016"	"H1 (1, AB607175/AB607810), H18 (1, AB607183/AB607818), H32 (1)"	H1	1	Tsuyazaki	Fukutsu	Japan	33.7875223	130.4673578
+58	"Shikano-shima, Fukuoka Pref., Japan (29 Mar. 2006)"	"Hanyuda et al., 2016"	"H18 (1), H31 (1, AB607183/AB607820)"	H18	1	Shikano-shima	Fukuoka Pref.	Japan	33.6626499	130.3142524
+58	"Shikano-shima, Fukuoka Pref., Japan (29 Mar. 2006)"	"Hanyuda et al., 2016"	"H18 (1), H31 (1, AB607183/AB607820)"	H31	1	Shikano-shima	Fukuoka Pref.	Japan	33.6626499	130.3142524
+59	"Keyano-oto, Shima, Fukuoka Pref., Japan (26 Apr. 2006)"	"Hanyuda et al., 2016"	"H28 (1, AB607183/AB607809)"	H28	1	Keyano-oto	Shima	Japan	34.3411841	136.8196451
+60	"Imari, Saga Pref., Japan (9 Jun. 2005)"	"Hanyuda et al., 2016"	"H39 (1, AB607180/AB607824), H44 (1)"	H39	1	Imari	Saga Pref.	Japan	33.2644557	129.8808439
+60	"Imari, Saga Pref., Japan (9 Jun. 2005)"	"Hanyuda et al., 2016"	"H39 (1, AB607180/AB607824), H44 (1)"	H44	1	Imari	Saga Pref.	Japan	33.2644557	129.8808439
+61	"Teguma, Nagasaki Pref., Japan (6 Jun. 2005)"	"Hanyuda et al., 2016"	H32 (1)	H32	1	Teguma	Nagasaki Pref.	Japan	32.712758	129.846463
+62	"Kuranomoto, Nagashima, Kagoshima Pref., Japan (28 Mar. 2006)"	"Hanyuda et al., 2016"	"H38 (1), H48 (1, AB607177/AB607824)"	H38	1	Kuranomoto	Nagashima	Japan	32.183459	130.166311
+62	"Kuranomoto, Nagashima, Kagoshima Pref., Japan (28 Mar. 2006)"	"Hanyuda et al., 2016"	"H38 (1), H48 (1, AB607177/AB607824)"	H48	1	Kuranomoto	Nagashima	Japan	32.183459	130.166311
+63	"Tajiri, Minami-osumi, Kagoshima Pref., Japan (26 May 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Tajiri	Minami-osumi	Japan	34.4043179	135.2780365
+65	"Gampo, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H19 (1, AB607185/AB607819)"	H19	1	Gampo	NA	Korea	42.9631482	-3.9057977
+66	"Kuryongp’o, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H27 (1, AB607185/AB607810), H45 (1)"	H17	1	Kuryongp’o	NA	Korea	-23.2335499	17.3231107
+66	"Kuryongp’o, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H27 (1, AB607185/AB607810), H45 (1)"	H27	1	Kuryongp’o	NA	Korea	-23.2335499	17.3231107
+66	"Kuryongp’o, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H27 (1, AB607185/AB607810), H45 (1)"	H45	1	Kuryongp’o	NA	Korea	-23.2335499	17.3231107
+67	"Wolpo, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H20 (1)"	H17	1	Wolpo	NA	Korea	36.2040057	129.3664017
+67	"Wolpo, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H20 (1)"	H20	1	Wolpo	NA	Korea	36.2040057	129.3664017
+68	"Dae daepo, Korea (11 Mar. 2006)"	"Hanyuda et al., 2016"	"H22 (1, AB607187/AB607816)"	H28	1	Dae daepo	NA	Korea	35.7235219	126.6762726
+69	"Songdo, Korea (11 Mar. 2006)"	"Hanyuda et al., 2016"	H21 (1)	H21	1	Songdo	NA	Korea	36.0368173	129.375069
+70	"Geoje Island, Korea (25 Aug. 2005)"	"Hanyuda et al., 2016"	H42 (2)	H42	1	Geoje Island	NA	Korea	34.9742338	128.6337401
+71	"Yosu, Korea (11 Mar. 2006)"	"Hanyuda et al., 2016"	"H20 (1), H23 (2, AB607185/AB607814)"	H20	2	Yosu	NA	Korea	43.1059433	-2.4244248
+71	"Yosu, Korea (11 Mar. 2006)"	"Hanyuda et al., 2016"	"H20 (1), H23 (2, AB607185/AB607814)"	H23	1	Yosu	NA	Korea	43.1059433	-2.4244248
+72	"Bangpo, Korea (17 Mar. 2006)"	"Hanyuda et al., 2016"	"H2 (1, AB607176/AB607808), H3 (2, AB607176/AB607807)"	H2	2	Bangpo	NA	Korea	25.059467	121.37876
+72	"Bangpo, Korea (17 Mar. 2006)"	"Hanyuda et al., 2016"	"H2 (1, AB607176/AB607808), H3 (2, AB607176/AB607807)"	H3	1	Bangpo	NA	Korea	25.059467	121.37876
+73	"Red Head Island, Bay of Islands, NZ (2 Mar. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	2	Red Head Island	Bay of Islands	NZ	17.1378828	-61.72835232
+74	"Tapeka Point, Russell, Bay of Islands, NZ (2 Mar. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Tapeka Point	Russell	NZ	-35.2418502	174.1215449
+75	"The Cliff site, Bay of Islands, NZ (3 Mar. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	The Cliff site	Bay of Islands	NZ	52.27953715	-1.597716877
+76	"Labird Channel, Poor Knights, NZ (24 Feb. 2005)"	"Hanyuda et al., 2016"	H5 (6)	H5	6	Labird Channel	Poor Knights	NZ	-35.465188	174.735628
+77	"Ocean Beach, Whangarei, Northland, NZ (21 Aug. 2005)"	"Hanyuda et al., 2016"	H5 (4)	H5	4	Ocean Beach	Whangarei	NZ	40.6467664	-73.1570589
+78	"Langs Beach, Bream Bay, Northland, NZ (19 Aug. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Langs Beach	Bream Bay	NZ	-36.0484302	174.5349034
+79	"Bait Pond, Mayor Island, NZ (1 Mar. 2005)"	"Hanyuda et al., 2016"	"H4 (1, AB607177/AB607806), H5 (2), H6 (1)"	H4	1	Bait Pond	Mayor Island	NZ	28.8468707	-95.67417461
+79	"Bait Pond, Mayor Island, NZ (1 Mar. 2005)"	"Hanyuda et al., 2016"	"H4 (1, AB607177/AB607806), H5 (2), H6 (1)"	H5	2	Bait Pond	Mayor Island	NZ	28.8468707	-95.67417461
+79	"Bait Pond, Mayor Island, NZ (1 Mar. 2005)"	"Hanyuda et al., 2016"	"H4 (1, AB607177/AB607806), H5 (2), H6 (1)"	H6	1	Bait Pond	Mayor Island	NZ	28.8468707	-95.67417461
+80	"Tauranga Port, NZ (8 Mar. 2002, 6 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Tauranga Port	NA	NZ	-37.66499985	176.1710778
+81	"Gisborne, NZ (25 Sep. 2004)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Gisborne	NA	NZ	-38.661326	178.0206487
+82	"Napier Port, NZ (17 Dec. 2001, 23 Nov. 2005)"	"Hanyuda et al., 2016"	"H5 (3), H7 (1)"	H5	3	Napier Port	NA	NZ	-39.4751357	176.9137908
+82	"Napier Port, NZ (17 Dec. 2001, 23 Nov. 2005)"	"Hanyuda et al., 2016"	"H5 (3), H7 (1)"	H7	1	Napier Port	NA	NZ	-39.4751357	176.9137908
+83	"Napier, NZ (25 Sep. 2004)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Napier	NA	NZ	-39.4902099	176.917839
+84	"Blackhead, NZ (23 Nov. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Blackhead	NA	NZ	42.2677434	-74.104636
+85	"Oponoi, Hokianga, Northland, NZ (19 Sep. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Oponoi	Hokianga	NZ	-38.01892325	177.133578
+86	"Kemps Beach, Leigh, NZ (6 Apr. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Kemps Beach	Leigh	NZ	36.832082	-76.151805
+87	"OiNeill Bay, Waitakere, Auckland, NZ (6 May 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	OiNeill Bay	Waitakere	NZ	-36.8492169	174.5437767
+88	"Te Henga, West Coast, Auckland, NZ (22 Jul. 2007)"	"Hanyuda et al., 2016"	H5 (3)	H5	3	Te Henga	West Coast	NZ	-36.8896316	174.4502946
+89	"Piha, Waitakere, Auckland, NZ (14 Dec. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Piha	Waitakere	NZ	-36.9556043	174.4694742
+90	"Kiritehere, Waikato, NZ (31 Jan. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H7	1	Kiritehere	Waikato	NZ	-38.3285201	174.7195064
+91	"Waitara, Taranaki, NZ (30 Jan. 2006)"	"Hanyuda et al., 2016"	H7 (1)	H5	1	Waitara	Taranaki	NZ	-39.0028236	174.2364324
+92	"Onaero, Taranaki, NZ (30 Jan. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Onaero	Taranaki	NZ	-39.0103255	174.3647375
+93	"Port Taranaki, NZ (15 Mar. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Port Taranaki	NA	NZ	-39.0561073	174.0297087
+94	"Picton floating dock, NZ (2 Oct. 2004, 8 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Picton floating dock	NA	NZ	-23.2335499	17.3231107
+95	"Waikawa Bay, Picton, NZ (8 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Waikawa Bay	Picton	NZ	-41.25958595	174.0471303
+96	"Picton Port, NZ (18 Jan. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Picton Port	NA	NZ	44.0102669	-77.1353417
+97	"Marlborough Sounds, NZ (25 Jan. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Marlborough Sounds	NA	NZ	-41.28893895	174.0088843
+98	"Scorching Bay, Wellington, NZ (8 Mar. 2005, 27 Jun. 2005, 5 Dec. 2005)"	"Hanyuda et al., 2016"	"H5 (2), H7 (1)"	H5	2	Scorching Bay	Wellington	NZ	-41.2981623	174.8346249
+98	"Scorching Bay, Wellington, NZ (8 Mar. 2005, 27 Jun. 2005, 5 Dec. 2005)"	"Hanyuda et al., 2016"	"H5 (2), H7 (1)"	H7	1	Scorching Bay	Wellington	NZ	-41.2981623	174.8346249
+99	"Pukerua Bay, Wellington, NZ (10 Mar. 2005)"	"Hanyuda et al., 2016"	H8 (1)	H8	2	Pukerua Bay	Wellington	NZ	-41.0374407	174.8854454
+100	"Wellington Port, NZ (15 Feb. 2005, 16 Feb. 2005, 18 Feb. 2005"	"Hanyuda et al., 2016"	H5 (3)	H5	3	Wellington Port	NA	NZ	51.4759136	-2.770103416
+101	"Island Bay, Wellington, NZ (27 Jun. 2005, 5 Dec. 2005)"	"Hanyuda et al., 2016"	"H5 (1), H8 (1)"	H5	1	Island Bay	Wellington	NZ	-41.3323139	174.7716525
+101	"Island Bay, Wellington, NZ (27 Jun. 2005, 5 Dec. 2005)"	"Hanyuda et al., 2016"	"H5 (1), H8 (1)"	H8	1	Island Bay	Wellington	NZ	-41.3323139	174.7716525
+102	"Porirua Harbour, Wellington, NZ (25 Nov. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Porirua Harbour	Wellington	NZ	-41.10889535	174.8585899
+103	"Titahi Bay, Wellington, NZ (29 Nov. 20005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Titahi Bay	Wellington	NZ	-41.1086925	174.8374978
+104	"Lyall Bay west, Wellington, NZ (5 Dec. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Lyall Bay west	Wellington	NZ	-41.3248033	174.8127753
+105	"Brendan beach, Pukerua Bay, Wellington, NZ (9 Dec. 2005)"	"Hanyuda et al., 2016"	H8 (1)	H8	1	Brendan beach	Pukerua Bay	NZ	-41.0283511	174.8990223
+106	"Mana marina, Wellington, NZ (9 Dec. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Mana marina	Wellington	NZ	-41.1001	174.8678
+107	"Marfells Beach, NZ (9 Apr. 2005)"	"Hanyuda et al., 2016"	"H5 (1), H8 (1)"	H5	1	Marfells Beach	NA	NZ	-41.7382241	174.1731901
+107	"Marfells Beach, NZ (9 Apr. 2005)"	"Hanyuda et al., 2016"	"H5 (1), H8 (1)"	H8	1	Marfells Beach	NA	NZ	-41.7382241	174.1731901
+108	"Mangamaunu, Kaikoura, NZ (2 Oct. 2004, 7 Dec. 2005)"	"Hanyuda et al., 2016"	H5 (3)	H5	3	Mangamaunu	Kaikoura	NZ	-42.2969179	173.7486759
+109	"Taylors Mistake, Christchurch, NZ (26 Jun. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Taylors Mistake	Christchurch	NZ	-43.5819873	172.7793067
+110	"Lyttelton Marina, Christchurch, NZ (18 Oct. 2004)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Lyttelton Marina	Christchurch	NZ	-43.6113774	172.7023971
+111	"Lyttelton Port, NZ (21 Mar. 2002, 1 Nov. 2004, 2 Nov. 2004)"	"Hanyuda et al., 2016"	"H5 (4), H7 (1)"	H5	4	Lyttelton Port	NA	NZ	-43.6065248	172.7349867
+112	"Cave Rock, Sumner, Canterbury, NZ (26 Jun. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Cave Rock	Sumner	NZ	42.3093679	-124.4167643
+113	"Pigeon Bay, Banks Peninsula, Canterbury, NZ (27 Jun. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Pigeon Bay	Banks Peninsula	NZ	-43.6867452	172.8999544
+114	"Waitangi, Petre Bay, Chatham Island, NZ (31 Jan. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Waitangi	Petre Bay	NZ	-35.2704653	174.0804593
+115	"Whangatere Inlet, Petre Bay, Chatham Island, NZ (2 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Whangatere Inlet	Petre Bay	NZ	-43.907669	-176.5618649
+116	"Port Hutt, Petre Bay, Chatham Island, NZ (2 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H7	1	Port Hutt	Petre Bay	NZ	-43.8148942	-176.710248
+117	"Mangere Island, Chatham Island, NZ (4 Feb. 2006)"	"Hanyuda et al., 2016"	H7 (1)	H5	1	Mangere Island	Chatham Island	NZ	-44.265432	-176.2934403
+118	"Timaru Port, NZ (23 Nov. 2004, 24 Nov. 2004)"	"Hanyuda et al., 2016"	H5 (4)	H5	4	Timaru Port	NA	NZ	-44.3924551	171.251282
+119	"Kakanui Beach, Otago, NZ (28 Jun. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Kakanui Beach	Otago	NZ	-45.166576	170.9095877
+120	"Moeraki Boulders, NZ (18 Sep. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H7	1	Moeraki Boulders	NA	NZ	-45.3451734	170.8262448
+121	"Moeraki, NZ (20 Oct. 2004)"	"Hanyuda et al., 2016"	H7 (1)	H5	1	Moeraki	NA	NZ	-45.3740025	170.844139
+122	"Aquarium point, NZ (24 May 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Aquarium point	NA	NZ	-29.86751945	31.04580089
+123	"Brighton Beach, Dunedin, NZ (27 May 2005, 19 Sep. 2005, 16 Dec. 2005)"	"Hanyuda et al., 2016"	H5 (4)	H5	4	Brighton Beach	Dunedin	NZ	40.57964365	-73.96111023
+124	"Kaka Point, NZ (28 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Kaka Point	NA	NZ	-46.3842151	169.7830234
+125	"Tirohanga, NZ (28 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Tirohanga	NA	NZ	-41.9627012	174.0545137
+126	"Halfmoon Bay, Stewart Island, NZ (21 Oct. 2004)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Halfmoon Bay	Stewart Island	NZ	49.50614665	-123.9275319
+127	"Port William, Stewart Island, NZ (31 Oct. 2004)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Port William	Stewart Island	NZ	39.5520056	-83.786314
+128	"Mill Bay creek, Stewart Island, NZ (31 Oct. 2004)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Mill Bay creek	Stewart Island	NZ	40.9027512	-73.5517295
+129	"Riverton Rocks, NZ (29 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Riverton Rocks	NA	NZ	-46.376756	168.0305681
+130	"Monkey Island, NZ (28 Apr. 2005, 29 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Monkey Island	NA	NZ	44.02704015	-88.51423064
+131	"Wharariki, Cape Farewell, NZ (13 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Wharariki	Cape Farewell	NZ	-39.5312634	174.6384361
+132	"Pohara Wharf, Golden Bay, NZ (13 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Pohara Wharf	Golden Bay	NZ	-40.679433	172.851843
+133	"Boulder Bank, Glenduan, Nelson, Tasman Bay, NZ (12 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Boulder Bank	Glenduan	NZ	-41.2327445	173.298041
+134	"Constant Bay, Carleston, West Coast, NZ (14 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H7	1	Constant Bay	Carleston	NZ	-41.9031212	171.4322201
+135	"South of Charleston, West Coast, NZ (14 Feb. 2006)"	"Hanyuda et al., 2016"	H7 (1)	H5	1	South of Charleston	West Coast	NZ	32.7844246	-79.93811494
+136	"Evening Point, NZ (14 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Evening Point	NA	NZ	53.6693179	-129.7598919
+137	"Eleanor Island, Charles Sound, Fiordland, NZ (11 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Eleanor Island	Charles Sound	NZ	60.5522585	-147.5666022
+138	"Copper pad, Gold Arm, Charles Sound, Fiordland, NZ (12 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Copper pad	Gold Arm	NZ	51.70631595	-117.7077194
+139	"Friendship Head, Gold Arm, Charles Sound, Fiordland, NZ (12 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Friendship Head	Gold Arm	NZ	-45.1029804	167.1405111
+140	"Deep Cove, before Brassel Point, Doubtful Sound, Fiordland, NZ (18 Oct. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Deep Cove	before Brassel Point	NZ	44.5709045	-64.0406803
+141	"Tricky Cove, Doubtful Sound, Fiordland, NZ (19 Oct. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Tricky Cove	Doubtful Sound	NZ	-45.3487968	167.0555933
+142	"Bauza Island, Doubtful Sound, Fiordland, NZ (29 Nov. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Bauza Island	Doubtful Sound	NZ	-45.29168895	166.9117727
+143	"Otago Point, Dagg Sound, Fiordland, NZ (6 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Otago Point	Dagg Sound	NZ	-45.4141521	166.8540069
+144	"Malaspina Reach, Doubtful Sound, Fiordland, NZ (10 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Malaspina Reach	Doubtful Sound	NZ	-45.33354585	167.0045022
+145	"Bowen Channel, Dusky Sound, Fiordland, NZ (5 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Bowen Channel	Dusky Sound	NZ	49.3784237	-123.3025708
+146	"Station Islet, Inner Edwardson Sound, Fiordland, NZ (3 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Station Islet	Inner Edwardson Sound	NZ	-45.9574591	166.6150045
+147	"Stella base site, Fiordland, NZ (3 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Stella base site	Fiordland	NZ	-45.29155285	167.4879931
+148	"First Cove, Breaksea Sound, Fiordland, NZ (6 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	First Cove	Breaksea Sound	NZ	50.8371535	-4.5555715
+149	"Acheron Passage, Dusky sound, Fiordland, NZ (5 Feb. 2006)"	"Hanyuda et al., 2016"	H5 (1)	HS	1	Acheron Passage	Dusky sound	NZ	-45.6654104	166.7258294

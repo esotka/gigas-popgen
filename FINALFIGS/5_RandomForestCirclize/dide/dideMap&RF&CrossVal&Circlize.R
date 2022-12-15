@@ -1,5 +1,4 @@
 rm(list=ls())
-library(randomForest)
 library(readxl,warn.conflicts = F,quietly = T)
 library(spatstat,warn.conflicts = F,quietly = T) # marks, ppp, quadratcount
 library(scales,warn.conflicts = F,quietly = T) # alpha
@@ -8,7 +7,7 @@ library(colorRamps)
 library(reshape)
 library(maps)
 library(mapdata)
-library(maptools)
+library(ranger)
 
 
 domain <- c(-130,180,-50,75) 

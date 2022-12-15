@@ -1,11 +1,13 @@
 rm(list=ls())
-library(randomForest)
 library(readxl,warn.conflicts = F,quietly = T)
 library(spatstat,warn.conflicts = F,quietly = T) # marks, ppp, quadratcount
 library(scales,warn.conflicts = F,quietly = T) # alpha
 library(circlize)
 library(colorRamps)
 library(reshape)
+library(maps)
+library(mapdata)
+library(ranger)
 
 domain <- c(-130,180,-50,75) 
 load("FINALFIGS/0_globalGrid/df.globe.Rda")

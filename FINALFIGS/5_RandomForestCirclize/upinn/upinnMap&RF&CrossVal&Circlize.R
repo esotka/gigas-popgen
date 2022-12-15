@@ -1,14 +1,13 @@
 rm(list=ls())
-library(readxl)
-library(spatstat)
-library(scales)
+library(readxl,warn.conflicts = F,quietly = T)
+library(spatstat,warn.conflicts = F,quietly = T) # marks, ppp, quadratcount
+library(scales,warn.conflicts = F,quietly = T) # alpha
 library(circlize)
 library(colorRamps)
+library(reshape)
 library(maps)
 library(mapdata)
-library(maptools)
 library(ranger)
-library(caret)
 
 
 domain <- c(-130,180,-50,75) 

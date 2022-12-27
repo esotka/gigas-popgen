@@ -45,6 +45,7 @@ map1 <- function() {
   points(meta$longitude,meta$Latitude,pch=20,cex=2)
 }
 pdf("FINALFIGS/5_RandomForestCirclize/taka/map.pdf",height=6,width=5); map1(); dev.off()
+png("FINALFIGS/5_RandomForestCirclize/taka/map.png",height=5,width=5,units="in",res=400); map1(); dev.off()
 
 ### 2) generate the random forest - native pops vs introduced pops
 dat <- read.table('FINALFIGS/5_RandomForestCirclize/taka/Makino 2018 hap freq.txt',sep="\t",header=T)

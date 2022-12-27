@@ -45,6 +45,7 @@ map1 <- function() {
   points(meta$Longitude,meta$Latitude,pch=20,cex=2)
 }
 pdf("FINALFIGS/5_RandomForestCirclize/cgiga/map.pdf",height=6,width=5); map1(); dev.off()
+png("FINALFIGS/5_RandomForestCirclize/cgiga/map.png",height=5,width=5,units="in",res=400); map1(); dev.off()
 
 ### 2) generate the random forest - native pops vs introduced pops
 tab = read.table("FINALFIGS/SNPs_noZeros.txt",header=T)
@@ -100,7 +101,8 @@ mat <- as.matrix(tbl)
 mat <- mat+.01
 
 cols.to.use <- c(blue2red(5),"black",rep("grey",ncol(mat)))
-#rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
+rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima","Korea / western Japan")
+colnames(mat) <- c("Argentina","Chile","noEurope","soEurope","NZ","nAM_north","nAM_south")
 
 
 pdf("FINALFIGS/5_RandomForestCirclize/cgiga/region_assignment_circlize.pdf",width=10,height=10)

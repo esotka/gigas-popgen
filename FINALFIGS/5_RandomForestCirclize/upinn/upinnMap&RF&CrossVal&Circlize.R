@@ -44,7 +44,7 @@ map1 <- function() {
   points(meta$lonInd,meta$latInd,pch=20,cex=2)
 }
 pdf("FINALFIGS/5_RandomForestCirclize/upinn/map.pdf",height=6,width=5); map1(); dev.off()
-
+png("FINALFIGS/5_RandomForestCirclize/upinn/map.png",height=5,width=5,units="in",res=400); map1(); dev.off()
 
 
 ### 2) generate the random forest - native pops vs introduced pops

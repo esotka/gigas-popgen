@@ -47,6 +47,7 @@ map1 <- function() {
   points(meta$Longitude,meta$Latitude,pch=20,cex=2)
 }
 pdf("FINALFIGS/5_RandomForestCirclize/hami/map.pdf",height=6,width=5); map1(); dev.off()
+png("FINALFIGS/5_RandomForestCirclize/hami/map.png",height=5,width=5,units="in",res=400); map1(); dev.off()
 
 
 ### 2) generate the random forest - native regions vs introduced pops
@@ -145,4 +146,5 @@ write.csv(as.matrix(tbl),"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/hamiByReg.
 ## write sample sizes for summary
 n <- data.frame(n=c(table(native_pops),table(intro_pops)))
 n$reg <- meta$sourceID[match(rownames(n),meta$Population)]
+rownames(n) <- paste("pop",1:nrow(n))
 write.csv(n,"FINALFIGS/5_RandomForestCirclize/ALLSPECIES/hami_sampleSize.csv",quote=F)

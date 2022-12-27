@@ -48,6 +48,7 @@ map1 <- function() {
   points(meta$longitude,meta$latitude,pch=20,cex=2)
 }
 pdf("FINALFIGS/5_RandomForestCirclize/battr_HL6/map.pdf",height=6,width=5); map1(); dev.off()
+png("FINALFIGS/5_RandomForestCirclize/battr_HL6/map.png",height=5,width=5,units="in",res=400); map1(); dev.off()
 
 ### 2) generate the random forest - native pops vs introduced pops
 dat <- as.data.frame(read_xlsx('FINALFIGS/5_RandomForestCirclize/battr_HL1/Miura2006haplotypes_haps.xlsx',sheet=3))

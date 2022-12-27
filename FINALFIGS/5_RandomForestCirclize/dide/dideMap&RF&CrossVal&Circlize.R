@@ -56,6 +56,8 @@ map1 <- function() {
   points(meta$Longitude,meta$Latitude,pch=20,cex=2)
 }
 pdf("FINALFIGS/5_RandomForestCirclize/dide/map.pdf",height=6,width=5); map1(); dev.off()
+png("FINALFIGS/5_RandomForestCirclize/dide/map.png",height=5,width=5,units="in",res=400); map1(); dev.off()
+
 
 ### 2) generate the random forest - native pops vs introduced pops
 #dat <- as.data.frame(read_xlsx('FINALFIGS/5_RandomForestCirclize/dide/Stefaniak_AppTable1_summary.xlsx',sheet=1))

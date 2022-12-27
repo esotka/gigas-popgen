@@ -38,7 +38,7 @@ par(mfrow=c(12,5),mar=c(0,0,0,1))
 load("ShippingLogs/shipping_routes.rda")
 print(tbl)
 tbl <- tbl[c(1,2,4,3,5),]
-col.to.use <- c(blue2red(5))
+col.to.use <- alpha(c(blue2red(5)),alpha=.75)
 pie(tbl[,c("pnw")],col = col.to.use,labels = "",main="nAM_north") #nAM_north
 pie(tbl[,c("SoCal")],col = col.to.use,labels = "",main="nAM_south") #nAM_south
 pie(tbl[,c("Normandy")],col = col.to.use,labels = "",main="Europe_north") #EuropeNorth
@@ -47,7 +47,7 @@ pie(tbl[,c("NZ")],col = col.to.use,labels = "",main="NZ") #NZ
 
 #cgigas
 tmp <- spp[["cgigas"]]
-col.to.use <- c(blue2red(5),"black")
+col.to.use <- alpha(c(blue2red(5),"black"),alpha=.75)
 pie(tmp[,c("NW.America")],col = col.to.use,labels = "") #nAM_north
 pie(tmp[,c("soCal")],col = col.to.use,labels = "") #nAM_south
 pie(tmp[,c("EuropeNorth")],col = col.to.use,labels = "") #EuropeNorth
@@ -56,7 +56,7 @@ pie(tmp[,c("New.Zealand")],col = col.to.use,labels = "") #NZ
 
 #upinn
 tmp <- spp[["upinn"]]
-col.to.use <- c(blue2red(5),"black")
+col.to.use <- alpha(c(blue2red(5),"black"),alpha=.75)
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey",cex=3,"NA") #nAM_north
 pie(tmp[,c("USA")],col = col.to.use,labels = "") #nAM_south
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey",cex=3,"NA") #EuropeNorth
@@ -65,7 +65,7 @@ pie(tmp[,c("New.Zealand")],col = col.to.use,labels = "") #NZ
 
 #dide
 tmp <- spp[["dide"]]
-col.to.use <- c(blue2red(5)[1:3])#,"black")
+col.to.use <- alpha(colour = blue2red(5)[1:3],alpha=.75)#,"black")
 pie(tmp[,c("NAm_north")],col = col.to.use,labels = "") #nAM_north
 pie(tmp[,c("NAm_south")],col = col.to.use,labels = "") #nAM_south
 pie(tmp[,c("EuropeNorth")],col = col.to.use,labels = "") #EuropeNorth
@@ -74,7 +74,7 @@ pie(tmp[,c("NewZealand")],col = col.to.use,labels = "") #NZ
 
 #gverm
 tmp <- spp[["gvermSNP"]]
-col.to.use <- c(blue2red(5)[-4],"black")
+col.to.use <- alpha(c(blue2red(5)[-4],"black"),alpha=.75)
 pie(tmp[,c("WNA")],col = col.to.use,labels = "") #nAM_north
 pie(tmp[,c("soCal")],col = col.to.use,labels = "") #nAM_south
 pie(tmp[,c("EuropeNorth")],col = col.to.use,labels = "") #EuropeNorth
@@ -83,7 +83,7 @@ pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey"
 
 #hami
 tmp <- spp[["hami"]]
-col.to.use <- c(blue2red(5),"black")
+col.to.use <- alpha(c(blue2red(5),"black"),alpha=.75)
 pie(tmp[,c("Washington")],col = col.to.use,labels = "") #nAM_north
 pie(tmp[,c("California")],col = col.to.use,labels = "") #nAM_south
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey",cex=3,"NA") #EuropeNorth
@@ -92,7 +92,7 @@ pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey"
 
 #battr
 tmp <- spp[["battr"]]
-col.to.use <- c(blue2red(5)[-1],"black")
+col.to.use <- alpha(c(blue2red(5)[-1],"black"),alpha=.75)
 pie(tmp[,c("NAm_north")],col = col.to.use,labels = "") #nAM_north
 pie(tmp[,c("NAm_south")],col = col.to.use,labels = "") #nAM_south
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #EuropeNorth
@@ -101,7 +101,7 @@ pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey"
 
 #battr_HL1
 tmp <- spp[["battr_HL1"]]
-col.to.use <- c(blue2red(5)[-1],"black")
+col.to.use <- alpha(c(blue2red(5)[-1],"black"),alpha=.75)
 pie(tmp[,c("NAm_north")],col = col.to.use,labels = "") #nAM_north
 pie(tmp[,c("NAm_south")],col = col.to.use,labels = "") #nAM_south
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #EuropeNorth
@@ -110,7 +110,7 @@ pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey"
 
 #battr_HL6
 tmp <- spp[["battr_HL6"]]
-col.to.use <- c(blue2red(5)[-1],"black")
+col.to.use <- alpha(c(blue2red(5)[-1],"black"),alpha=.75)
 pie(tmp[,c("NAm_north")],col = col.to.use,labels = "") #nAM_north
 pie(tmp[,c("NAm_south")],col = col.to.use,labels = "") #nAM_south
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #EuropeNorth
@@ -119,7 +119,7 @@ pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey"
 
 #mcyl
 tmp <- spp[["mcyl"]]
-col.to.use <- c(blue2red(5),"black")
+col.to.use <- alpha(c(blue2red(5),"black"),alpha=.75)
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #nAM_north
 pie(tmp[,c("USA")],col = col.to.use,labels = "") #nAM_south
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #EuropeNorth
@@ -128,7 +128,7 @@ pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey"
 
 #taka
 tmp <- spp[["taka"]]
-col.to.use <- c(blue2red(5),"black")
+col.to.use <- alpha(c(blue2red(5),"black"),alpha=.75)
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #nAM_north
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #nAM_south
 pie(tmp[,c("NorthEurope")],col = col.to.use,labels = "") #EuropeNorth
@@ -137,7 +137,7 @@ pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,col="grey"
 
 #sang
 tmp <- spp[["sang"]]
-col.to.use <- c(blue2red(5),"black")
+col.to.use <- alpha(c(blue2red(5),"black"),alpha=.75)
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #nAM_north
 pie(1,col = "white",border="white",labels = ""); mtext(line=-6,side=3,cex=3,col="grey","NA") #nAM_south
 pie(tmp[,c("Europe")],col = col.to.use,labels = "") #EuropeNorth

@@ -1,0 +1,9 @@
+Input: lname=call_list.beagle_all.bamlist.gz nPop=7, fname=(null) qname=(null) outfiles=admix_7
+Setup: seed=1664807660 nThreads=11 method=1
+Convergence: maxIter=7000 tol=0.000010 tolLike50=0.100000 dymBound=0
+Filters: misTol=0.050000 minMaf=0.010000 minLrt=0.000000 minInd=0
+Input file has dim: nsites=298216 nind=738
+Input file has dim (AFTER filtering): nsites=292533 nind=738
+	[ALL done] cpu-time used =  88590.21 sec
+	[ALL done] walltime used =  11153.00 sec
+best like=-86953905.736402 after 4495 iterations

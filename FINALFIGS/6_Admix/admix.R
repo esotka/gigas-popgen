@@ -30,7 +30,7 @@ colorder <- list(
 plotadmix = function(m=as.matrix(adin[[1]]$q),
 	 cldf=iddf,
 	 cp=1:nrow(m),
-	 sortcols=c("Region","pop"),
+	 sortcols=c("Region2","pop"),
 	 left=TRUE,
 	 right=TRUE)	
 { 

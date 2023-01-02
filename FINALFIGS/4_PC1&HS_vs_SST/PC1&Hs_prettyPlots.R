@@ -64,7 +64,7 @@ mtext("Genetic PC1",side=2,line=2.5,cex=1.5)
 text(x=nat$sstmean,y=nat$PC1,nat$Group.1,cex=.5,col=nat$popTextCol)
 
 
-### PC1 ~ Hs
+### PC1 ~ Hs 
 nat2 <- nat[!nat$Group.1%in%c("MAI","YOJ"),] #n<5 for Hs
 
 plot(PC1~Hs,data=nat2,cex=4,xlim=range(nat2$Hs),ylim=range(nat2$PC1),col=nat2$pc1.cols,pch=20,xlab="",ylab="")
@@ -74,8 +74,35 @@ mtext("Expected Heterozygosity",side=1,line=2.5,cex=1.5)
 mtext("Genetic PC1",side=2,line=2.5,cex=1.5)
 text(x=nat$Hs,y=nat$PC1,nat$Group.1,cex=.5,col=nat$popTextCol)
 
+##########################
+### PC1 ~ Hs # no putative aquacultured pops (i.e., Argentina, Chile, northern Europe)
+##########################
+pca_results3 <- pca_results2[!pca_results2$GeneticRegions%in%c("Argentina","Chile","noEurope"),]
 
+plot(PC1~Hs,data=pca_results3,cex=c(3,4)[factor(pca_results3$natnon)],xlim=range(pca_results3$Hs),ylim=range(pca_results3$PC1),col=pca_results3$pc1.cols,pch=c(21,20)[factor(pca_results3$natnon)],xlab="",ylab="")
+abline(lm(PC1~Hs,data=pca_results3[pca_results3$natnon=="Native",]))
+abline(lm(PC1~Hs,data=pca_results3[pca_results3$natnon=="Introduced",]),lty="dashed")
 
+mtext("Expected Heterozygosity",side=1,line=2.5,cex=1.5)
+mtext("Genetic PC1",side=2,line=2.5,cex=1.5)
+text(x=pca_results3$Hs,y=pca_results3$PC1,pca_results3$Group.1,cex=.5,col=pca_results3$popTextCol)
+
+print(cor.test(~PC1+Hs,data=pca_results3[pca_results3$natnon=="Native",]))
+print(cor.test(~PC1+Hs,data=pca_results3[pca_results3$natnon=="Introduced",]))
+
+##########################
+### Hs ~ sstmean # no putative aquacultured pops (i.e., Argentina, Chile, northern Europe)
+##########################
+plot(Hs~sstmean,data=pca_results3,cex=c(3,4)[factor(pca_results3$natnon)],ylim=range(pca_results3$Hs),xlim=range(pca_results3$sstmean),col=pca_results3$pc1.cols,pch=c(21,20)[factor(pca_results3$natnon)],xlab="",ylab="")
+abline(lm(Hs~sstmean,data=pca_results3[pca_results3$natnon=="Native",]))
+abline(lm(Hs~sstmean,data=pca_results3[pca_results3$natnon=="Introduced",]),lty="dashed")
+
+mtext("Expected Heterozygosity",side=2,line=2.5,cex=1.5)
+mtext("Mean SST (ºC)",side=1,line=2.5,cex=1.5)
+text(x=pca_results3$sstmean,y=pca_results3$Hs,pca_results3$Group.1,cex=.5,col=pca_results3$popTextCol)
+
+print(cor.test(~Hs+sstmean,data=pca_results3[pca_results3$natnon=="Native",]))
+print(cor.test(~Hs+sstmean,data=pca_results3[pca_results3$natnon=="Introduced",]))
 
 
 dev.off()

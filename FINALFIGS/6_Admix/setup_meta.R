@@ -6,15 +6,17 @@
 
 bf = "FINALFIGS/6_Admix/all.bamlist"
 metaf = "FINALFIGS/6_Admix/gigas_bam_qualities.csv"
+meta2 = "FINALFIGS/gigas_meta_41pop_env_FINAL.csv"
 ##read data and merge bams with metadata
 
 
 bams=readLines(bf)
 
 meta=read.csv(metaf)
+meta2=read.csv(meta2)
 
 meta=meta[,c("pop","Region","id","Latitude","Longitude")]
-
+meta$Region2=meta2$Region2[match(meta$pop,meta2$pop)]
 bams <- gsub("/home/stranda/projects/oyster/sotka/roslin/bwa/out/","",bams)
 bams <- gsub("/home/stranda/projects/oyster/LiSamples/roslin/bwa/out/","",bams)
 bams <- gsub("_roslin","",bams)
@@ -32,6 +34,10 @@ print("assembled dataframe")
 iddf$Region = factor(as.character(iddf$Region))
 iddf$Region = factor(iddf$Region,
                      levels=levels(iddf$Region)[c(8,1,2,5,3,9,13,12,4,11,10,6,7)])
+iddf$Region2 = factor(as.character(iddf$Region2))
+iddf$Region2 = factor(iddf$Region2,
+                     levels=levels(iddf$Region2)[c(8,4,10,13,5,1,11,9,12,7,2,3,6)])
+
 
 iddf$Latitude[is.na(iddf$Latitude)]=0
 iddf$Longitude[is.na(iddf$Longitude)]=0

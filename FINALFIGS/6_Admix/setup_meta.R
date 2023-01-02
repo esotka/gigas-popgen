@@ -4,28 +4,14 @@
 ###
 
 
-#bf = "../../bamlists/alldata-subLi.bamlist"
-bf = "all.bamlist"
-metaf = "gigas_bam_qualities.csv"
-#metal = "LiMetaData.csv"
-
+bf = "FINALFIGS/6_Admix/all.bamlist"
+metaf = "FINALFIGS/6_Admix/gigas_bam_qualities.csv"
 ##read data and merge bams with metadata
 
 
 bams=readLines(bf)
 
 meta=read.csv(metaf)
-#metali=read.csv(metal)
-
-#print(meta$file)
-print(dim(meta))
-
-
-
-#metali=metali[,-which(names(metali) %in% c("BioSample","SampleName","ReleaseDate","LoadDate","spots","bases","spots_with_mates","avgLength","size_MB","AssemblyName","download_path","Experiment","LibraryName","LibraryStrategy","LibrarySelection","LibrarySource","LibraryLayout","InsertSize","InsertDev","Platform","Model","SRAStudy","BioProject","Study_Pubmed_id","BioSample.y","SampleType","TaxID"))]
-#names(metali)[which(names(metali)=="Run")]="id"
-
-#head(metali)
 
 meta=meta[,c("pop","Region","id","Latitude","Longitude")]
 
@@ -44,10 +30,11 @@ iddf <- iddf[order(iddf$bforder),]
 print("assembled dataframe")
 
 iddf$Region = factor(as.character(iddf$Region))
+iddf$Region = factor(iddf$Region,
+                     levels=levels(iddf$Region)[c(8,1,2,5,3,9,13,12,4,11,10,6,7)])
 
 iddf$Latitude[is.na(iddf$Latitude)]=0
 iddf$Longitude[is.na(iddf$Longitude)]=0
 print(unique(iddf$Region))
-#print(iddf)
 
 #now there's a dataframe called iddf that is pretty complete metadata

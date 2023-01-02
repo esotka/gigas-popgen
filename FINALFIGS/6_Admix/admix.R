@@ -2,11 +2,29 @@
 ### R script to generate PCA from a covariance matrix stored on disk
 ### Uses a bamfile and metadata to classify points, this happens in setup_meta.R
 ###
+rm(list=ls())
+source("FINALFIGS/6_Admix/setup_meta.R")
 
-source("setup_meta.R")
-
-p="."
+p="FINALFIGS/6_Admix/"
 f=list.files(path=p,pattern="*.qopt")
+
+kcol <- c(       "black", #1
+                 "red",#2
+                 "darkgreen",#3
+                 "gainsboro",#4
+                 "yellow",#5
+                 "deepskyblue",#6
+                 "brown",#7
+                 "dodgerblue4")#8
+colorder <- list(
+                   c(1,2), #ks=2
+                   c(2,1,3), #ks=3
+                   c(3,4,1,2), #ks=4
+                   c(2,5,4,3,1), #ks=5
+                   c(5,2,6,1,3,4), #ks=6
+                   c(6,2,7,1,3,4,5), #ks=7
+                   c(7,2,1,4,3,6,5,8)) #ks=8
+
 
 #######################################################
 plotadmix = function(m=as.matrix(adin[[1]]$q),
@@ -34,9 +52,9 @@ if (right){ mar[4]=6; xlim[2]=1.02}
 
 par(mar=mar)
    pm=t(as.matrix(plotdf[,(ncol(cldf)+1):ncol(plotdf)]))
-   barplot(pm,beside=F,border=NA,col=c(cp[1]:cp[ncol(m)]),space=0,horiz=T,axes=F,names.arg=rep("",length(plotdf$id)),xpd=NA,
+   barplot(pm,beside=F,border=NA,col=c(kcol[colorder[[i]]]),space=0,horiz=T,axes=F,names.arg=rep("",length(plotdf$id)),xpd=NA,
            xlim=xlim,main=paste("K=",ncol(m)))
-
+   
    if ((!is.null(sortcols))&(length(sortcols)>0)) {
       r1 = rle(as.character(plotdf[,sortcols[1]]))
       r2 = rle(as.character(plotdf[,sortcols[2]]))	
@@ -55,10 +73,11 @@ par(mar=mar)
       if (left)
       {
       fac = 1 #-inds * 1.5      
-      mtext(side=2,text=r1_coords$vals,at=fac*rowMeans(r1_coords[,c("strt","stp")]))
+      mtext(side=2,line=-2,text=r1_coords$vals,at=fac*rowMeans(r1_coords[,c("strt","stp")]))
       for(j in 1:nrow(r1_coords))
       {
-        x=-1*c(0.01,0.012)[(1+(j%%2))]
+        #x=-1*c(0.01,0.012)[(1+(j%%2))]
+        x=-1*c(0.02,0.05)[(1+(j%%2))]
         segments(x,r1_coords[j,"strt"],x,r1_coords[j,"stp"],type="l", lwd=2,col="black")   
       }
 
@@ -67,10 +86,10 @@ par(mar=mar)
       if (right)
       {
       fac = 1 #-inds * 1.5      
-      mtext(side=4,text=r2_coords$vals,at=fac*rowMeans(r2_coords[,c("strt","stp")]),cex=0.7,adj=-0.4)
+      mtext(side=4,line=.075,text=r2_coords$vals,at=fac*rowMeans(r2_coords[,c("strt","stp")]),cex=0.7,adj=-0.4)
       for(j in 1:nrow(r2_coords))
       {
-        x=c(1.003,1.008)[(1+(j%%2))]
+        x=c(1.01,1.05)[(1+(j%%2))]
         segments(x,r2_coords[j,"strt"],x,r2_coords[j,"stp"],type="l", lwd=2,col="black")   
       }
 
@@ -104,7 +123,7 @@ print(froot)
 
 print("about to plot")
 
-pdf("admix.pdf",width=14,height=10)
+pdf("FINALFIGS/6_Admix/admix.pdf",width=14,height=10)
 
 cp=1:15
 cldf=iddf
@@ -116,10 +135,11 @@ for (i in 1:length(adin))
 {
     m=as.matrix(adin[[i]]$q)
     if (i==1)
-        plotadmix(m,cldf,left=T,right=F) else if (i==length(adin)) plotadmix(m,cldf,left=F,right=T)
-                                         else plotadmix(m,cldf,left=F,right=F) 
+        plotadmix(m,cldf,left=T,right=F) else if (i==length(adin)) plotadmix(m,cldf,left=F,right=T) else plotadmix(m,cldf,left=F,right=F) 
 
 }
+
+
 
 par(mar=c(5,8,1,2))
 print(diff(sapply(adin,function(x) x$LL)))

@@ -51,23 +51,41 @@ write.csv(out2,"FINALFIGS/2_basicStats/LD_and_Ne.csv",quote=F)
 
 ####
 out2 <- read.csv("FINALFIGS/2_basicStats/LD_and_Ne.csv")
+out2$Ne_v2 <- out2$Ne; out2$Ne_v2[is.infinite(out2$Ne_v2)] = 6058
+out2$NatNonAqua <- out2$NatNon
+out2$NatNonAqua[out2$region%in%c("Argentina","Chile","noEurope")] = "Introduced (Arg, Chi, NEur)"
+out2$NatNonAqua[out2$NatNonAqua=="Introduced"] = "Introduced (other)"
+m <- lm(Ne_v2~NatNon,out2)
+print(anova(m))
 
-tmp <- out2[!is.infinite(out2$Ne),] # remove Ne that are infinite.
+m <- lm(Ne_v2~NatNonAqua,out2)
+print(anova(m))
+print(TukeyHSD(aov(m)))
+pdf("FINALFIGS/2_basicStats/LD_and_Ne.pdf",width=5,height=5)
+
+
+f5 <- ggplot(out2,aes(y=Ne_v2,x=NatNonAqua)) +
+  geom_boxplot() +
+  geom_point(pch=20,cex=.3) + 
+  geom_jitter(width = .05, alpha = .5) +
+  xlab("") + ylab("Ne") + ylim(c(0,7500)) +
+  guides(fill="none") +
+  theme_classic() +
+  annotate("text", x=c(1.5,2,2.5), y=c(6500,7500,6500), label= c("p=0.088","0.022","0.685")) +
+  annotate("segment", x=1.1, xend=1.9, y=6300, yend=6300) +
+  annotate("segment", x=1.1, xend=2.9, y=7300, yend=7300) +
+  annotate("segment", x=2.1, xend=2.9, y=6300, yend=6300)
+  
+plot(f5)
+dev.off()
+#Ne that are infinite.
  # GOS - Korea
  # OHK - Tokyo
  # PES - so Cal
  # TJE - so Cal
  # WLB - PNW
-pdf("FINALFIGS/2_basicStats/LD_and_Ne.pdf",width=5,height=5)
-f5 <- ggplot(tmp,aes(y=Ne,x=NatNon)) +#,ymax=param.uci,ymin=param.lci)) +
-  geom_boxplot() +
-  geom_point(pch=20,cex=.3) + 
-  geom_jitter(width = .05, alpha = .5) +
-  xlab("") +
-  guides(fill=FALSE) +
-  theme_classic() 
-plot(f5)
-dev.off()
-anova(lm(Ne~NatNon,tmp))
-
+tmp <- out2[!is.infinite(out2$Ne),]
+m <- lm(Ne_v2~NatNonAqua,tmp)
+print(anova(m))
+print(TukeyHSD(aov(m)))
 

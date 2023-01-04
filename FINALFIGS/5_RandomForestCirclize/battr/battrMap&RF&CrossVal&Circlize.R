@@ -36,6 +36,7 @@ tmpreg <- matrix(c(
   "Elkhorn","NAm_south"),nrow=4,ncol=2,byrow = T)
 tmpreg2 <-tmpreg[match(meta$Site,tmpreg[,1]),2]
 meta$sourceID <- ifelse(is.na(tmpreg2),meta$sourceID,tmpreg2)
+write.csv(meta,"FINALFIGS/5_RandomForestCirclize/battr/Miura2006haplotypes_meta_wSourceIDs.csv",quote=F,row.names = F)
 
 ### map of populations ###
 map1 <- function() {

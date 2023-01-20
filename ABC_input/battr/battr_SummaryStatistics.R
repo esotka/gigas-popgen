@@ -58,7 +58,7 @@ for(i in 1:length(levels(region)))
 names(tajD_reg) = levels(region)
 
 
-print(c(
+print(list(
   popHet,
   popOverall,
   nucD_pop,

@@ -1,0 +1,184 @@
+---
+title: "Crassostrea gigas SNPs"
+output: pdf_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## unpublished (Sotka, Strand, Carnegie et al.) 
+### Using Korea and Japan (native), wNA and Eur only
+### nloci = 9043
+### nind = 606 (Native, wNA, Eur only)
+
+```{r echo = F}
+rm(list=ls())
+library(readxl,warn.conflicts = F,quietly = T)
+library(spatstat,warn.conflicts = F,quietly = T) # marks, ppp, quadratcount
+library(scales,warn.conflicts = F,quietly = T) # alpha
+
+domain <- c(-130,180,-50,75) 
+load("../../output/df.globe.Rda")
+meta <- as.data.frame(read_xlsx("cgiga_meta.xlsx"))
+meta1 <- meta[,c("PopID","Region","Latitude","Longitude")]
+meta2 <- meta[,c("PopID.alt","Region","Latitude","Longitude")]; colnames(meta2)[1] <- "PopID"
+meta <- rbind(meta1,meta2[complete.cases(meta2$PopID),])
+meta <- meta[order(meta$PopID),]
+reg.to.use <- matrix(c(
+"Japan","Native",
+"soCal","wNA",
+"France","Eur",
+"Spain","Eur",
+"Korea","Native",
+"NW America","wNA",
+"Ireland","Eur",
+"Sweden","Eur",
+"Norway","Eur",
+"Denmark","Eur",
+"Europe","Eur"),ncol=2,byrow = T)
+tmp <- meta[meta$Region%in%c(reg.to.use[,1]),]
+tmp$Region2 <- reg.to.use[match(tmp$Region,reg.to.use[,1]),2]
+## find which quadrat each pop
+gridIDs.tmp <- c()
+for (i in 1:length(tmp$PopID))
+{
+  ppp.tmp <- ppp(x=tmp$Longitude[tmp$PopID==tmp$PopID[i]],y=tmp$Latitude[tmp$PopID==tmp$PopID[i]],xrange=domain[1:2],yrange=domain[3:4])
+  grid.tmp <- quadratcount(ppp.tmp, nx = abs(domain[1]-domain[2]), ny = abs(domain[3]-domain[4]))
+  df.tmp <- data.frame(grid.tmp,quadIDs=1:dim(df.globe)[1])
+  gridIDs.tmp <- c(gridIDs.tmp,df.tmp$quadIDs[df.tmp$Freq==1])
+}
+gridIDs.meta <- data.frame(gridIDs=gridIDs.tmp,pop=tmp$PopID)
+gridIDs.meta$vars <- df.globe[match(gridIDs.meta$gridIDs,df.globe$gridID),]
+
+plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
+
+points(gridIDs.meta$vars$plotted.Var1,gridIDs.meta$vars$plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gridIDs.meta$vars$reg)],.4))
+write.csv(gridIDs.meta,"cgiga_meta.csv",quote=F,row.names = F)
+```
+
+## combine pops in that are within the same 1x1º block
+### fst
+
+```{r echo = F}
+library(strataG,warn.conflicts = F,quietly = T)
+library(poppr,warn.conflicts = F,quietly = T)
+snp <- read.delim("SNPs_noZeros.txt",sep="\t")
+### convert into 2 alleles per locus
+nloci <- ncol(snp)-1
+############################
+### do this code once ######
+#snp2 <- c()
+#for (i in 1:nloci)
+#{
+#  tmp <- snp[,1+i]
+#  key <- data.frame(snp=c(0,1,2),a=c(1,1,2),b=c(1,2,2))
+#  a <- key$a[match(tmp,key$snp)]
+#  b <- key$b[match(tmp,key$snp)]
+#  snp2 <- cbind(snp2,a,b)
+#}
+#colnames(snp2) <- sort(c(paste("a",1:nloci,sep=""),paste("b",1:nloci,sep="")))
+
+#pop <- gridIDs.meta$gridIDs[match(substr(snp$id,1,3),gridIDs.meta$pop)]
+#dat <- data.frame(snp$id,pop,snp2)
+#dat <- dat[!is.na(dat$pop),] # remove NAs ==> populations not in these grids
+#colnames(dat) <- c("Ind","Pop",colnames(snp2))
+#write.table(dat,"SNPs_noZeros_2alleles.txt",sep="\t",quote = F,row.names = F)
+############################
+dat <- read.delim("SNPs_noZeros_2alleles.txt",sep="\t")
+gi <- df2gtypes(dat, ploidy = 2, id.col = 1, strata.col = 2, loc.col = 3)
+fst <- pairwiseTest(gi,nrep = 1,by.locus = F,quietly=T) 
+
+fst2 <- pairwiseSummary(fst)
+colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
+colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
+fst.threshold <- ifelse(fst2$Fst_noNegs<=0.1,fst2$Fst_noNegs,NA) # threshold
+save(fst2,file = "cgiga_snp_Fst.Rda")
+print(head(fst2))
+
+fst2$Fst_noNegs <- ifelse(fst2$Fst<0,0,fst2$Fst) # get rid of negatives
+fst.threshold <- ifelse(fst2$Fst_noNegs==0,fst2$Fst_noNegs,NA) # threshold
+
+fst2$ax <- gridIDs.meta$vars$plotted.Var1[match(fst2$gridID.1,gridIDs.meta$gridIDs)]
+fst2$ay <- gridIDs.meta$vars$plotted.Var2[match(fst2$gridID.1,gridIDs.meta$gridIDs)]
+fst2$bx <- gridIDs.meta$vars$plotted.Var1[match(fst2$gridID.2,gridIDs.meta$gridIDs)]
+fst2$by <- gridIDs.meta$vars$plotted.Var2[match(fst2$gridID.2,gridIDs.meta$gridIDs)]
+
+plot(df.globe$plotted.Var1,df.globe$plotted.Var2,pch=21,col=alpha(c("black","red","blue")[factor(df.globe$reg)],.4),yaxt="n",xaxt="n",ylab="",xlab="",main="Asia (black); wNA (red); Europe (blue) " )
+
+points(gridIDs.meta$vars$plotted.Var1,gridIDs.meta$vars$plotted.Var2,pch=20,cex=2,col=alpha(c("black","red","blue")[as.factor(gridIDs.meta$vars$reg)],.4))
+mtext("fst=0",side=3,line=-1)
+### only plot segments with Fst < 0.1
+segments(fst2$ax,fst2$ay,fst2$bx,fst2$by,col=alpha("black",.5),lwd=fst.threshold+1)
+
+#make a map with these same lines
+
+fst2$gridID.1.lon <- df.globe$lon[match(fst2$gridID.1,df.globe$gridID)]
+fst2$gridID.1.lat <- df.globe$lat[match(fst2$gridID.1,df.globe$gridID)]
+fst2$gridID.2.lon <- df.globe$lon[match(fst2$gridID.2,df.globe$gridID)]
+fst2$gridID.2.lat <- df.globe$lat[match(fst2$gridID.2,df.globe$gridID)]
+fst2$reg.1 <- df.globe$reg[match(fst2$gridID.1,df.globe$gridID)]
+fst2$reg.2 <- df.globe$reg[match(fst2$gridID.1,df.globe$gridID)]
+
+plot(df.globe[df.globe$coastline==1,c(2,1)],cex=.1,xlim=c(-130,145),ylim=c(30,60),pch=19)
+points(df.globe[df.globe$grid.for.model==1,c(2,1)],col="red",pch=20,cex=0.5)
+segments(fst2$gridID.1.lon,fst2$gridID.1.lat,fst2$gridID.2.lon,fst2$gridID.2.lat,col="black",lwd=fst.threshold+1)
+
+```
+\newpage
+
+### overall Fst
+
+```{r echo = F}
+overallFst <- overallTest(gi,quietly=T)$result
+save(overallFst,file = "cgiga_snp_FstOverall.Rda")
+print(overallFst)
+
+```
+
+
+### 3 region Fst
+
+```{r echo = F}
+reg <- gridIDs.meta$vars$reg[match(dat$Pop,gridIDs.meta$gridIDs)]
+dat2 <- dat
+dat2$Pop <- reg
+gi2 <- df2gtypes(dat2, ploidy = 2, id.col = 1, strata.col = 2, loc.col = 3)
+fst <- pairwiseTest(gi2,nrep = 1,by.locus = F,quietly=T) 
+fst2 <- pairwiseSummary(fst)
+colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
+colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
+save(fst2,file = "cgiga_snp_FstNatNon.Rda")
+print(fst2)
+```
+
+### native vs non-native Fst
+
+```{r echo = F}
+reg <- gridIDs.meta$vars$reg[match(dat$Pop,gridIDs.meta$gridIDs)]
+reg <- ifelse(reg=="1_Asia","native","nonnative")
+dat2 <- dat
+dat2$Pop <- reg
+gi3 <- df2gtypes(dat2, ploidy = 2, id.col = 1, strata.col = 2, loc.col = 3)
+fst <- pairwiseTest(gi3,nrep = 1,by.locus = F,quietly=T) 
+fst2 <- pairwiseSummary(fst)
+colnames(fst2)[colnames(fst2)=="strata.1"] <- "gridID.1"
+colnames(fst2)[colnames(fst2)=="strata.2"] <- "gridID.2"
+save(fst2,file = "cgiga_usat_Fst3region.Rda")
+print(fst2)
+```
+
+\newpage
+
+### within pop Hexp
+
+```{r echo = F}
+out <- summarizeLoci(gi,by.strata = T)
+hexp <- aggregate(out$exptd.het,by=list(out$stratum),mean)
+colnames(hexp) <- c("gridID","Hexp")
+head(hexp)
+save(hexp,file = "cgiga_usat_Hexp.Rda")
+```
+

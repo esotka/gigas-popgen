@@ -1,0 +1,92 @@
+Locality codea	Collection locality (collection date)	Origin	"Haplotyes (No. samples, Accession No.b)"	Haplotype	Number	Name1	Name2	Country	lat	lon
+1	"Gorishoek, Netherlands (Oct, 2005)"	"Hanyuda et al., 2016"	"H5 (1, AB607177/AB607804)"	H5	1	Gorishoek	NA	Netherlands	51.525986	4.076128
+2	"Berghse Diepsluis, Netherlands (Oct, 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Berghse Diepsluis	NA	Netherlands	51.514560	4.175259
+3	"Roscoff, France (Nov, 2005)"	"Hanyuda et al., 2016"	"H42 (1, AB607185/AB607826)"	H42	1	Roscoff	NA	France	48.725582	-3.982898
+4	"Thau Lagoon, France (s Apr. 2002)"	"Hanyuda et al., 2016"	H42 (2)	H42	2	Thau Lagoon	NA	France	43.392462	3.616380
+9	"West Port, Grays Harbor, Washington, USA (27 Mar. 2015)"	Present study	"H10 (1, AB607184/AB607804)"	H10	1	Grays Harbor	Washington	USA	47.174417	-123.865883
+10	"Port of Peninsula, Washington, USA (17 Jun. 2015)"	Present study	H5 (1)	H5	1	Port of Peninsula	Washington	USA	49.195198	-122.921790
+11	"Bird Rock, La Jolla, San Diego, California, USA (14 Jun. 1999)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	La Jolla	San Diego	USA	32.840162	-117.274078
+13	"Lake Notoro, Abashiri, Hokkaido, Japan (21 Sep. 2005)"	"Hanyuda et al., 2016"	"H33 (2, AB607185/AB607823), H44 (1, AB607185/AB607827)"	H33	2	Lake Notoro	Abashiri	Japan	44.057960	144.150412
+13	"Lake Notoro, Abashiri, Hokkaido, Japan (21 Sep. 2005)"	"Hanyuda et al., 2016"	"H33 (2, AB607185/AB607823), H44 (1, AB607185/AB607827)"	H44	1	Lake Notoro	Abashiri	Japan	44.057960	144.150412
+14	"Lake Akkeshi, Akkeshi, Hokkaido, Japan (22 Sep. 2005)"	"Hanyuda et al., 2016"	"H26 (1, AB607185/AB607813)"	H26	1	Lake Akkeshi	Akkeshi	Japan	43.046188	144.896732
+15	"Zenibako, Otaru, Hokkaido, Japan (20 Sep. 2005)"	"Hanyuda et al., 2016"	"H16 (2, AB607176/AB607818), H47 (1, AB607176/AB607825)"	H16	2	Zenibako	Otaru	Japan	43.143480	141.159717
+15	"Zenibako, Otaru, Hokkaido, Japan (20 Sep. 2005)"	"Hanyuda et al., 2016"	"H16 (2, AB607176/AB607818), H47 (1, AB607176/AB607825)"	H47	1	Zenibako	Otaru	Japan	43.143480	141.159717
+16	"Kikonai, Hokkaido, Japan (3 Jul. 2000)"	"Hanyuda et al., 2016"	"H20 (1, AB607185/AB607817)"	H20	1	Kikonai	Hokkaido	Japan	41.678439	140.437630
+17	"Asamushi, Aomori Pref., Japan (19 Sep. 2005)"	"Hanyuda et al., 2016"	"H9 (3, AB607179/AB607804)"	H9	3	Asamushi	Aomori Pref.	Japan	40.889545	140.865612
+18	"Shiriya, Aomori Pref., Japan (9 Aug. 2014)"	Present study	"H50 (3, AB607185/ LC217737)"	H50	3	Shiriya	Aomori Pref.	Japan	41.417539	141.433867
+19	"Ahigezaki, Hachinohe, Aomori Pref., Japan (25 Fe. 2015)"	Present study	H50 (2)	H50	2	Ahigezaki	Hachinohe	Japan	40.512239	141.488296
+20	"Nakano, Iwate Pref., Japan (24 Feb. 2015)"	Present study	H9 (1)	H9	1	Nakano	Iwate Pref.	Japan	40.273087	141.826102
+21	"Hiraiga, Iwate Pref., Japan (22 Apr. 2015)"	Present study	H9 (3)	H9	3	Hiraiga	Iwate Pref.	Japan	39.698323	142.028678
+22	"Sanouiwa, Iwate Pref., Japan (7 Jun. 2015)"	Present study	H10 (2)	H10	2	Sanouiwa	Iwate Pref.	Japan	39.867747	141.982700
+23	"Koujin Beach, Iwate Pref., Japan (21 Apr. 2015)"	Present study	"H9 (1), H49 (1, AB607181/AB607804)"	H9	1	Koujin Beach	Iwate Pref.	Japan	39.870912	141.978199
+23	"Koujin Beach, Iwate Pref., Japan (21 Apr. 2015)"	Present study	"H9 (1), H49 (1, AB607181/AB607804)"	H49	1	Koujin Beach	Iwate Pref.	Japan	39.870912	141.978199
+24	"Kirikiri, Iwate Pref., Japan (21 Apr. 2015)"	Present study	H9 (2)	H9	2	Kirikiri	Iwate Pref.	Japan	39.374257	141.946058
+25	"Ainohama, Iwate Pref., Japan (21 Apr. 2015)"	Present study	H49 (2)	H49	2	Ainohama	Iwate Pref.	Japan	34.924790	139.831684
+26	"Shidugawa, Miyagi Pref., Japan (21 May 2015)"	Present study	"H5 (1), H9 (2)"	H5	1	Shidugawa	Miyagi Pref.	Japan	38.691529	141.277271
+26	"Shidugawa, Miyagi Pref., Japan (21 May 2015)"	Present study	"H5 (1), H9 (2)"	H9	2	Shidugawa	Miyagi Pref.	Japan	38.691529	141.277271
+27	"Ogatsu, Ishinomaki, Miyagi Pref., Japan (20 Jul. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Ogatsu	Ishinomaki	Japan	35.658158	139.511966
+28	"Souma, Fukushima Pref., Japan (21 Feb. 2005)"	"Hanyuda et al., 2016"	H10 (1)	H10	1	Souma	Fukushima Pref.	Japan	37.838577	140.964706
+29	"Ouse, Hitachi, Ibaraki Pref., Japan (16 Nov. 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Ouse	Hitachi	Japan	36.583312	140.665039
+30	"Kanazawa, Yokohama, Konagwa Pref., Japan (5 Jun. 2005)"	"Hanyuda et al., 2016"	"H6 (2, AB607177/AB607802)"	H6	2	Kanazawa	Yokohama	Japan	36.578050	136.648025
+31	"Hayama, Kanagawa Pref., Japan (28 Apr. 2005)"	"Hanyuda et al., 2016"	"H7 (1, AB607177/AB607803)"	H7	1	Hayama	Kanagawa Pref.	Japan	35.272909	139.593177
+32	"Futamachiya, Miura, Kanagawa Pref., Japan (16 Sep. 2005)"	"Hanyuda et al., 2016"	H6 (1)	H6	1	Futamachiya	Miura	Japan	35.273166	139.601886
+33	"Oura, Shimoda, Shizuoka Pref., Japan (17 Sep. 2005)"	"Hanyuda et al., 2016"	H6 (1)	H6	1	Oura	Shimoda	Japan	34.666218	138.941310
+34	"Touji, Shimoda, Shizuoka Pref., Japan (29 Apr. 2005)"	"Hanyuda et al., 2016"	H5 (1)	H5	1	Touji	Shimoda	Japan	34.980631	135.747719
+35	"Gamagori, Aichi Pref., Japan (8 Jun. 2005)"	"Hanyuda et al., 2016"	H7 (1)	H7	1	Gamagori	Aichi Pref.	Japan	34.833929	137.225163
+36	"Toba, Mie Pref., Japan (12 Jun. 2005)"	"Hanyuda et al., 2016"	H6 (3)	H6	3	Toba	Mie Pref.	Japan	34.471446	136.829358
+37	"Benten Cape, Sado, Niigata Pref., Japan (12 Jun. 2005)"	"Hanyuda et al., 2016"	"H34 (1, AB607187/AB607823)"	H34	1	Benten Cape	Sado	Japan	38.007667	138.546623
+38	"Tamasaki, Sado, Niigata Pref., Japan (13 Jun. 2005)"	"Hanyuda et al., 2016"	"H37 (1, AB607187/AB607824), H44 (1)"	H37	1	Tamasaki	Sado	Japan	35.530762	140.071648
+38	"Tamasaki, Sado, Niigata Pref., Japan (13 Jun. 2005)"	"Hanyuda et al., 2016"	"H37 (1, AB607187/AB607824), H44 (1)"	H44	1	Tamasaki	Sado	Japan	35.530762	140.071648
+39	"Maze, Niigata, Niigata Pref., Japan (2 Jan. 2006)"	"Hanyuda et al., 2016"	"H35 (1, AB607188/AB607822), H36 (1, AB607188/AB607824)"	H35	1	Maze	Niigata	Japan	37.905923	138.954723
+39	"Maze, Niigata, Niigata Pref., Japan (2 Jan. 2006)"	"Hanyuda et al., 2016"	"H35 (1, AB607188/AB607822), H36 (1, AB607188/AB607824)"	H36	1	Maze	Niigata	Japan	37.905923	138.954723
+40	"Nakai, Anamizu, Ishikawa Pref., Japan (20 Jun. 2006)"	"Hanyuda et al., 2016"	"H45 (1, AB607185/AB607828)"	H45	1	Nakai	Anamizu	Japan	35.334473	139.220648
+41	"Akazumi, Shik, Ishikawa Pref., Japan (Sep. 2005)"	"Hanyuda et al., 2016"	"H43 (1, AB607181/AB607827)"	H43	1	Akazumi	Shik	Japan	37.190777	137.076203
+42	"Obama, Fukui Pref., Japan (9 Jun. 2005)"	"Hanyuda et al., 2016"	H44 (2)	H44	2	Obama	Fukui Pref.	Japan	35.493828	135.744661
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H12	1	Takeno	Hyogo Pref.	Japan	35.649961	134.756376
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H15	1	Takeno	Hyogo Pref.	Japan	35.649961	134.756376
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H17	1	Takeno	Hyogo Pref.	Japan	35.649961	134.756376
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H21	1	Takeno	Hyogo Pref.	Japan	35.649961	134.756376
+43	"Takeno, Hyogo Pref., Japan (8 May 2005)"	"Hanyuda et al., 2016"	"H12 (1, AB607180/AB607813), H15 (1, AB607178/AB607818), H17 (1, AB607185/AB607818), H21 (1, AB607185/AB607816), H38 (1, AB607185/AB607824)"	H38	1	Takeno	Hyogo Pref.	Japan	35.649961	134.756376
+44	"Amagasaki, Hyogo Pref., Japan (Mar. 2005)"	"Hanyuda et al., 2016"	"H41 (1, AB607185/AB607825)"	H41	1	Amagasaki	Hyogo Pref.	Japan	34.728900	135.412989
+45	"Kobe Port, Hyogo Pref., Japan (17 Nov. 2005, 25 may 2005)"	"Hanyuda et al., 2016"	"H30 (2, AB607185/AB607820), H33 (1)"	H30	2	Kobe Port	Hyogo Pref.	Japan	34.666279	135.218887
+46	"Iwaya, Awaji I., Hyogo Pref., Japan (26 May 2005, 28 Apr. 2005)"	"Hanyuda et al., 2016"	"H32 (1, AB607185/AB607822), H33 (1), H41 (1)"	H32	1	Iwaya	Awaji I.	Japan	34.599319	135.011518
+46	"Iwaya, Awaji I., Hyogo Pref., Japan (26 May 2005, 28 Apr. 2005)"	"Hanyuda et al., 2016"	"H32 (1, AB607185/AB607822), H33 (1), H41 (1)"	H33	1	Iwaya	Awaji I.	Japan	34.599319	135.011518
+46	"Iwaya, Awaji I., Hyogo Pref., Japan (26 May 2005, 28 Apr. 2005)"	"Hanyuda et al., 2016"	"H32 (1, AB607185/AB607822), H33 (1), H41 (1)"	H41	1	Iwaya	Awaji I.	Japan	34.599319	135.011518
+47	"Akashi, Hyogo Pref., Japan (28 Apr. 2005)"	"Hanyuda et al., 2016"	H32 (1)	H32	1	Akashi	Hyogo Pref.	Japan	34.683264	134.947693
+48	"Yura, Sumoto, Hyogo Pref., Japan (25 Apr. 2005)"	"Hanyuda et al., 2016"	H7 (2)	H7	1	Yura	Sumoto	Japan	34.280936	134.950550
+49	"Maruyama, Minamiawaji, Hyogo Pref., Japan (25 Apr. 2005, 12 May 2005)"	"Hanyuda et al., 2016"	"H30 (1), H42 (1)"	H30	2	Maruyama	Minamiawaji	Japan	34.291671	134.659030
+50	"Ie-shima, Himeji, Hyogo Pref., Japan (10 May 2005)"	"Hanyuda et al., 2016"	H32 (1)	H42	1	Ie-shima	Himeji	Japan	34.717564	134.634189
+50	"Ie-shima, Himeji, Hyogo Pref., Japan (10 May 2005)"	"Hanyuda et al., 2016"	H32 (1)	H32	1	Ie-shima	Himeji	Japan	34.717564	134.634189
+51	"Oki Island, Shimane Pref., Japan (Aug. 2006)"	"Hanyuda et al., 2016"	"H11 (1, AB607180/AB607811), H14 (1, AB607180/AB607818), H40 (1, AB607180/AB607825)"	H11	1	Oki Island	Shimane Pref.	Japan	36.161605	133.270519
+51	"Oki Island, Shimane Pref., Japan (Aug. 2006)"	"Hanyuda et al., 2016"	"H11 (1, AB607180/AB607811), H14 (1, AB607180/AB607818), H40 (1, AB607180/AB607825)"	H14	1	Oki Island	Shimane Pref.	Japan	36.161605	133.270519
+51	"Oki Island, Shimane Pref., Japan (Aug. 2006)"	"Hanyuda et al., 2016"	"H11 (1, AB607180/AB607811), H14 (1, AB607180/AB607818), H40 (1, AB607180/AB607825)"	H40	1	Oki Island	Shimane Pref.	Japan	36.161605	133.270519
+52	"Nakaumi, Matsue, Shimane Pref., Japan (13 Jun. 2006)"	"Hanyuda et al., 2016"	H12 (3)	H12	3	Nakaumi	Matsue	Japan	35.474630	133.194394
+53	"Izumo, Shimane Pref., Japan (30 Mar. 2006)"	"Hanyuda et al., 2016"	H12 (1)	H12	1	Izumo	Shimane Pref.	Japan	35.366889	132.754883
+54	"Tonoura, Hamada, Shimane Pref., Japan (30 Mar. 2006)"	"Hanyuda et al., 2016"	"H13 (1, AB607180/AB607816), H17 (1), H30 (1)"	H13	1	Tonoura	Hamada	Japan	34.403937	133.203851
+54	"Tonoura, Hamada, Shimane Pref., Japan (30 Mar. 2006)"	"Hanyuda et al., 2016"	"H13 (1, AB607180/AB607816), H17 (1), H30 (1)"	H17	1	Tonoura	Hamada	Japan	34.403937	133.203851
+54	"Tonoura, Hamada, Shimane Pref., Japan (30 Mar. 2006)"	"Hanyuda et al., 2016"	"H13 (1, AB607180/AB607816), H17 (1), H30 (1)"	H30	1	Tonoura	Hamada	Japan	34.403937	133.203851
+55	"Yashiro Is., Yamaguchi Pref., Japan (12 Jun. 2005)"	"Hanyuda et al., 2016"	H38 (1)	H38	1	Yashiro Is.	Yamaguchi Pref.	Japan	33.912194	132.249072
+56	"Onyu Is., Saeki, Oita Pref., Japan (6 Jun. 2005)"	"Hanyuda et al., 2016"	"H46 (1, AB607177/AB607828)"	H46	1	Onyu Is.	Saeki	Japan	34.438250	132.302395
+57	"Tsuyazaki, Fukutsu, Fukuoka Pref., Japan (27 Apr. 2006, 13 Jul. 2006)"	"Hanyuda et al., 2016"	"H1 (1, AB607175/AB607810), H18 (1, AB607183/AB607818), H32 (1)"	H1	1	Tsuyazaki	Fukutsu	Japan	33.787522	130.467358
+58	"Shikano-shima, Fukuoka Pref., Japan (29 Mar. 2006)"	"Hanyuda et al., 2016"	"H18 (1), H31 (1, AB607183/AB607820)"	H18	1	Shikano-shima	Fukuoka Pref.	Japan	33.662650	130.314252
+58	"Shikano-shima, Fukuoka Pref., Japan (29 Mar. 2006)"	"Hanyuda et al., 2016"	"H18 (1), H31 (1, AB607183/AB607820)"	H31	1	Shikano-shima	Fukuoka Pref.	Japan	33.662650	130.314252
+59	"Keyano-oto, Shima, Fukuoka Pref., Japan (26 Apr. 2006)"	"Hanyuda et al., 2016"	"H28 (1, AB607183/AB607809)"	H28	1	Keyano-oto	Shima	Japan	34.341184	136.819645
+60	"Imari, Saga Pref., Japan (9 Jun. 2005)"	"Hanyuda et al., 2016"	"H39 (1, AB607180/AB607824), H44 (1)"	H39	1	Imari	Saga Pref.	Japan	33.264456	129.880844
+60	"Imari, Saga Pref., Japan (9 Jun. 2005)"	"Hanyuda et al., 2016"	"H39 (1, AB607180/AB607824), H44 (1)"	H44	1	Imari	Saga Pref.	Japan	33.264456	129.880844
+61	"Teguma, Nagasaki Pref., Japan (6 Jun. 2005)"	"Hanyuda et al., 2016"	H32 (1)	H32	1	Teguma	Nagasaki Pref.	Japan	32.712758	129.846463
+62	"Kuranomoto, Nagashima, Kagoshima Pref., Japan (28 Mar. 2006)"	"Hanyuda et al., 2016"	"H38 (1), H48 (1, AB607177/AB607824)"	H38	1	Kuranomoto	Nagashima	Japan	32.183459	130.166311
+62	"Kuranomoto, Nagashima, Kagoshima Pref., Japan (28 Mar. 2006)"	"Hanyuda et al., 2016"	"H38 (1), H48 (1, AB607177/AB607824)"	H48	1	Kuranomoto	Nagashima	Japan	32.183459	130.166311
+63	"Tajiri, Minami-osumi, Kagoshima Pref., Japan (26 May 2005)"	"Hanyuda et al., 2016"	H5 (2)	H5	2	Tajiri	Minami-osumi	Japan	34.404318	135.278037
+65	"Gampo, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H19 (1, AB607185/AB607819)"	H19	1	Gampo	NA	Korea	35.800440	129.502401
+66	"Kuryongp’o, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H27 (1, AB607185/AB607810), H45 (1)"	H17	1	Kuryongp’o	NA	Korea	35.982493	129.558637
+66	"Kuryongp’o, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H27 (1, AB607185/AB607810), H45 (1)"	H27	1	Kuryongp’o	NA	Korea	35.982493	129.558637
+66	"Kuryongp’o, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H27 (1, AB607185/AB607810), H45 (1)"	H45	1	Kuryongp’o	NA	Korea	35.982493	129.558637
+67	"Wolpo, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H20 (1)"	H17	1	Wolpo	NA	Korea	36.204006	129.366402
+67	"Wolpo, Korea (10 Mar. 2006)"	"Hanyuda et al., 2016"	"H17 (1), H20 (1)"	H20	1	Wolpo	NA	Korea	36.204006	129.366402
+68	"Dae daepo, Korea (11 Mar. 2006)"	"Hanyuda et al., 2016"	"H22 (1, AB607187/AB607816)"	H22	1	Dae daepo	NA	Korea	35.723522	126.676273
+69	"Songdo, Korea (11 Mar. 2006)"	"Hanyuda et al., 2016"	H21 (1)	H21	1	Songdo	NA	Korea	36.036817	129.375069
+70	"Geoje Island, Korea (25 Aug. 2005)"	"Hanyuda et al., 2016"	H42 (2)	H42	1	Geoje Island	NA	Korea	34.974234	128.633740
+71	"Yosu, Korea (11 Mar. 2006)"	"Hanyuda et al., 2016"	"H20 (1), H23 (2, AB607185/AB607814)"	H20	2	Yosu	NA	Korea	34.723485	127.655692
+71	"Yosu, Korea (11 Mar. 2006)"	"Hanyuda et al., 2016"	"H20 (1), H23 (2, AB607185/AB607814)"	H23	1	Yosu	NA	Korea	34.723485	127.655692
+72	"Bangpo, Korea (17 Mar. 2006)"	"Hanyuda et al., 2016"	"H2 (1, AB607176/AB607808), H3 (2, AB607176/AB607807)"	H2	2	Bangpo	NA	Korea	35.678783	126.518634
+72	"Bangpo, Korea (17 Mar. 2006)"	"Hanyuda et al., 2016"	"H2 (1, AB607176/AB607808), H3 (2, AB607176/AB607807)"	H3	1	Bangpo	NA	Korea	35.678783	126.518634

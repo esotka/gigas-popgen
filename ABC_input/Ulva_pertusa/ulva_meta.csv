@@ -1,0 +1,67 @@
+pop,country,source,lonInd,latInd
+Gorishoek,3_Eur,EU,4.076128,51.525986
+Berghse Diepsluis,3_Eur,EU,4.175259,51.51456
+Port of Peninsula,2_wNA,PNW,-122.92179,49.195198
+Roscoff,3_Eur,EU,-3.982898,48.725582
+Grays Harbor,2_wNA,PNW,-123.865883,47.174417
+Lake Notoro,1_Asia,hok,144.150412,44.05796
+Thau Lagoon,3_Eur,EU,3.61638,43.392462
+Zenibako,1_Asia,hok,141.159717,43.14348
+Lake Akkeshi,1_Asia,hok,144.896732,43.046188
+Kikonai,1_Asia,hok,140.43763,41.678439
+Shiriya,1_Asia,hon,141.433867,41.417539
+Asamushi,1_Asia,hon,140.865612,40.889545
+Ahigezaki,1_Asia,hon,141.488296,40.512239
+Nakano,1_Asia,hon,141.826102,40.273087
+Koujin Beach,1_Asia,hon,141.978199,39.870912
+Sanouiwa,1_Asia,hon,141.9827,39.867747
+Hiraiga,1_Asia,hon,142.028678,39.698323
+Kirikiri,1_Asia,hon,141.946058,39.374257
+Shidugawa,1_Asia,hon,141.277271,38.691529
+Benten Cape,1_Asia,nonSource,138.546623,38.007667
+Maze,1_Asia,nonSource,138.954723,37.905923
+Souma,1_Asia,hon,140.964706,37.838577
+Akazumi,1_Asia,nonSource,137.076203,37.190777
+Ouse,1_Asia,hon,140.665039,36.583312
+Kanazawa,1_Asia,nonSource,136.648025,36.57805
+Wolpo,1_Asia,nonSource,129.366402,36.204006
+Oki Island,1_Asia,nonSource,133.270519,36.161605
+Songdo,1_Asia,nonSource,129.375069,36.036817
+Kuryongp’o,1_Asia,nonSource,129.558637,35.982493
+Gampo,1_Asia,nonSource,129.502401,35.80044
+Dae daepo,1_Asia,nonSource,126.676273,35.723522
+Bangpo,1_Asia,nonSource,126.518634,35.678783
+Ogatsu,1_Asia,tok,139.511966,35.658158
+Takeno,1_Asia,nonSource,134.756376,35.649961
+Tamasaki,1_Asia,tok,140.071648,35.530762
+Obama,1_Asia,nonSource,135.744661,35.493828
+Nakaumi,1_Asia,nonSource,133.194394,35.47463
+Izumo,1_Asia,nonSource,132.754883,35.366889
+Nakai,1_Asia,tok,139.220648,35.334473
+Futamachiya,1_Asia,tok,139.601886,35.273166
+Hayama,1_Asia,tok,139.593177,35.272909
+Touji,1_Asia,tok,135.747719,34.980631
+Geoje Island,1_Asia,nonSource,128.63374,34.974234
+Ainohama,1_Asia,tok,139.831684,34.92479
+Gamagori,1_Asia,tok,137.225163,34.833929
+Amagasaki,1_Asia,sea,135.412989,34.7289
+Yosu,1_Asia,nonSource,127.655692,34.723485
+Ie-shima,1_Asia,sea,134.634189,34.717564
+Akashi,1_Asia,sea,134.947693,34.683264
+Kobe Port,1_Asia,sea,135.218887,34.666279
+Oura,1_Asia,tok,138.94131,34.666218
+Iwaya,1_Asia,sea,135.011518,34.599319
+Toba,1_Asia,tok,136.829358,34.471446
+Onyu Is.,1_Asia,sea,132.302395,34.43825
+Tajiri,1_Asia,sea,135.278037,34.404318
+Tonoura,1_Asia,sea,133.203851,34.403937
+Keyano-oto,1_Asia,tok,136.819645,34.341184
+Maruyama,1_Asia,sea,134.65903,34.291671
+Yura,1_Asia,sea,134.95055,34.280936
+Yashiro Is.,1_Asia,sea,132.249072,33.912194
+Tsuyazaki,1_Asia,sea,130.467358,33.787522
+Shikano-shima,1_Asia,sea,130.314252,33.66265
+Imari,1_Asia,kag,129.880844,33.264456
+La Jolla,2_wNA,Cali,-117.274078,32.840162
+Teguma,1_Asia,kag,129.846463,32.712758
+Kuranomoto,1_Asia,kag,130.166311,32.183459

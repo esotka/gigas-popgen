@@ -1,0 +1,2 @@
+library(strataG)
+dat =read.table("dipsmll.351ind.geno_noMissingLoci.txt",header=F)

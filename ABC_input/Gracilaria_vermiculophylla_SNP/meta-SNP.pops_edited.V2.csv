@@ -1,0 +1,36 @@
+Country,Region,pop,Site.Abb.2,source,Latitude,Longitude,site,n.dips,n.mlg,N,MLG_msat,lat.name,long.name,pos
+Japan,JAP,aka,akk,hok,43.02513,144.879657,Chikarakotan Akkeshi Bay,14,14,14,14,42.11,145.85,4
+Japan,JAP,fut,fut,hok,44.04931667,144.2579,Futatsuiwa,16,16,16,16,45.01,144.52,4
+Japan,JAP,mou,mou,hon,38.901194,141.622668,Moune Bay,7,6,8,8,39.41,143.78,4
+Japan,JAP,mng,mng,hon,38.418195,141.413173,Mangoku-ura,14,12,16,15,38.21,146.45,4
+Japan,JAP,sou,sou,hon,38.352839,141.059694,Soukanzan Matsushima Bay,14,12,16,16,36.26,145.48,4
+Japan,JAP,cnt,nag,tok,35.701004,140.8633327,Choshi Nagasaki Tyou,12,11,12,12,35.44,142.38,4
+Japan,JAP,usu,usu,hok,42.515497,140.78618,Usu,16,16,16,16,43.12,139.36,2
+Japan,JAP,hay,hay,nonSource,35.615327,135.906486,Hayase River,14,12,16,16,36.96,135.56,2
+Japan,JAP,hik,hik,kag,31.7321,130.671644,Hikiyama,11,11,11,11,30.48,131.64,4
+Japan,JAP,waj,waj,sea,33.673563,130.426959,Wajiro,16,16,16,16,34.92,130.6,3
+Japan,JAP,shk,shk,sea,33.66313,130.2962,Shika Island,16,16,16,16,33.88,128.44,2
+Non-native,EUR,dhh,hei,EU,54.380225,10.983212,Heiligenhafen,15,3,16,10,52.67,10.72,1
+Non-native,EUR,dhd,dhd,EU,54.363825,10.193674,Heikendorf Kiel,14,11,14,14,53.02842026,8.997037458,2
+Non-native,EUR,dns,nor,EU,54.486315,8.812739,Nordstrand,16,15,16,15,54.15913503,6.533582241,2
+Non-native,EUR,fdm,fdm,EU,48.514599,-1.9698,"Mordreuc, Dinan ",15,12,15,12,50.68989652,-2.768718802,3
+Non-native,EUR,fpl,pol,EU,48.675775,-3.971613,St Pol de L�on,16,3,16,5,49.27650305,-6.886733493,2
+Non-native,EUR,fpa,fpa,EU,47.866948,-4.215873,Pont L'Abb�,15,8,16,11,46.57820642,-5.820461832,2
+Non-native,EUR,far,far,EU,37.027824,-8.022425,Faro,15,3,16,12,38.14924172,-5.489549937,4
+Non-native,EUR,gal,gal,EU,43.328288,-8.37892,A Coru�a,14,3,15,8,43.16036403,-5.085102066,4
+Non-native,EUR,ave,gaf,EU,40.637814,-8.665855,Aveiro,16,10,16,12,40.7447461,-5.416013961,4
+Non-native,ENA,grb,grb,nonSource,43.092076,-70.864714,Great Bay,15,6,16,6,42.9,-69.4,4
+Non-native,ENA,ris,ris,nonSource,41.661794,-71.409895,Sandy Point,16,13,16,13,40.8,-70.4,4
+Non-native,ENA,lhp,lhp,nonSource,41.248826,-72.904226,Lighthouse Point,16,16,16,15,42.09,-73.49,2
+Non-native,ENA,nyc,nyc,nonSource,40.928615,-73.32685,Crab Meadow,16,16,16,16,41.29,-75.06,2
+Non-native,ENA,osh,osh,nonSource,37.284019,-75.409702,Hillcrest Oyster,16,12,16,10,36.49,-75.12,4
+Non-native,ENA,uho,wac,nonSource,37.619458,-75.669593,Upper Haul Over Wachapreague,16,12,16,12,37.57,-73.68,4
+Non-native,ENA,wwf,red,nonSource,37.455851,-75.818625,"Castle Ridge Creek, Willis Wharf ",16,16,16,16,36.93,-73.92,4
+Non-native,ENA,cfj,fjn,nonSource,32.751149,-79.901191,Fort Johnson,15,11,15,11,32.6,-78.2,4
+Non-native,ENA,ebp,par,nonSource,32.317566,-80.703792,Elliot's Beach,16,2,16,8,31.6,-79.59,4
+Non-native,ENA,sav,tyb,nonSource,31.950832,-80.984364,Tybee Cut,16,6,16,8,30.44,-80.55,4
+Non-native,WNA,ptw,ptw,PNW,47.210495,-122.842044,Pt. Wilson,11,8,16,7,47.52,-123.55,2
+Non-native,WNA,pmo,moo,PNW,49.279999,-122.85169,Port Moody,16,3,16,9,49.39,-122.21,4
+Non-native,WNA,tmb,tmb,Cali,38.179647,-122.9093435,Tomales Bay,14,14,15,15,37.61,-123.6,2
+Non-native,WNA,eld,eld,PNW,47.084893,-122.978715,Eld Inlet,15,3,16,1,46.9,-122.27,4
+Non-native,WNA,bob,bob,Cali,38.317774,-123.055447,Bodega Bay,16,3,16,7,38.48,-124.04,2

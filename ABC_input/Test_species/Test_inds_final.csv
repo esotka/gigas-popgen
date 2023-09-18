@@ -1,0 +1,27 @@
+indID,Country,Subregion,popID,Date,latInd,lonInd,AccessionNum,VIR_ID
+ind1,France,Brittany,Bay of Morlaix,27-May-14,48.7487,-3.9062,OM418514,18596
+ind2,France,Brittany,Bay of Morlaix,27-May-14,48.7487,-3.9062,OM418515,18596
+ind3,France,Aquitaine,Jacquets,12-Jun-14,44.722,-1.1887,OM418516,18609
+ind4,France,Aquitaine,Jacquets,12-Jun-14,44.722,-1.1887,OM418517,18609
+ind6,France,Aquitaine,"Arcachon, Legallais",16-Nov-16,44.663914,-1.175977,OM418547,20233
+ind7,France,Aquitaine,"Arcachon, Legallais",16-Nov-16,44.663914,-1.175977,OM418548,20233
+ind11,France,Languedoc-Roussillon,Leucate,26-Jun-14,42.8778,3.0229,OM418522,18634
+ind12,France,Languedoc-Roussillon,Leucate,26-Jun-14,42.8778,3.0229,OM418523,18634
+ind13,Italy,Campania,Ischia Is.,7-Jul-14,40.74439,13.93948,OM418524,18660
+ind14,Italy,Campania,Ischia Is.,7-Jul-14,40.74439,13.93948,OM418525,18660
+ind17,Italy,Apulia,Taranto,15-Jul-14,40.4323,17.2409,OM418527,18672
+ind18,Italy,Apulia,Taranto,15-Jul-14,40.4323,17.2409,OM418528,18672
+ind23,Japan,Hiroshima Prefecture,"Hiroshima Bay, Oonoseto",Jul-11,34.26,132.25,LC101869,22964
+ind24,Japan,Ibaraki Prefecture,Kitaibaraki,Feb-11,36.794,140.7575,LC101870,22965
+ind25,Japan,Miyagi Prefecture,Moune Bay,May-13,38.8965,141.6267,LC101871,22966
+ind26,Japan,Miyagi Prefecture,Onagawa Bay,Jul-11,38.4375,141.4617,LC101872,22967
+ind27,Japan,Miyagi Prefecture,Onagawa Bay,Jul-12,38.4375,141.4617,LC595743,24518
+ind28,Japan,Miyagi Prefecture,Gobu-ura Bay,Aug-11,38.398,141.471,LC101873,22968
+ind29,Japan,Miyagi Prefecture,Gobu-ura Bay,Aug-11,38.398,141.471,LC101874,22968
+ind31,Japan,Nagasaki Prefecture,Tairacho,Sep-09,32.735,129.825,LC101867,22963
+ind32,USA,California,Carlsbad Aquafarm,11-Sep-17,33.1416,-117.3382,OM418554,20710
+ind33,USA,California,Carlsbad Aquafarm,11-Sep-17,33.1416,-117.3382,OM418555,20710
+ind34,USA,California,"San Pedro, Terminal Is.",14-Sep-17,33.73607,-118.26985,OM418556,20715
+ind35,USA,California,"San Pedro, Terminal Is.",14-Sep-17,33.73607,-118.26985,OM418557,20715
+ind36,France,NA,Normandy,NA,49.356118,0.024266,LC682732,NA
+ind37,France,NA,Normandy,NA,49.356118,0.024266,LC682731,NA

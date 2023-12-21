@@ -1,17 +1,18 @@
-gridIDs,pop,vars.lat,vars.lon,vars.coastline,vars.grid.for.model,vars.reg,vars.gridID,vars.plotted.Var1,vars.plotted.Var2,source,reg
-32543,Ariake,32.5, 130.5,1,1,1_Asia,32543,11, 4,kag,1_Asia
-  913,Bolinus,37.5,-122.5,1,1,2_wNA,  913,11,10,Cali,Cali
-  776,Boundary,49.5,-123.5,1,1,2_wNA,  776,21, 9,PNW,PNW
- 1039,Elkhorn,36.5,-121.5,1,1,2_wNA, 1039,15,10,Cali,Cali
-33041,Ibo,34.5, 134.5,1,1,1_Asia,33041,15, 5,sea,1_Asia
-33041,Kasuga,34.5, 134.5,1,1,1_Asia,33041,15, 5,sea,1_Asia
-33291,Kumode,34.5, 136.5,1,1,1_Asia,33291, 5, 6,tok,1_Asia
-33912,Mangoku,38.5, 141.5,1,1,1_Asia,33912,19, 7,hon,1_Asia
-33788,Matsukawa,37.5, 140.5,1,1,1_Asia,33788, 8, 7,hon,1_Asia
-33912,Matsushima,38.5, 141.5,1,1,1_Asia,33912,19, 7,hon,1_Asia
-33912,Nagazura,38.5, 141.5,1,1,1_Asia,33912,19, 7,hon,1_Asia
-33665,Obitsu,35.5, 139.5,1,1,1_Asia,33665,20, 6,tok,1_Asia
-  902,Padila,48.5,-122.5,1,1,2_wNA,  902, 8,10,PNW,PNW
-33661,Toga,39.5, 139.5,1,1,1_Asia,33661,17, 6,nonSource,1_Asia
-33787,Torinoumi,38.5, 140.5,1,1,1_Asia,33787, 7, 7,hon,1_Asia
-33911,Yamada,39.5, 141.5,1,1,1_Asia,33911,18, 7,hon,1_Asia
+pop,vars.lat,vars.lon,source,reg
+Ariake,32.5,130.5,kag,1_Asia
+Bolinus,37.5,-122.5,Cali,Cali
+Boundary,49.5,-123.5,PNW,PNW
+Elkhorn,36.5,-121.5,Cali,Cali
+Ibo,34.5,134.5,sea,1_Asia
+Kasuga,34.5,134.5,sea,1_Asia
+Kumode,34.5,136.5,tok,1_Asia
+Mangoku,38.5,141.5,hon,1_Asia
+Matsukawa,37.5,140.5,hon,1_Asia
+Matsushima,38.5,141.5,hon,1_Asia
+Nagazura,38.5,141.5,hon,1_Asia
+Obitsu,35.5,139.5,tok,1_Asia
+Padila,48.5,-122.5,PNW,PNW
+Toga,39.5,139.5,nonSource,1_Asia
+Torinoumi,38.5,140.5,hon,1_Asia
+Yamada,39.5,141.5,hon,1_Asia
+Hiroshima,34.343409,132.326668,sea,1_Asia

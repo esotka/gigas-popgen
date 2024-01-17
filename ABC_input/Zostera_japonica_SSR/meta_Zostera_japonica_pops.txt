@@ -32,4 +32,4 @@ XSW	XSW	 China	Xiangshan Wetland Taiwan Island	24.77722222	120.9125	32	13	12
 Yaq	Yaqu	America	Yaquina Bay OR	44.58083333	-123.9947222	32	12	12
 Yon	Yon	South Korea	Yongbuk Koje Island Busan	35.44944444	128.5958333	6	7	0
 YRD	YRD	China	Yellow River Delta Donying	37.71916667	119.1636111	32	12	12
-	Yul	South Korea	Yulpo Koje Island Busan	34.76777778	128.5958333	0	10	13
+XXX	Yul	South Korea	Yulpo Koje Island Busan	34.76777778	128.5958333	0	10	13

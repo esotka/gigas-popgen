@@ -1,35 +1,35 @@
-usatCode,pop,Region,PopName,Latitude,Longitude,source,N_usat,N_matK,N_ITS
-Ago,Ago,Japan,Ago Bay Mie,34.30083333,136.8472222,,32,13,13
-BGI,BGI, China,Beigang Island Haikou,20.015,110.5625,,30,12,12
+pop,longpop,Region,PopName,Latitude,Longitude,source,N_usat,N_matK,N_ITS
 Bir,Birch,America,Birch Bay WA,48.90194444,-122.7738889,PNW,31,11,12
 Coo,Coos,America,Coos Bay OR,43.31472222,-124.3191667,PNW,32,12,12
-GMW,GMW, China,Gaomei Wetland Taiwan Island,24.31583333,120.5438889,,26,12,12
-Hir,Hir,Japan,Jigozen Hiroshima bay Japan ,34.33388889,132.3208333,,9,7,0
-HK,HK, China,Laichiwo Hongkong,22.05583333,114.2694444,,30,11,12
-HQB,HQB,China,Huiquan Bay Qingdao,36.05138889,120.3380556,,24,12,12
 Hum,Humb,America,Humboldt Bay CA,40.85805556,-124.1575,Cali,6,6,3
-HXI,HXI,China,Haxian Island Dalian,39.23361111,122.5208333,,31,12,11
-JQ,JQ, China,Jiangmei and Qitou Penghu Island,23.64916667,119.6044444,,20,10,2
-Kat,Kat,Japan,Katsura-jima Island Miyagi,38.33555556,141.0872222,,31,14,16
-Lid,Lid,Japan,Lida Bay Noto Penisula Japan,37.43305556,137.2583333,,32,13,6
-Nan,Nan,Japan,Nanao bay Noto Penisula Japan,37.20305556,136.9066667,,21,12,14
 Net,Neta,America,Netarts Bay OR,45.41027778,-123.9352778,PNW,32,11,12
-Not,Not,Japan,Notoro Lake Abashiri Hokaido,44.09972222,143.87,,32,11,12
-Oha,Oha,Japan,Ohashi River  Shimane,34.80111111,133.1125,,32,12,12
-Oki,Oki,Japan,Okinawa Island Japan,26.3475,127.8852778,,24,12,12
-Onn,Onn,Japan,Onneto Lake Nemuro Hokaido,43.26305556,145.4911111,,31,12,12
 Pad,Padi,America,Padilla WA,48.48055556,-122.4769444,PNW,31,12,10
-PEB,PerB, China,Perl  Bay Fangchenggang,21.59777778,108.2127778,,31,11,12
-Sar,Sar,Japan,Saroma Lake Abashiri Hokaido,44.06888889,144.1938889,,32,4,0
-SCI,SCI, China,Shangchuandao Island Taishan,21.65611111,112.7633333,,15,10,12
-SLL,SLL,China,Swan Lake Rongcheng,37.35027778,122.5794444,,32,12,12
-Tok,Tok,Japan,Tokyo Bay Tokyo,35.31277778,139.8136111,,31,11,12
-WDP,WDP, China,Wude Port Penghu Island,23.52861111,119.5966667,,32,9,12
 Wil,Willa,America,Willapa Bay WA,46.72777778,-123.9516667,PNW,31,12,12
-WJR,WJR, China,Wujiang River Kinmen Island,24.42666667,118.3094444,,30,12,12
-XCh,Xch,China,Xingcheng,40.40361111,120.6047222,,30,11,11
-XSW,XSW, China,Xiangshan Wetland Taiwan Island,24.77722222,120.9125,,32,13,12
 Yaq,Yaqu,America,Yaquina Bay OR,44.58083333,-123.9947222,PNW,32,12,12
-Yon,Yon,South Korea,Yongbuk Koje Island Busan,35.44944444,128.5958333,,6,7,0
-YRD,YRD,China,Yellow River Delta Donying,37.71916667,119.1636111,,32,12,12
-XXX,Yul,South Korea,Yulpo Koje Island Busan,34.76777778,128.5958333,,0,10,13
+BGI,BGI,China,Beigang Island Haikou,20.015,110.5625,nonSource,30,12,12
+GMW,GMW,China,Gaomei Wetland Taiwan Island,24.31583333,120.5438889,nonSource,26,12,12
+HK,HK,China,Laichiwo Hongkong,22.05583333,114.2694444,nonSource,30,11,12
+HQB,HQB,China,Huiquan Bay Qingdao,36.05138889,120.3380556,nonSource,24,12,12
+HXI,HXI,China,Haxian Island Dalian,39.23361111,122.5208333,nonSource,31,12,11
+JQ,JQ,China,Jiangmei and Qitou Penghu Island,23.64916667,119.6044444,nonSource,20,10,2
+PEB,PerB,China,Perl  Bay Fangchenggang,21.59777778,108.2127778,nonSource,31,11,12
+SCI,SCI,China,Shangchuandao Island Taishan,21.65611111,112.7633333,nonSource,15,10,12
+SLL,SLL,China,Swan Lake Rongcheng,37.35027778,122.5794444,nonSource,32,12,12
+WDP,WDP,China,Wude Port Penghu Island,23.52861111,119.5966667,nonSource,32,9,12
+WJR,WJR,China,Wujiang River Kinmen Island,24.42666667,118.3094444,nonSource,30,12,12
+XCh,Xch,China,Xingcheng,40.40361111,120.6047222,nonSource,30,11,11
+XSW,XSW,China,Xiangshan Wetland Taiwan Island,24.77722222,120.9125,nonSource,32,13,12
+YRD,YRD,China,Yellow River Delta Donying,37.71916667,119.1636111,nonSource,32,12,12
+Ago,Ago,Japan,Ago Bay Mie,34.30083333,136.8472222,tok,32,13,13
+Hir,Hir,Japan,Jigozen Hiroshima bay Japan ,34.33388889,132.3208333,sea,9,7,0
+Kat,Kat,Japan,Katsura-jima Island Miyagi,38.33555556,141.0872222,hon,31,14,16
+Lid,Lid,Japan,Lida Bay Noto Penisula Japan,37.43305556,137.2583333,nonSource,32,13,6
+Nan,Nan,Japan,Nanao bay Noto Penisula Japan,37.20305556,136.9066667,nonSource,21,12,14
+Not,Not,Japan,Notoro Lake Abashiri Hokaido,44.09972222,143.87,hok,32,11,12
+Oha,Oha,Japan,Ohashi River  Shimane,34.80111111,133.1125,nonSource,32,12,12
+Oki,Oki,Japan,Okinawa Island Japan,26.3475,127.8852778,nonSource,24,12,12
+Onn,Onn,Japan,Onneto Lake Nemuro Hokaido,43.26305556,145.4911111,hok,31,12,12
+Sar,Sar,Japan,Saroma Lake Abashiri Hokaido,44.06888889,144.1938889,hok,32,4,0
+Tok,Tok,Japan,Tokyo Bay Tokyo,35.31277778,139.8136111,tok,31,11,12
+XXX,Yul,South Korea,Yulpo Koje Island Busan,34.76777778,128.5958333,nonSource,0,10,13
+Yon,Yon,South Korea,Yongbuk Koje Island Busan,35.44944444,128.5958333,nonSource,6,7,0

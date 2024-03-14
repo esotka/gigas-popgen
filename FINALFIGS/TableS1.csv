@@ -1,0 +1,42 @@
+pop,Abbreviation,Region,Region2,NatNon,Date_of_Collection,Latitude,Longitude,Collector,BO_sstmean,n,Ho,Hs,Fis,mean.rsq,mean.exp.rsq,Ne,Ne.lci,Ne.hci
+AKK,Akkeshi,Japan,Akkeshi,Native,17-Aug,43.02131,144.836622,Yorisue/Nakaoka,8.44299984,27,0.186,0.142,-0.136,0.042,0.041,567,472,708
+ALB,Alamitos Bay LA County - 2nd street,soCal,soCalifornia,Introduced,,33.746239,-118.135526,Zacherl,17.18400002,19,0.192,0.146,-0.149,0.062,0.062,788,556,1340
+BAN,Banzu Tidalflat in Tokyo Bay (Kisarazu city),Japan,Tokyo,Native,9-Jun-17,35.41246,139.902977,Kanaya,18.20400047,23,0.191,0.146,-0.14,0.05,0.05,3468,1417,Inf
+BBH,Bahia Blanca Harbor (BB),Argentina,Argentina,Introduced,,-38.78497,-62.29695,Schwindt,16.77199936,18,0.185,0.14,-0.172,0.067,0.066,441,352,590
+BOI,Waikare Inlet Bay of Islands (from Oyster World),New Zealand,New Zealand,Introduced,10-Sep-17,-35.31,174.18,Taylor,18.2159996,20,0.189,0.144,-0.15,0.058,0.058,1812,958,16100
+BOU,Boursefranc (Pertuis d'Antioche),France,soEurope,Introduced,11-Jul-17,45.85504,-1.170636,Pante,14.9090004,7,0.186,0.142,-0.19,0.227,0.222,63,55,73
+CHI,Chile,Chile,Chile,Introduced,8-Oct-19,-30.244331,-71.491032,Martin Thiel & Jim Carlton,15.65400028,18,0.186,0.138,-0.197,0.083,0.066,17,17,17
+CLE,Clevedon (from Clevedon Coast Oysters),New Zealand,New Zealand,Introduced,4-Oct-17,-36.94,175.11,Taylor,18.10099983,18,0.191,0.145,-0.156,0.066,0.066,1842,907,Inf
+ESN,Esnandes (Aiguillon Bay Pertuis Breton),France,soEurope,Introduced,11-Jul-17,46.24123,-1.219623,Pante,14.6960001,9,0.186,0.142,-0.176,0.158,0.157,303,213,522
+ESP,Espasante_Galicia,Spain,soEurope,Introduced,,43.72127,-7.814205,Couceiro,15.14599991,20,0.184,0.141,-0.141,0.058,0.058,2336,1086,Inf
+GAN,Gandario,Spain,soEurope,Introduced,,43.34252,-8.23345,Couceiro,15.91600037,10,0.192,0.147,-0.168,0.138,0.137,393,267,742
+GOS,GoseongBay,Korea,nonSource,Native,1-Jun-17,34.9555,128.3257,Lee,18.24500084,13,0.187,0.143,-0.158,0.098,0.098,Inf,1233,Inf
+GRC,Grand Caribe San Diego Bay,soCal,soCalifornia,Introduced,,32.62674,-117.129703,Zacherl,17.29899979,10,0.189,0.145,-0.172,0.137,0.137,1201,492,Inf
+GWG,Gwanyang,Korea,nonSource,Native,1-Jun-17,34.94519,127.77932,Lee,17.81800079,25,0.187,0.143,-0.138,0.045,0.045,1707,1034,4830
+HIR,Hiroshima_Japan,Japan,Seto,Native,,34.27547,132.266519,Hori,19.8239994,24,0.193,0.147,-0.143,0.047,0.047,3102,1388,Inf
+HOD,HoodCanal_HammaHammaRiver_NorthShore,NW America,PNW,Introduced,25-Jun-17,47.54666,-123.041383,Ruesink,9.414999962,10,0.191,0.145,-0.172,0.139,0.137,133,114,159
+KOJ,Koje Bay,Korea,nonSource,Native,1-Jun-17,34.7991,128.5829,Lee,17.79400063,26,0.197,0.15,-0.145,0.044,0.043,1247,857,2280
+LDY,Ladysmith British Columbia,NW America,PNW,Introduced,8-Aug-17,48.99065,-123.808072,Ruesink,11.45100021,19,0.189,0.144,-0.149,0.062,0.062,1997,978,Inf
+LHE,L’Herbe (Arcachon Bay),France,soEurope,Introduced,24-Jul-17,44.68641,-1.233772,Pante,15.74300003,15,0.186,0.143,-0.152,0.082,0.082,6059,1161,Inf
+LOS,Lough Swill,Ireland,noEurope,Introduced,year 2008,55.0206,-7.577,Strand,10.12199974,16,0.182,0.138,-0.182,0.077,0.076,225,195,265
+MAH,Dyers Creek Mahurangi (from Matakana Oysters),New Zealand,New Zealand,Introduced,26-Sep-17,-36.46,174.71,Taylor,17.70299911,18,0.196,0.149,-0.154,0.066,0.066,965,626,2080
+MAI,Maizuru,Japan,nonSource,Native,Fall 2021,35.515338,135.336001,Yorisue,18.65800095,4,0.186,0.135,-0.298,0.876,0.506,0,0,0
+MAL,Matsukawaura Lagoon (A branch Bay of Sendai Bay),Japan,Miyagi,Native,28-May-17,37.82314,140.954988,Kanaya,14.81799984,24,0.186,0.142,-0.137,0.047,0.047,2420,1232,57700
+MAT,Matsushima Bay (A branch Bay of Sendai Bay),Japan,Miyagi,Native,24-Jul-17,38.35186,141.058982,Kanaya,14.80200005,27,0.187,0.143,-0.135,0.042,0.041,4803,1796,Inf
+MON,Nishi Mone Bay (A branch Bay of Kesennuma Bay),Japan,Miyagi,Native,30-May-17,38.90008,141.624736,Kanaya,14.04800034,29,0.189,0.144,-0.133,0.038,0.038,4761,1880,Inf
+NEW,NewportBay Orange County - 15th street,soCal,soCalifornia,Introduced,,33.60813,-117.92009,Zacherl,17.46299934,19,0.19,0.145,-0.15,0.062,0.062,813,569,1420
+OHK,Ohkamo River in Izu Peninsura (Shimoda city),Japan,Tokyo,Native,6-Aug-17,34.65528,138.918478,Kanaya,20.29599953,15,0.192,0.147,-0.155,0.082,0.082,Inf,1971,Inf
+OKA,Okayama_Japan,Japan,Seto,Native,,34.45628,133.896859,Hori,18.87800026,23,0.194,0.148,-0.144,0.05,0.05,1075,740,1960
+OTA,Oita_Japan,Japan,Seto,Native,,33.62537,131.193653,Hori,19.86499977,27,0.194,0.148,-0.136,0.042,0.041,1076,781,1720
+PES,Los Penasquitos Lagoon Coast hwy,soCal,soCalifornia,Introduced,,32.93318,-117.259885,Crooks,18.13500023,16,0.187,0.144,-0.149,0.076,0.076,Inf,1780,Inf
+QB2,Quilcene - Hood Canal,NW America,PNW,Introduced,Fall 2021,47.793347,-122.856315,Hilary Heyford,10.21000004,20,0.184,0.141,-0.148,0.058,0.058,2564,1132,Inf
+SAM,Same River in Iwaki City,Japan,Miyagi,Native,14-Jul-17,36.90936,140.816924,Kanaya,16.66300011,25,0.187,0.144,-0.136,0.045,0.045,5954,1826,Inf
+SAR,Lake Saroma,Japan,Akkeshi,Native,17-Aug,44.12084,143.966724,Yorisue/Nakaoka,7.880000114,26,0.185,0.141,-0.143,0.043,0.043,2507,1311,26900
+SBB,San Blas Bay (SB),Argentina,Argentina,Introduced,,-40.5394,-62.252666,Schwindt,15.39099979,16,0.183,0.14,-0.167,0.076,0.076,648,454,1130
+SVA,Svallhagen,Sweden,noEurope,Introduced,year 2013,58.8684,11.1551,Strand/Kochmann,9.777999878,18,0.187,0.143,-0.164,0.067,0.066,489,382,676
+TJE,TJE Boca Rio,soCal,soCalifornia,Introduced,,32.5595,-117.129165,Crooks,17.45100021,11,0.188,0.144,-0.167,0.121,0.121,Inf,1014,Inf
+TRO,Tromlingene,Norway,noEurope,Introduced,year 2013,58.4748,8.9067,Strand,10.49499989,16,0.187,0.142,-0.171,0.077,0.076,486,368,712
+WAD,Wadden Sea,Denmark,noEurope,Introduced,year 2013,55.1859,8.6222,Strand,9.973999977,19,0.191,0.144,-0.173,0.063,0.062,338,286,412
+WLB,WillapaBay_Nahcotta,NW America,PNW,Introduced,20-May-17,46.46874,-124.023696,Ruesink,11.56400013,12,0.181,0.139,-0.16,0.108,0.108,Inf,1932,Inf
+YOJ,Yojiro Kagoshima,Japan,Kagoshima,Native,10-Aug-17,31.55863,130.562861,Terada/Endo,22.56599998,1,0.186,NA,NA,NA,NA,NA,NA,NA
+YUR,Yura_Sumoto_HyogoPrefecture,Japan,Seto,Native,8-May-17,34.27394,134.953667,Kamiya,19.22900009,13,0.191,0.146,-0.161,0.098,0.098,1547,673,Inf

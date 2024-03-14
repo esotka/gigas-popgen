@@ -3,19 +3,17 @@ rm(list=ls())
 library(circlize)
 library(colorRamps)
 
-tbl = read.csv("shipTbl30__matrix.csv")
-rownames(tbl) = tbl$X; tbl = tbl[,-1]
-tbl = tbl[,c("EU","PNW","Cali")]
-tbl = tbl[c("hok","hon","tok","sea","kag"),]
+load("ShippingLogs/shipping_routes.rda")
 print(tbl)
 mat <- as.matrix(tbl)
+mat <- mat[c(1,2,4,3,5),]
 mat <- mat+0.1
-#rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima")
-#colnames(mat) <- c("soEurope","noEurope","NZ","nAM_north","nAM_south")
+rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima")
+colnames(mat) <- c("soEurope","noEurope","NZ","nAM_north","nAM_south")
 
 cols.to.use <- c(blue2red(5),rep("grey",ncol(mat)))
 
-pdf("ShippingCirclizePlot.pdf",width=10,height=10)
+pdf("ShippingLogs/ShippingCirclizePlot.pdf",width=10,height=10)
 circos.clear()
 circos.par(gap.after = c(rep(5,5),15,rep(5,5),15),start.degree = 90, gap.degree = 4)
 
@@ -31,6 +29,7 @@ chordDiagram(x = mat,
              link.arr.length =  0.15,
              diffHeight = -0.001,
              preAllocateTracks = list(track.height = max(strwidth(unlist(dimnames(mat))))))
+mtext("shipping",line=-5,cex=2)
 circos.track(track.index = 1, panel.fun = function(x, y) {
   xlim = get.cell.meta.data("xlim")
   xplot = get.cell.meta.data("xplot")

@@ -1,0 +1,5 @@
+###
+### quick visualization of BF plots
+###
+dat = read.csv("rfBayesFactor.csv")
+dat$species=gsub("-","",dat$species)

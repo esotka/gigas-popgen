@@ -3,7 +3,7 @@ rm(list=ls())
 library(circlize)
 library(colorRamps)
 
-tbl = read.csv("shipTbl30__matrix.csv")
+tbl = read.csv("gigas_matrix.csv")
 rownames(tbl) = tbl$X; tbl = tbl[,-1]
 tbl = tbl[,c("EU","PNW","Cali")]
 tbl = tbl[c("hok","hon","tok","sea","kag"),]
@@ -15,7 +15,7 @@ mat <- mat+0.1
 
 cols.to.use <- c(blue2red(5),rep("grey",ncol(mat)))
 
-pdf("ShippingCirclizePlot.pdf",width=10,height=10)
+pdf("gigasCirclizePlot.pdf",width=10,height=10)
 circos.clear()
 circos.par(gap.after = c(rep(5,5),15,rep(5,5),15),start.degree = 90, gap.degree = 4)
 

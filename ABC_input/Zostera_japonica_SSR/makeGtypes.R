@@ -21,7 +21,12 @@ for (p in unique(ingen$pop))
                     ingen[lmiss$row[i],lmiss$col[i]] = sample(sset,1)
                 }
     }
-gt = df2gtypes(ingen,ploidy=2)
+
+
 meta=read.csv("zostera_meta.csv")
+meta=meta[meta$source!="nonSource",]
+
+gt = df2gtypes(ingen[ingen$pop%in%meta$pop,],ploidy=2)
+
 if (all(meta$pop %in% getStrata(gt))&all(getStrata(gt)%in%meta$pop))
     saveRDS(file="Zostera_japonica_SSR_gtype",gt)

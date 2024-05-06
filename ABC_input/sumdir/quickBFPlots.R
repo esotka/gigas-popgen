@@ -27,6 +27,12 @@ prior = prior[,names(prior)!="probShip"]
 
 prior = merge(prior,dirSpecies)
 
+scat = merge(dat,prior) %>% mutate(postShip=1-plotpost) %>% group_by(species, type, prior) %>%
+    summarise(postShip = mean(postShip), priorShip = mean(priorShip)) %>% filter(type=="untrans")
+
+
+ggplot(scat,aes(x=postShip,y=priorShip,color=species)) + geom_point() + facet_wrap(~prior) +  geom_hline(yintercept=0.5) + geom_vline(xintercept=0.5)
+
 dat = dat%>%
 #    filter(!grepl("SNP",species),!grepl("SSR",species))%>%
     group_by(species,type,prior) %>%

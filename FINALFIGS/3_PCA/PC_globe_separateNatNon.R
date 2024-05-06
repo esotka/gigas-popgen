@@ -26,36 +26,48 @@ natnon <- natnon[!(natnon$pop=="YOJ" | natnon$reg=="nonSource"),]
 natnon$reg <- factor(natnon$reg)
 natnon$reg <- factor(natnon$reg,levels=levels(natnon$reg)[c(1,4,11,8,5,3,2,7,9,6,10)])
 ## PRINT THIS TO A FILE
-ggplot(natnon,aes(x = pc1, y = reg)) + geom_density_ridges_gradient(scale=.8) + coord_flip() 
+library(ggplot2)
+library(ggridges)
+f1= ggplot(natnon,aes(x = pc1, y = reg, fill = stat(x))) + geom_density_ridges_gradient(scale=.8) + scale_fill_viridis_c(name = "PC1", option = "C") + coord_flip() 
+pdf("FINALFIGS/3_PCA/PC_histograms_assignments.pdf"); plot(f1); dev.off()
 
+library(colorRamps)
 #quartz(width=6,height=6)
 png("FINALFIGS/3_PCA/PC_globe_separateNatNon.png",width=6,height=6,units="in",res=500)
 par(mar=c(2,4,2,4))
 #par(mfrow=c(1,2),mar=c(0,0,0,0))
 plot(x=pca1$x[,2],y=pca1$x[,1],cex=0,xaxt="none",yaxt="none",ylab="",xlab="")
 xbar <- aggregate(pca1$x[,1:2],by=list(nat.pop),mean)
-xbar$GeneticRegions <- meta$GeneticRegions[match(xbar$Group.1,meta$pop)]
+xbar$GeneticRegions <- meta$Region2[match(xbar$Group.1,meta$pop)]
+cols.to.use <- c(blue2red(5),"black")
+names(cols.to.use) <- c("Akkeshi","Miyagi","Tokyo","Seto","Kagoshima","nonSource")
+xbar$pc1.cols = cols.to.use[match(xbar$GeneticRegions,names(cols.to.use))]
 xbar$pc1.Rounded <- round(xbar$PC1+abs(min(xbar$PC1)),0)+1
-xbar$pc1.cols <- blue2red(n = max(xbar$pc1.Rounded))[max(xbar$pc1.Rounded):1][xbar$pc1.Rounded]
+#xbar$pc1.cols <- grey.colors(n = max(xbar$pc1.Rounded))[max(xbar$pc1.Rounded):1][xbar$pc1.Rounded]
+library(RColorBrewer)
+#xbar$pc1.cols <- blue2red(n = max(xbar$pc1.Rounded))[max(xbar$pc1.Rounded):1][xbar$pc1.Rounded]
+#xbar$pc1.Rounded[xbar$pc1.Rounded>9] = 9
+#xbar$pc1.cols <- brewer.pal(n = 9,"Oranges")[1:max(xbar$pc1.Rounded)][xbar$pc1.Rounded]
 ### predict ###
 introPredict4 <- predict(pca1,newdata=non)
 xbar.IntroPredict <- aggregate(introPredict4[,1:2],by=list(non.pop),mean)
 xbar.IntroPredict$pc1.Rounded <- round(xbar.IntroPredict$PC1+abs(min(xbar$PC1)),0)+1
 xbar.IntroPredict$pc1.cols <- xbar$pc1.cols[match(xbar.IntroPredict$pc1.Rounded,xbar$pc1.Rounded)]
 
-xbar$pc1.cols[xbar$Group.1=="MAI"] <- "grey"
-xbar$pc1.cols[xbar$GeneticRegions=="Korea"] <- "black"
+#xbar$pc1.cols[xbar$Group.1=="MAI"] <- "grey"
+xbar$pc1.cols[xbar$Group.1%in%c("GWG","GOS","KOJ","MAI")] <- "black"
 
 popPts <- xbar[match(nat.pop,xbar$Group.1),]
 seg_col <- xbar$pc1.cols[match(nat.pop,as.character(xbar$Group.1))]
-segments(x0 = -pca1$x[,2],y0=pca1$x[,1],x1=-popPts$PC2,y1=popPts$PC1,col=alpha(seg_col,0.2))#,col=alpha(col.sub,.5))
+segments(x0 = -pca1$x[,2],y0=pca1$x[,1],x1=-popPts$PC2,y1=popPts$PC1,col=alpha(seg_col,0.2),lwd=2)#,col=alpha(col.sub,.5))
 points(x=-xbar$PC2,y=xbar$PC1,pch=20,cex=4,col=xbar$pc1.cols)
-xbar$popTextCol <- c("black","white")[factor(xbar$GeneticRegions=="Korea")]
-xbar$popTextCol[xbar$Group.1=="SAR"] <- "white"
+#xbar$popTextCol <- c("black","white")[factor(xbar$GeneticRegions=="Korea")]
+xbar$popTextCol = "black"
+xbar$popTextCol[xbar$Group.1%in%c("SAR","GOS","GWG","KOJ","MAI","AKK")] <- "white"
 text(x=-xbar$PC2,y=xbar$PC1,xbar$Group.1,cex=.5,col=xbar$popTextCol)
-popPts <- xbar.IntroPredict[match(non.pop,xbar.IntroPredict$Group.1),1:3]
-segments(x0 = -introPredict4[,2],y0=introPredict4[,1],x1=-popPts$PC2,y1=popPts$PC1,col=alpha(xbar.IntroPredict$pc1.cols,.1))
-points(x=-xbar.IntroPredict$PC2,y=xbar.IntroPredict$PC1,col=xbar.IntroPredict$pc1.cols,pch=21,lwd=2)
+#popPts <- xbar.IntroPredict[match(non.pop,xbar.IntroPredict$Group.1),1:3]
+#segments(x0 = -introPredict4[,2],y0=introPredict4[,1],x1=-popPts$PC2,y1=popPts$PC1,col=alpha(xbar.IntroPredict$pc1.cols,.1))
+#points(x=-xbar.IntroPredict$PC2,y=xbar.IntroPredict$PC1,col=xbar.IntroPredict$pc1.cols,pch=21,lwd=2)
 
 out <- summary(pca1)
 perc.pc1 <- round(out$importance[2,1],3)*100

@@ -47,6 +47,16 @@ f4 = ggplot(pca1_mat_sub,aes(x=PC1,y=factor(nat.pop_sub),fill=factor(nat.pop_sub
      scale_fill_cyclical(values = xbar$pc1.cols[match(levels(nat.pop_sub),xbar$Group.1)])+
      theme_minimal()#+ 
 
+pop_non <- meta$pop[meta$NatNon=="Introduced"]
+non = geno[pop%in%pop_non,]
+non.pop <- substr(rownames(non),1,3)
+non.reg <- meta$Region2[match(non.pop,meta$pop)]
+
+introPredict4 <- predict(pca1,newdata=non)
+intro_xbar = data.frame(PC1 = tapply(introPredict4[,1],non.pop,mean),
+     PC2 = tapply(introPredict4[,2],non.pop,mean))
+intro_xbar$reg = meta$Region2[match(rownames(intro_xbar),meta$pop)]
+f1 = f1 + geom_point(data=intro_xbar,aes(x=PC2,y=PC1),size=4,pch=21,col="darkgrey")
 
 
 ### PC and assignment on Akkeshi (SAR only) + Miyagi, Seto and Tokyo (remove AKK and YOJ) ###
@@ -108,10 +118,20 @@ f3= ggplot(df,aes(x = pc1, y = reg, fill = reg)) +
      scale_fill_cyclical(values = as.character(c(cols.to.use,rep("grey",7)))) +
      theme_minimal()
 
-#quartz()
-png("FINALFIGS/3_PCA/PC-all.png",width=5,height=5,units="in",res=400); f1; dev.off()
+intro_xbar = data.frame(PC1 = -tapply(introPredict4[,1],non.pop,mean),
+     PC2 = tapply(introPredict4[,2],non.pop,mean))
+intro_xbar$reg = meta$Region2[match(rownames(intro_xbar),meta$pop)]
+f2 = f2 + geom_point(data=intro_xbar,aes(x=PC2,y=PC1),size=4,pch=21,col="darkgrey")
+# annotate("text",x=intro_xbar$PC2,y=intro_xbar$PC1,label = substr(intro_xbar$reg,1,2),cex=2)
 
-png("FINALFIGS/3_PCA/PC-histograms_japan.png",width=5,height=5,units="in",res=400); f4; dev.off()
+#quartz()
+png("FINALFIGS/3_PCA/PC-all.png",width=5,height=5,units="in",res=400)
+print(f1)
+dev.off()
+ 
+png("FINALFIGS/3_PCA/PC-histograms_japan.png",width=5,height=5,units="in",res=400)
+print(f4)
+dev.off()
 
 png("FINALFIGS/3_PCA/PC+Histogram.png",width=9,height=5,units="in",res=400)
 grid.arrange(grobs = list(f2,f3),nrow=1,padding=0)#layout_matrix = c(1,2,2))

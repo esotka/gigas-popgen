@@ -56,7 +56,9 @@ introPredict4 <- predict(pca1,newdata=non)
 intro_xbar = data.frame(PC1 = tapply(introPredict4[,1],non.pop,mean),
      PC2 = tapply(introPredict4[,2],non.pop,mean))
 intro_xbar$reg = meta$Region2[match(rownames(intro_xbar),meta$pop)]
-f1 = f1 + geom_point(data=intro_xbar,aes(x=PC2,y=PC1),size=4,pch=21,col="darkgrey")
+intro_xbar$reg2 = as.factor(intro_xbar$reg)
+intro_xbar$symbols = c(21,21,23,21,21,22,21)[intro_xbar$reg2]
+f1 = f1 + geom_point(data=intro_xbar,aes(x=PC2,y=PC1),size=3,pch=intro_xbar$symbols,col="darkgrey")
 
 
 ### PC and assignment on Akkeshi (SAR only) + Miyagi, Seto and Tokyo (remove AKK and YOJ) ###

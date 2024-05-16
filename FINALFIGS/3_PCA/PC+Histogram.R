@@ -121,7 +121,9 @@ f3= ggplot(df,aes(x = pc1, y = reg, fill = reg)) +
 intro_xbar = data.frame(PC1 = -tapply(introPredict4[,1],non.pop,mean),
      PC2 = tapply(introPredict4[,2],non.pop,mean))
 intro_xbar$reg = meta$Region2[match(rownames(intro_xbar),meta$pop)]
-f2 = f2 + geom_point(data=intro_xbar,aes(x=PC2,y=PC1),size=4,pch=21,col="darkgrey")
+intro_xbar$reg2 = as.factor(intro_xbar$reg)
+intro_xbar$symbols = c(21,21,23,21,21,22,21)[intro_xbar$reg2]
+f2 = f2 + geom_point(data=intro_xbar,aes(x=PC2,y=PC1),size=2,pch=intro_xbar$symbols,col="black")
 # annotate("text",x=intro_xbar$PC2,y=intro_xbar$PC1,label = substr(intro_xbar$reg,1,2),cex=2)
 
 #quartz()

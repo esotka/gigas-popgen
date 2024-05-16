@@ -2,13 +2,15 @@
 ### SST + SAT from BioOracle marine dataset.
 rm(list=ls())
 library(raster)
+library(colorRamps)
+library(ggplot2)
 library(gplots)
 meta <- read.csv("FINALFIGS/gigas_meta_41pop_env_FINAL.csv")
 cols.to.use <- c(blue2red(5))
 names(cols.to.use) <- c("Akkeshi","Miyagi","Tokyo","Seto","Kagoshima")
 meta$cols.to.use = cols.to.use[match(meta$Region2,names(cols.to.use))]
-meta$cols.to.use[is.na(meta$cols.to.use)] = "grey"
-meta$cols.to.use[meta$Region=="Korea"] = "black"
+meta$cols.to.use[is.na(meta$cols.to.use)] = "black"
+#meta$cols.to.use[meta$Region=="Korea"] = "black"
 meta$popTextCol <- c("black","white")[factor(meta$Region2=="nonSource")]
 meta$popTextCol[meta$Region2=="Akkeshi"] <- "white"
 

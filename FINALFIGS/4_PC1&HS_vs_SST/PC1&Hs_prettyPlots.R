@@ -33,7 +33,7 @@ introPredict <- predict(pca1,newdata=non)[,1:2]
 
 xbar_non <- aggregate(introPredict[,1:2],by=list(non.pop),mean)
 xbar_non$GeneticRegions <- meta$Region2[match(xbar_non$Group.1,meta$pop)]
-xbar_non$cols="grey"
+xbar_non$cols="black"
 pca_results = rbind(xbar,xbar_non)
 pca_results <- pca_results[!pca_results$Group.1%in%c("MAI","YOJ"),] #n<5
 
@@ -45,10 +45,14 @@ par(mfrow=c(1,2),mar=c(4,5,1,1))
 #### pc1 ~ sstmean
 pca_results$sstmean <- meta$BO_sstmean[match(pca_results$Group.1,meta$pop)]
 pca_results$natnon <- meta$NatNon[match(pca_results$Group.1,meta$pop)]
+pca_results$reg = meta$Region2[match(pca_results$Group.1,meta$pop)]
+pca_results$reg2 = as.factor(pca_results$reg)
+pca_results$symbols = c(20,21,21,20,23,21,20,21,20,22,21,20)[pca_results$reg2]
+#pca_results$symbols[is.na(pca_results$symbols)] = 20
 plot(PC1~sstmean,data=pca_results,cex=c(3,4)[factor(pca_results$natnon)],
     xlim=c(6,22),ylim=range(pca_results$PC1),
-    col=pca_results$cols,pch=c(21,20)[factor(pca_results$natnon)],xlab="",ylab="")
-points(x=pca_results$sstmean,y=pca_results$PC1,pch=21,cex=2.9)
+    col=pca_results$cols,pch=pca_results$symbols,xlab="",ylab="")
+points(x=pca_results$sstmean[pca_results$natnon=="Native"],y=pca_results$PC1[pca_results$natnon=="Native"],pch=21,cex=2.9)
 abline(lm(PC1~sstmean,data=pca_results[pca_results$natnon=="Native",]))
 abline(lm(PC1~sstmean,data=pca_results[pca_results$natnon=="Introduced",]),lty="dashed")
 
@@ -64,8 +68,9 @@ pca_results$Hs <- stats$Hs[match(pca_results$Group.1,stats$X)]
 
 plot(PC1~Hs,data=pca_results,cex=c(3,4)[factor(pca_results$natnon)],
     xlim=range(pca_results$Hs),ylim=range(pca_results$PC1),
-    col=pca_results$cols,pch=c(21,20)[factor(pca_results$natnon)],xlab="",ylab="")
-points(x=pca_results$Hs,y=pca_results$PC1,pch=21,cex=2.9)
+    col=pca_results$cols,pch=pca_results$symbols,xlab="",ylab="")
+points(x=pca_results$Hs[pca_results$natnon=="Native"],y=pca_results$PC1[pca_results$natnon=="Native"],pch=21,cex=2.9)
+
 abline(lm(PC1~Hs,data=pca_results[pca_results$natnon=="Native",]))
 abline(lm(PC1~Hs,data=pca_results[pca_results$natnon=="Introduced",]),lty="dashed")
 

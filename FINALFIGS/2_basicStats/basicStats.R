@@ -42,7 +42,7 @@ pdf("FINALFIGS/2_basicStats/Hs.pdf",width=5,height=5)
 
 f5 <- ggplot(out.summary,aes(y=Hs,x=NatNonAqua)) +
   geom_boxplot() +
-  geom_point(pch=20,cex=.3) + 
+  #geom_point(pch=20,cex=.3) + 
   geom_jitter(width = .05, alpha = .5) +
   xlab("") + ylab("Expected Heterozygosity") + ylim(c(0.135,0.160)) +
   guides(fill="none") +

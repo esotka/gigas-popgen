@@ -15,6 +15,7 @@ nat.reg <- factor(meta$Region2[match(nat.pop,meta$pop)])
 nat.reg <- factor(nat.reg,levels(nat.reg)[c(1,3,6,5,2,4)])
 pca1 <- prcomp(nat)
 pca1_mat = pca1$x[,1:2]
+print(summary(pca1))
 
 ### PCA on everything
 xbar <- aggregate(pca1_mat[,1:2],by=list(nat.pop),mean)
@@ -33,7 +34,7 @@ f1 = ggplot() +
      geom_point(data=pca1_mat,aes(x = PC2, y = PC1),color = alpha(pts.cols,0.2)) + 
      geom_point(data = xbar,aes(x=PC2,y=PC1),color= xbar$pc1.cols,size=6) + 
      geom_segment(data=segments_df,aes(x=PC2,y=PC1,xend=xbar_pc2,yend=xbar_pc1),color=alpha(pts.cols,0.2)) +
-     #scale_y_continuous(limits=c(-10,10)) + 
+     xlab("PC2 (0.7%)") + ylab("PC1 (1.1%)") +
      theme_light() +
      annotate(geom = "text", x = xbar$PC2, y = xbar$PC1,size=2, label = xbar$Group.1,col=xbar$popTextCol)
 
@@ -75,6 +76,7 @@ nat.reg <- factor(nat.reg,levels(nat.reg)[c(1,2,4,3)])
 
 pca1 <- prcomp(nat)
 pca1_mat = pca1$x[,1:2]
+print(summary(pca1))
 
 ### PCA # 2
 xbar <- aggregate(pca1_mat[,1:2],by=list(nat.pop),mean)
@@ -93,7 +95,8 @@ f2 = ggplot() +
      geom_point(data=pca1_mat,aes(x = PC2, y = -PC1),color = alpha(pts.cols,0.2)) + 
      geom_point(data = xbar,aes(x=PC2,y=-PC1),color= xbar$pc1.cols,size=6) + 
      geom_segment(data=segments_df,aes(x=PC2,y=-PC1,xend=xbar_pc2,yend=-xbar_pc1),color=alpha(pts.cols,0.2)) +
-     theme_light() +
+     theme_light() + 
+     xlab("PC2 (0.8%)") + ylab("PC1 (1.3%)") +
      annotate(geom = "text", x = xbar$PC2, y = -xbar$PC1,size=2, label = xbar$Group.1,col=xbar$popTextCol)
 
 pop_non <- meta$pop[meta$NatNon=="Introduced"]

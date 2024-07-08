@@ -1,10 +1,10 @@
 pop,Abbreviation,Region,Region2,NatNon,Date_of_Collection,Latitude,n,Ho,Hs,Fis,mean rsq,mean exp rsq,Ne,Ne.lci,Ne.hci
 AKK,Akkeshi,Japan,Akkeshi,Native,17-Aug,43.02131,27,0.186,0.142,-0.136,0.042,0.041,567,472,708
 ALB,Alamitos Bay LA County - 2nd street,soCal,soCalifornia,Introduced,,33.74624,19,0.192,0.146,-0.149,0.062,0.062,788,556,1340
-BAN,Banzu Tidalflat in Tokyo Bay (Kisarazu city),Japan,Tokyo,Native,9-Jun-17,35.41246,23,0.191,0.146,-0.140,0.050,0.050,3468,1417,         Inf
-BBH,Bahia Blanca Harbor (BB),Argentina,Argentina,Introduced,,-38.78497,18,0.185,0.140,-0.172,0.067,0.066,441,352,590
-BOI,Waikare Inlet Bay of Islands (from Oyster World),New Zealand,New Zealand,Introduced,10-Sep-17,-35.31,20,0.189,0.144,-0.150,0.058,0.058,1812,958,16100
-BOU,Boursefranc (Pertuis d'Antioche),France,soEurope,Introduced,11-Jul-17,45.85504,7,0.186,0.142,-0.190,0.227,0.222,63,55,73
+BAN,Banzu Tidalflat in Tokyo Bay (Kisarazu city),Japan,Tokyo,Native,9-Jun-17,35.41246,23,0.191,0.146,-0.14,0.05,0.05,3468,1417,         Inf
+BBH,Bahia Blanca Harbor (BB),Argentina,Argentina,Introduced,,-38.78497,18,0.185,0.14,-0.172,0.067,0.066,441,352,590
+BOI,Waikare Inlet Bay of Islands (from Oyster World),New Zealand,New Zealand,Introduced,10-Sep-17,-35.31,20,0.189,0.144,-0.15,0.058,0.058,1812,958,16100
+BOU,Boursefranc-le-Chapus,France,soEurope,Introduced,11-Jul-17,45.85504,7,0.186,0.142,-0.19,0.227,0.222,63,55,73
 CHI,Chile,Chile,Chile,Introduced,8-Oct-19,-30.24433,18,0.186,0.138,-0.197,0.083,0.066,17,17,17
 CLE,Clevedon (from Clevedon Coast Oysters),New Zealand,New Zealand,Introduced,4-Oct-17,-36.94,18,0.191,0.145,-0.156,0.066,0.066,1842,907,         Inf
 ESN,Esnandes (Aiguillon Bay Pertuis Breton),France,soEurope,Introduced,11-Jul-17,46.24123,9,0.186,0.142,-0.176,0.158,0.157,303,213,522
@@ -15,28 +15,28 @@ GRC,Grand Caribe San Diego Bay,soCal,soCalifornia,Introduced,,32.62674,10,0.189,
 GWG,Gwanyang,Korea,nonSource,Native,1-Jun-17,34.94519,25,0.187,0.143,-0.138,0.045,0.045,1707,1034,4830
 HIR,Hiroshima_Japan,Japan,Seto,Native,,34.27547,24,0.193,0.147,-0.143,0.047,0.047,3102,1388,         Inf
 HOD,HoodCanal_HammaHammaRiver_NorthShore,NW America,PNW,Introduced,25-Jun-17,47.54666,10,0.191,0.145,-0.172,0.139,0.137,133,114,159
-KOJ,Koje Bay,Korea,nonSource,Native,1-Jun-17,34.7991,26,0.197,0.150,-0.145,0.044,0.043,1247,857,2280
+KOJ,Koje Bay,Korea,nonSource,Native,1-Jun-17,34.7991,26,0.197,0.15,-0.145,0.044,0.043,1247,857,2280
 LDY,Ladysmith British Columbia,NW America,PNW,Introduced,8-Aug-17,48.99065,19,0.189,0.144,-0.149,0.062,0.062,1997,978,         Inf
-LHE,L’Herbe (Arcachon Bay),France,soEurope,Introduced,24-Jul-17,44.68641,15,0.186,0.143,-0.152,0.082,0.082,6059,1161,         Inf
+LHE,L'Herbe (Arcachon Bay),France,soEurope,Introduced,24-Jul-17,44.68641,15,0.186,0.143,-0.152,0.082,0.082,6059,1161,         Inf
 LOS,Lough Swill,Ireland,noEurope,Introduced,year 2008,55.0206,16,0.182,0.138,-0.182,0.077,0.076,225,195,265
 MAH,Dyers Creek Mahurangi (from Matakana Oysters),New Zealand,New Zealand,Introduced,26-Sep-17,-36.46,18,0.196,0.149,-0.154,0.066,0.066,965,626,2080
 MAI,Maizuru,Japan,nonSource,Native,Fall 2021,35.51534,4,0.186,0.135,-0.298,0.876,0.506,0,0,0
 MAL,Matsukawaura Lagoon (A branch Bay of Sendai Bay),Japan,Miyagi,Native,28-May-17,37.82314,24,0.186,0.142,-0.137,0.047,0.047,2420,1232,57700
 MAT,Matsushima Bay (A branch Bay of Sendai Bay),Japan,Miyagi,Native,24-Jul-17,38.35186,27,0.187,0.143,-0.135,0.042,0.041,4803,1796,         Inf
 MON,Nishi Mone Bay (A branch Bay of Kesennuma Bay),Japan,Miyagi,Native,30-May-17,38.90008,29,0.189,0.144,-0.133,0.038,0.038,4761,1880,         Inf
-NEW,NewportBay Orange County - 15th street,soCal,soCalifornia,Introduced,,33.60813,19,0.190,0.145,-0.150,0.062,0.062,813,569,1420
+NEW,NewportBay Orange County - 15th street,soCal,soCalifornia,Introduced,,33.60813,19,0.19,0.145,-0.15,0.062,0.062,813,569,1420
 OHK,Ohkamo River in Izu Peninsura (Shimoda city),Japan,Tokyo,Native,6-Aug-17,34.65528,15,0.192,0.147,-0.155,0.082,0.082,         Inf,1971,         Inf
-OKA,Okayama_Japan,Japan,Seto,Native,,34.45628,23,0.194,0.148,-0.144,0.050,0.050,1075,740,1960
+OKA,Okayama_Japan,Japan,Seto,Native,,34.45628,23,0.194,0.148,-0.144,0.05,0.05,1075,740,1960
 OTA,Oita_Japan,Japan,Seto,Native,,33.62537,27,0.194,0.148,-0.136,0.042,0.041,1076,781,1720
 PES,Los Penasquitos Lagoon Coast hwy,soCal,soCalifornia,Introduced,,32.93318,16,0.187,0.144,-0.149,0.076,0.076,         Inf,1780,         Inf
 QB2,Quilcene - Hood Canal,NW America,PNW,Introduced,Fall 2021,47.79335,20,0.184,0.141,-0.148,0.058,0.058,2564,1132,         Inf
 SAM,Same River in Iwaki City,Japan,Miyagi,Native,14-Jul-17,36.90936,25,0.187,0.144,-0.136,0.045,0.045,5954,1826,         Inf
 SAR,Lake Saroma,Japan,Akkeshi,Native,17-Aug,44.12084,26,0.185,0.141,-0.143,0.043,0.043,2507,1311,26900
-SBB,San Blas Bay (SB),Argentina,Argentina,Introduced,,-40.5394,16,0.183,0.140,-0.167,0.076,0.076,648,454,1130
+SBB,San Blas Bay (SB),Argentina,Argentina,Introduced,,-40.5394,16,0.183,0.14,-0.167,0.076,0.076,648,454,1130
 SVA,Svallhagen,Sweden,noEurope,Introduced,year 2013,58.8684,18,0.187,0.143,-0.164,0.067,0.066,489,382,676
 TJE,TJE Boca Rio,soCal,soCalifornia,Introduced,,32.5595,11,0.188,0.144,-0.167,0.121,0.121,         Inf,1014,         Inf
 TRO,Tromlingene,Norway,noEurope,Introduced,year 2013,58.4748,16,0.187,0.142,-0.171,0.077,0.076,486,368,712
 WAD,Wadden Sea,Denmark,noEurope,Introduced,year 2013,55.1859,19,0.191,0.144,-0.173,0.063,0.062,338,286,412
-WLB,WillapaBay_Nahcotta,NW America,PNW,Introduced,20-May-17,46.46874,12,0.181,0.139,-0.160,0.108,0.108,         Inf,1932,         Inf
+WLB,WillapaBay_Nahcotta,NW America,PNW,Introduced,20-May-17,46.46874,12,0.181,0.139,-0.16,0.108,0.108,         Inf,1932,         Inf
 YOJ,Yojiro Kagoshima,Japan,Kagoshima,Native,10-Aug-17,31.55863,1,0.186,NA,NA,NA,NA,NA,NA,NA
 YUR,Yura_Sumoto_HyogoPrefecture,Japan,Seto,Native,8-May-17,34.27394,13,0.191,0.146,-0.161,0.098,0.098,1547,673,         Inf

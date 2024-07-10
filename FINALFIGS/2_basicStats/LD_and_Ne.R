@@ -66,7 +66,7 @@ pdf("FINALFIGS/2_basicStats/LD_and_Ne.pdf",width=5,height=5)
 
 f5 <- ggplot(out2,aes(y=Ne_v2,x=NatNonAqua)) +
   geom_boxplot() +
-  geom_point(pch=20,cex=.3) + 
+  #geom_point(pch=20,cex=.3) + 
   geom_jitter(width = .05, alpha = .5) +
   xlab("") + ylab("Ne") + ylim(c(0,7500)) +
   guides(fill="none") +

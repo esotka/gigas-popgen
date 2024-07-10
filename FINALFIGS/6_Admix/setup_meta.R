@@ -4,9 +4,9 @@
 ###
 
 
-bf = "FINALFIGS/6_Admix/all.bamlist"
-metaf = "FINALFIGS/6_Admix/gigas_bam_qualities.csv"
-meta2 = "FINALFIGS/gigas_meta_41pop_env_FINAL.csv"
+bf = "all.bamlist"
+metaf = "gigas_bam_qualities.csv"
+meta2 = "../gigas_meta_41pop_env_FINAL.csv"
 ##read data and merge bams with metadata
 
 

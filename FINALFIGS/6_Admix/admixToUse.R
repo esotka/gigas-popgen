@@ -1,12 +1,27 @@
 ###
 ### R script to generate PCA from a covariance matrix stored on disk
 ### Uses a bamfile and metadata to classify points, this happens in setup_meta.R
+### plots individual assignments from the qopt files, but gets the likelihoods for each K
+### in a dataframe
 ###
+library(Cairo)
+library(dplyr)
 rm(list=ls())
 source("setup_meta.R")
 
 p="."      #"FINALFIGS/6_Admix/"
 f=list.files(path=p,pattern="*.qopt")
+likes = read.csv("admix_likelihood_reps.csv",header=F)
+names(likes) = c("rep","k","llike")
+likes$k = as.numeric(gsub("k","",likes$k))
+sumlike=likes %>% arrange(rep,k) %>% group_by(rep) %>% reframe(rep=rep,d=c(NA,diff(llike))) %>%
+    mutate(k=rep(c("","2-3","3-4","4-5","5-6","6-7","7-8"),50)) %>% filter(!is.na(d)) %>%
+    group_by(k) %>% summarise(mnd=mean(d),mind=min(d),maxd=max(d),
+                              sdd=sd(d),n=n(),se=sd(d)/sqrt(n()),
+                              percent05=quantile(d,0.05),
+                              percent95=quantile(d,0.95))
+sumlike=as.data.frame(sumlike)
+sumlike$plotk=3:8
 
 kcol <- c(       "black", #1
                  "red",#2
@@ -34,7 +49,7 @@ plotadmix = function(m=as.matrix(adin[[1]]$q),
 	 left=TRUE,
 	 right=TRUE)	
 { 
-  
+    
    plotdf=data.frame(cbind(cldf,m))
    names(plotdf)[(ncol(cldf)+1):ncol(plotdf)] = paste0("q",1:ncol(m))
 ## Sorting
@@ -123,7 +138,8 @@ print(froot)
 
 print("about to plot")
 
-pdf("admix.pdf",width=14,height=10)
+#pdf("admix.pdf",width=14,height=10)
+CairoPNG("admix.png",width=1400,height=1000)
 
 cp=1:15
 cldf=iddf
@@ -142,16 +158,18 @@ for (i in 1:length(adin))
 
 
 par(mar=c(5,8,1,2))
-print(diff(sapply(adin,function(x) x$LL)))
 
-plot(diff(sapply(adin,function(x) x$LL))~sapply(adin,function(x) x$k)[-1],
+plot(mnd~plotk,
      xlim=c(1,length(adin)+1.68),
-     type="b",lwd=2,cex=1.5,pch=16,axes=F,
-     xlab="",ylab="")
+     type="b",lwd=2,cex=2,pch=16,axes=F,
+     ylim=c(min(percent05),max(percent95)),
+     xlab="",ylab="",data=sumlike)
 axis(2)
 par(las=3)
-mtext(line=4,side=2,text="Log-Likelihood for admixture model",cex=0.7)
-legend(x=1,y=200000,legend="Difference in LogLike among previous and current K")
+mtext(line=4,side=2,text="delta Log-Like",cex=0.8)
+for (i in 1:nrow(sumlike))
+    with(sumlike,points(x=c(plotk[i],plotk[i]),y=c(percent05[i],percent95[i]),type="l"))
+#legend(x=1,y=300000,legend="Difference in LogLike among previous and current K")
 dev.off()
 
 

@@ -13,7 +13,7 @@ GAN,Gandario,Spain,soEurope,Introduced,,43.34252,10,0.192,0.147,-0.168,0.138,0.1
 GOS,GoseongBay,Korea,nonSource,Native,1-Jun-17,34.9555,13,0.187,0.143,-0.158,0.098,0.098,         Inf,1233,         Inf
 GRC,Grand Caribe San Diego Bay,soCal,soCalifornia,Introduced,,32.62674,10,0.189,0.145,-0.172,0.137,0.137,1201,492,         Inf
 GWG,Gwanyang,Korea,nonSource,Native,1-Jun-17,34.94519,25,0.187,0.143,-0.138,0.045,0.045,1707,1034,4830
-HIR,Hiroshima_Japan,Japan,Seto,Native,,34.27547,24,0.193,0.147,-0.143,0.047,0.047,3102,1388,         Inf
+HIR,Oono Strait in Hiroshima Bay; Hiroshima Japan,Japan,Seto,Native,,34.27547,24,0.193,0.147,-0.143,0.047,0.047,3102,1388,         Inf
 HOD,HoodCanal_HammaHammaRiver_NorthShore,NW America,PNW,Introduced,25-Jun-17,47.54666,10,0.191,0.145,-0.172,0.139,0.137,133,114,159
 KOJ,Koje Bay,Korea,nonSource,Native,1-Jun-17,34.7991,26,0.197,0.15,-0.145,0.044,0.043,1247,857,2280
 LDY,Ladysmith British Columbia,NW America,PNW,Introduced,8-Aug-17,48.99065,19,0.189,0.144,-0.149,0.062,0.062,1997,978,         Inf
@@ -26,7 +26,7 @@ MAT,Matsushima Bay (A branch Bay of Sendai Bay),Japan,Miyagi,Native,24-Jul-17,38
 MON,Nishi Mone Bay (A branch Bay of Kesennuma Bay),Japan,Miyagi,Native,30-May-17,38.90008,29,0.189,0.144,-0.133,0.038,0.038,4761,1880,         Inf
 NEW,NewportBay Orange County - 15th street,soCal,soCalifornia,Introduced,,33.60813,19,0.19,0.145,-0.15,0.062,0.062,813,569,1420
 OHK,Ohkamo River in Izu Peninsura (Shimoda city),Japan,Tokyo,Native,6-Aug-17,34.65528,15,0.192,0.147,-0.155,0.082,0.082,         Inf,1971,         Inf
-OKA,Okayama_Japan,Japan,Seto,Native,,34.45628,23,0.194,0.148,-0.144,0.05,0.05,1075,740,1960
+OKA, Hinase Bay; Okayama Japan,Japan,Seto,Native,,34.45628,23,0.194,0.148,-0.144,0.05,0.05,1075,740,1960
 OTA,Oita_Japan,Japan,Seto,Native,,33.62537,27,0.194,0.148,-0.136,0.042,0.041,1076,781,1720
 PES,Los Penasquitos Lagoon Coast hwy,soCal,soCalifornia,Introduced,,32.93318,16,0.187,0.144,-0.149,0.076,0.076,         Inf,1780,         Inf
 QB2,Quilcene - Hood Canal,NW America,PNW,Introduced,Fall 2021,47.79335,20,0.184,0.141,-0.148,0.058,0.058,2564,1132,         Inf

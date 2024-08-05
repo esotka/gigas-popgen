@@ -113,7 +113,7 @@ df$reg[df$reg == "Akkeshi"] = "Hokkaido"
 df$reg[df$reg=="Seto"] = "Seto Inland Sea"
 df$reg[df$reg=="soCalifornia"] = "N America (Cali)"
 df$reg[df$reg=="PNW"] = "N America (CA/WA)"
-df$reg[df$reg=="noEurope"] = "N Europe (UK/De/G/Sw)"
+df$reg[df$reg=="noEurope"] = "N Europe (Ie/Se/No/Dk)"
 df$reg[df$reg=="soEurope"] = "S Europe (Fr/Sp)"
 
 df$reg <- factor(df$reg)

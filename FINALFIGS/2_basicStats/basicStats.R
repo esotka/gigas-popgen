@@ -37,6 +37,11 @@ out.summary$NatNonAqua[out.summary$NatNonAqua=="Introduced"] = "Introduced (othe
 m <- lm(Hs~NatNonAqua,out.summary)
 print(anova(m))
 print(TukeyHSD(aov(m)))
+library(pgirmess)
+print(kruskal.test(Hs~NatNonAqua,out.summary))
+library(pgirmess)
+print(kruskalmc(Hs~NatNonAqua,out.summary))
+
 pdf("FINALFIGS/2_basicStats/Hs.pdf",width=5,height=5)
 
 
@@ -47,7 +52,7 @@ f5 <- ggplot(out.summary,aes(y=Hs,x=NatNonAqua)) +
   xlab("") + ylab("Expected Heterozygosity") + ylim(c(0.135,0.160)) +
   guides(fill="none") +
   theme_classic() +
-  annotate("text", x=c(1.5,2,2.5), y=c(0.151,0.156,0.151), label= c("p=0.059","0.031","0.917")) +
+  annotate("text", x=c(1.5,2,2.5), y=c(0.151,0.156,0.151), label= c("ns","*","ns")) +
   annotate("segment", x=1.1, xend=1.9, y=0.15, yend=0.15) +
   annotate("segment", x=1.1, xend=2.9, y=0.155, yend=0.155) +
   annotate("segment", x=2.1, xend=2.9, y=0.15, yend=0.15)

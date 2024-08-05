@@ -61,6 +61,10 @@ print(anova(m))
 m <- lm(Ne_v2~NatNonAqua,out2)
 print(anova(m))
 print(TukeyHSD(aov(m)))
+print(kruskal.test(Ne_v2~NatNonAqua,out2))
+library(pgirmess)
+print(kruskalmc(Ne_v2~NatNonAqua,out2))
+
 pdf("FINALFIGS/2_basicStats/LD_and_Ne.pdf",width=5,height=5)
 
 
@@ -71,7 +75,7 @@ f5 <- ggplot(out2,aes(y=Ne_v2,x=NatNonAqua)) +
   xlab("") + ylab("Ne") + ylim(c(0,7500)) +
   guides(fill="none") +
   theme_classic() +
-  annotate("text", x=c(1.5,2,2.5), y=c(6500,7500,6500), label= c("p=0.088","0.022","0.685")) +
+  annotate("text", x=c(1.5,2,2.5), y=c(6500,7500,6500), label= c("*","*","ns")) +
   annotate("segment", x=1.1, xend=1.9, y=6300, yend=6300) +
   annotate("segment", x=1.1, xend=2.9, y=7300, yend=7300) +
   annotate("segment", x=2.1, xend=2.9, y=6300, yend=6300)
@@ -88,4 +92,6 @@ tmp <- out2[!is.infinite(out2$Ne),]
 m <- lm(Ne_v2~NatNonAqua,tmp)
 print(anova(m))
 print(TukeyHSD(aov(m)))
-
+print(kruskal.test(Ne_v2~NatNonAqua,tmp))
+library(pgirmess)
+print(kruskalmc(Ne_v2~NatNonAqua,out2))

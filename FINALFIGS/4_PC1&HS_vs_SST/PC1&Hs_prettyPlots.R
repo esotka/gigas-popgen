@@ -1,5 +1,5 @@
 # pretty HS
-
+library(colorRamps)
 rm(list=ls())
 meta <- read.csv("FINALFIGS/gigas_meta_41pop_env_FINAL.csv")
 stats <- read.csv("FINALFIGS/2_basicStats/BasicStats_all.csv")

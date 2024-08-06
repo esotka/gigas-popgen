@@ -94,6 +94,8 @@ mtext("Expected Heterozygosity",side=2,line=2.5,cex=1.5)
 
 print(cor.test(~Hs+sstmean,data=pca_results[pca_results$natnon=="Native",]))
 print(cor.test(~Hs+sstmean,data=pca_results[pca_results$natnon=="Introduced",]))
+tmp = pca_results[pca_results$reg2%in%c("New Zealand","PNW","soCalifornia","soEurope"),]
+print(cor.test(~Hs+sstmean,data=tmp))
 
 dev.off()
 

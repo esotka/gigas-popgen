@@ -1,0 +1,34 @@
+library(snpStat)
+library(snpStats)
+help('snpStats')
+library(reshape)
+install.library('LeafArea')
+install.libraries('LeafArea')
+N=1; t=0;while(t<=5*24) { print(N); N=N*2; t=t+1; }
+?read.csv
+?read_csv
+packages <- readLines("~/Desktop/Rpackages.txt")
+head(packages)
+for (p in 1:length(packages))#
+{install.packages(packages[p])}
+for (p in 1:length(packages))#
+{install.packages(packages[p],dependencies="Yes")}
+for (p in 1:length(packages))#
+{install.packages(packages[p],dependencies=T)}
+?install.packages
+for (p in 1:length(packages))#
+{install.packages(packages[p],dependencies=TRUE)}
+for (p in 1:length(packages))#
+{install.packages(packages[p],dependencies=FALSE)}
+library(ape)
+version
+library(caret)
+?train
+setwd("/Users/sotkae/Dropbox/Documents/Publications/CURRENT/gigas-popgen/github/gigas-popgen/FINALFIGS/5_RandomForestCirclize/gverm/")
+load("GvermforRangerCrossValidation.rda")
+ls()
+setwd("/Users/sotkae/Dropbox/Documents/Publications/CURRENT/gigas-popgen/github/gigas-popgen/FINALFIGS/5_RandomForestCirclize/cgiga/")
+load("cgigaforRangerCrossValidation.rda")
+ls()
+rm(list=ls())
+load("cgigaforRangerCrossValidation.rda")

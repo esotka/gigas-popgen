@@ -13,7 +13,7 @@ mat <- mat+0.1
 #rownames(mat) <- c("Hokkaido","Miyagi","Tokyo","Seto Inland Sea","Kagoshima")
 #colnames(mat) <- c("soEurope","noEurope","NZ","nAM_north","nAM_south")
 
-cols.to.use <- c(blue2red(5),rep("grey",ncol(mat)))
+cols.to.use <- c(blue2red(5),"black","lightgrey","darkgrey")
 
 pdf("ShippingCirclizePlot.pdf",width=10,height=10)
 circos.clear()

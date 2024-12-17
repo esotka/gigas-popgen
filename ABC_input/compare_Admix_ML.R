@@ -31,7 +31,7 @@ wide = ret %>% filter(type=="untrans") %>%
 
 head(data.frame(wide))
 
-pdf("sumdir/figs/ML_versus_Admix_shipping_prob.pdf")
+pdf("ML_versus_Admix_shipping_prob.pdf")
 ggplot(wide,aes(x=postship_ShipVML,y=postship_ShipVadmix)) +
     geom_point() +
     geom_abline(slope=1)+facet_wrap(~priorcat)+

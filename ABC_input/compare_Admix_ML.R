@@ -40,3 +40,17 @@ ggplot(wide,aes(x=postship_ShipVML,y=postship_ShipVadmix)) +
     ggtitle("posterior probability of shipping")
 dev.off()
 
+
+png("ML_versus_Admix_shipping_prob_FLAT.png",height = 6,width = 6,units="in",res=400)
+flat = wide[wide$priorcat=="flat_priors.csv",]
+flat$sppAbb = c("Up","Mc","Af","Ba","Gv","Dv","HL6","HL1","Ht","Hj","Ph","Pm","Hs")
+plot(x=flat$postship_ShipVML,y=flat$postship_ShipVadmix, xlab = "Random Forest (ML)-based oyster model", 
+    ylab = "Admixture-based oyster model", 
+    main = "posterior probability of shipping",cex=4)
+segments(-1,-1,1,1,lty="dotted")
+text(x=flat$postship_ShipVML,y=flat$postship_ShipVadmix,flat$sppAbb)
+dev.off()
+
+print(cor.test(x=flat$postship_ShipVML,y=flat$postship_ShipVadmix))
+flat2 = flat[!flat$sppAbb=="Up",]
+print(cor.test(x=flat2$postship_ShipVML,y=flat2$postship_ShipVadmix))

@@ -79,7 +79,12 @@ mtext("Genetic PC1",side=2,line=2.5,cex=1.5)
 #text(x=pca_results$Hs,y=pca_results$PC1,pca_results$Group.1,cex=.5,col=pca_results$popTextCol)
 
 print(cor.test(~PC1+Hs,data=pca_results[pca_results$natnon=="Native",]))
+tmp = pca_results[pca_results$natnon=="Native" & !pca_results$Group.1=="AKK",] # remove AKK because of history
+print(cor.test(~PC1+Hs,data=tmp))
 print(cor.test(~PC1+Hs,data=pca_results[pca_results$natnon=="Introduced",]))
+tmp = pca_results[pca_results$reg2%in%c("New Zealand","PNW","soCalifornia","soEurope"),]
+print(cor.test(~PC1+Hs,data=tmp))
+
 
 #### Hs ~ sstmean
 
@@ -93,6 +98,8 @@ mtext("Expected Heterozygosity",side=2,line=2.5,cex=1.5)
 #text(x=pca_results$sstmean,y=pca_results$Hs,pca_results$Group.1,cex=.5,col=pca_results$popTextCol)
 
 print(cor.test(~Hs+sstmean,data=pca_results[pca_results$natnon=="Native",]))
+tmp = pca_results[pca_results$natnon=="Native" & !pca_results$Group.1=="AKK",] # remove AKK because of history
+print(cor.test(~Hs+sstmean,data=tmp))
 print(cor.test(~Hs+sstmean,data=pca_results[pca_results$natnon=="Introduced",]))
 tmp = pca_results[pca_results$reg2%in%c("New Zealand","PNW","soCalifornia","soEurope"),]
 print(cor.test(~Hs+sstmean,data=tmp))

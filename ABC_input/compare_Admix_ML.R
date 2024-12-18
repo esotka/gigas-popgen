@@ -11,7 +11,7 @@ library(ggplot2)
 #ret = do.call(rbind,lapply(files,function(fn) read.csv(fn)))
 #write.table(file="RFCompAllReps.csv",sep=",",row.names=F,ret)
 
-ret = read.csv("RFCompAllReps.csv")
+ret = read.csv("ABC_input/RFCompAllReps.csv")
 ret$priorcat=basename(ret$priorfile)
 ret$postship=ifelse(ret$chosen=="g2",
          ifelse(ret$comparison!="AdmixVML",1-ret$post,NA),
@@ -31,7 +31,7 @@ wide = ret %>% filter(type=="untrans") %>%
 
 head(data.frame(wide))
 
-pdf("ML_versus_Admix_shipping_prob.pdf")
+pdf("ABC_input/ML_versus_Admix_shipping_prob.pdf")
 ggplot(wide,aes(x=postship_ShipVML,y=postship_ShipVadmix)) +
     geom_point() +
     geom_abline(slope=1)+facet_wrap(~priorcat)+
@@ -41,9 +41,9 @@ ggplot(wide,aes(x=postship_ShipVML,y=postship_ShipVadmix)) +
 dev.off()
 
 
-png("ML_versus_Admix_shipping_prob_FLAT.png",height = 6,width = 6,units="in",res=400)
+png("ABC_input/ML_versus_Admix_shipping_prob_FLAT.png",height = 6,width = 6,units="in",res=400)
 flat = wide[wide$priorcat=="flat_priors.csv",]
-flat$sppAbb = c("Up","Mc","Af","Ba","Gv","Dv","HL6","HL1","Ht","Hj","Ph","Pm","Hs")
+flat$sppAbb = c("Up","Mc","Af","Ba","Gv","Dv","HL6","HL1","Ht","Up2","Hj","Ph","Pm","Hs")
 plot(x=flat$postship_ShipVML,y=flat$postship_ShipVadmix, xlab = "Random Forest (ML)-based oyster model", 
     ylab = "Admixture-based oyster model", 
     main = "posterior probability of shipping",cex=4)

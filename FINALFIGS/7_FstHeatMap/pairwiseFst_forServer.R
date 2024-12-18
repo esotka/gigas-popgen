@@ -1,7 +1,7 @@
 library(hierfstat)
 library(ape)
 library(lattice)
-library(RColorBrewer)
+library(gplots)
 library(scales)
 
 rm(list=ls())
@@ -39,3 +39,17 @@ pdf('FINALFIGS/7_FstHeatMap/FstFigsTable_FINAL.pdf',width=15,height=13)
 f <- levelplot(wc3,col.regions=col.l,,xlab="",ylab="",cuts=50)
 print(f)
 dev.off()
+
+##stats native range
+natpop = meta$pop[meta$NatNon=="Native"]
+nat = wc2[rownames(wc2)%in%natpop,colnames(wc2)%in%natpop] # 15 pops
+nat = nat[lower.tri(nat)]
+non = wc2[!rownames(wc2)%in%natpop,!colnames(wc2)%in%natpop] # 24 pops
+non = non[lower.tri(non)]
+
+print(mean(nat))
+print(sd(nat)/sqrt(length(nat)))
+print(range(nat))
+print(mean(non))
+print(sd(non)/sqrt(length(non)))
+print(range(non))

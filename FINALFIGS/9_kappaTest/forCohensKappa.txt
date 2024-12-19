@@ -1,0 +1,15 @@
+Species	Historical	Historical_numeral	Genetic Inference	Genetic_numeral
+Polydora (worm)	Mixed or Unknown	2	Oyster	3
+Haminoa (slug)	Oyster	3	Oyster	3
+Battilaria (snail)	Oyster	3	Oyster	3
+Cercaria-HL6 (trematode)	Oyster	3	Oyster	3
+H. takanoi (crab)	Shipping	1	Oyster	3
+Gracilaria (crab)	Mixed or Unknown	2	Oyster	3
+Ulva 	Mixed or Unknown	2	Unknown	2
+Acanthogobius (goby)	Shipping	1	Unknown	2
+Mutimo (alga)	Shipping	1	Unknown	2
+Undaria (alga)	Mixed or Unknown	2	Shipping	1
+Cercaria-HL1 (trematode)	Mixed or Unknown	2	Shipping	1
+H. sanguineus (crab)	Shipping	1	Shipping	1
+Didemnum (tunicate)	Shipping	1	Shipping	1
+Palaemon (shrimp)	Shipping	1	Shipping	1

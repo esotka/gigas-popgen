@@ -50,7 +50,10 @@ intro_xbar = data.frame(PC1 = tapply(introPredict4[,1],non.pop,mean),
 intro_xbar$reg = meta$Region2[match(rownames(intro_xbar),meta$pop)]
 intro_xbar$reg2 = as.factor(intro_xbar$reg)
 intro_xbar$symbols = c(21,21,23,21,21,22,21)[intro_xbar$reg2]
-f1 = f1 + geom_point(data=intro_xbar,aes(x=PC2,y=PC1),size=3,pch=intro_xbar$symbols,col="darkgrey")
+# 21 = circle (Miyagi)
+# 22 = square (Tokyo-ish)
+# 23 = triangle (Seto Inland Sea)
+f1 = f1 + geom_point(data=intro_xbar,aes(x=PC2,y=PC1),size=3,pch=intro_xbar$symbols,col="black")
 
 
 ### PC and assignment on Hokaido + Miyagi, Seto and Tokyo  ###

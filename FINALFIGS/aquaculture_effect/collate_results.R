@@ -46,14 +46,19 @@ overall$pairing=paste(overall$sourceA,overall$sourceB,sep="_")
 
 mns=overall %>% filter(sourceA=="CTRL") %>%mutate(diffRatio=inSusp/inOther)%>% select(overallFst,suspDiff,diffRatio) %>% colMeans()
 
-png("among_pop_diversity.png")
-### treating suspect and everything else as two populations (ignore hier)
-overall %>% filter(sourceA!="CTRL") %>% group_by(pairing, sourceA, sourceB, num.parents, gen.feral) %>% summarise(overallFst=mean(overallFst)) %>%
+p = overall %>% filter(sourceA!="CTRL") %>% group_by(pairing, sourceA, sourceB, num.parents, gen.feral) %>%
+    summarise(overallFst=mean(overallFst)) %>%
     mutate(sameSource=sourceA==sourceB) %>%
-    ggplot(aes(y=overallFst,x=num.parents,group=pairing,color=pairing)) + geom_point() + geom_line() +
-    geom_hline(yintercept=mns[1],linetype="dashed", color = "red") + facet_wrap(~gen.feral) +
-    ggtitle("Overall Fst among suspect and 'normal' pops\nTreating as if 2 populations")
+    mutate(Generations_Feral=gen.feral) %>%
+  ggplot(aes(y=overallFst,x=num.parents,group=pairing,color=pairing,shape=sameSource)) + geom_point() + geom_line() +
+  geom_hline(yintercept=mns[1],linetype="dashed", color = "red") + facet_wrap(~Generations_Feral,labeller=label_both) +
+  ggtitle("Overall Fst among suspect and 'normal' pops\nTreating as if 2 populations") +
+  xlab("Number of parents used in Broodstock") 
 
+
+png("among_pop_diversity.png",width=1000,height=1200)
+### treating suspect and everything else as two populations (ignore hier)
+p
 dev.off()
 
 pdf("among_pop_diversity.pdf")

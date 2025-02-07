@@ -56,7 +56,7 @@ p = overall %>% filter(sourceA!="CTRL") %>% group_by(pairing, sourceA, sourceB, 
   xlab("Number of parents used in Broodstock") 
 
 
-png("among_pop_diversity.png",width=1000,height=1200)
+png("among_pop_diversity.png",width=1000,height=1200,res=1200)
 ### treating suspect and everything else as two populations (ignore hier)
 p
 dev.off()

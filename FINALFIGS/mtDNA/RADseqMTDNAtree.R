@@ -76,10 +76,10 @@ set.seed(1)
 ## bootstrap with 100 replications:
 (bp <- boot.phylo(tw, aln.forApe, f, quiet = TRUE,B = 1000))
 bp[bp<900] = ""
-plot(tw,cex=0.5)
+plot(root(tw,"bilineata_MT985154.1"),cex=0.5)
 drawSupportOnEdges(100*round(as.numeric(bp)/1000,2),cex=0.5,bg="white",frame="none",adj=c(0.5,-.75),col="red")
-segments(0.15,5,0.17,5)
-text(0.16,6,"0.02")
+segments(0.05,5,0.07,5)
+text(0.06,6,"0.02")
 dev.off()
 
 

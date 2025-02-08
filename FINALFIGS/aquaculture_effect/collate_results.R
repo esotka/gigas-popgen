@@ -2,6 +2,7 @@ library(strataG)
 library(parallel)
 library(ggplot2)
 library(dplyr)
+library(Cairo)
 
 cores=12
 
@@ -50,18 +51,30 @@ p = overall %>% filter(sourceA!="CTRL") %>% group_by(pairing, sourceA, sourceB, 
     summarise(overallFst=mean(overallFst)) %>%
     mutate(sameSource=sourceA==sourceB) %>%
     mutate(Generations_Feral=gen.feral) %>%
-  ggplot(aes(y=overallFst,x=num.parents,group=pairing,color=pairing,shape=sameSource)) + geom_point() + geom_line() +
+  ggplot(aes(y=overallFst,x=num.parents,group=pairing,color=pairing,shape=sameSource)) + geom_point(size=3) + geom_line() +
   geom_hline(yintercept=mns[1],linetype="dashed", color = "red") + facet_wrap(~Generations_Feral,labeller=label_both) +
-  ggtitle("Overall Fst among suspect and 'normal' pops\nTreating as if 2 populations") +
-  xlab("Number of parents used in Broodstock") 
+  ggtitle("Overall Fst among suspect and 'normal' pops: Treating as if 2 populations") +
+  xlab("Number of parents used in Broodstock") + theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),  # Title font size, bold, and centered
+    axis.title = element_text(size = 14),        # Axis labels font size
+    axis.text = element_text(size = 12),         # Axis tick labels font size
+    strip.text = element_text(size = 14),        # Facet headers font size
+    legend.title = element_text(size = 16),  # Increase legend title size
+    legend.text = element_text(size = 14)   # Increase legend text size
+  )
 
 
-png("among_pop_diversity.png",width=1000,height=1200)
+CairoPNG("among_pop_diversity.png",width=1400,height=1000)
 ### treating suspect and everything else as two populations (ignore hier)
 p
 dev.off()
 
-pdf("among_pop_diversity.pdf")
+CairoPDF("among_pop_diversity.pdf",width=11,height=9)
+### treating suspect and everything else as two populations (ignore hier)
+p
+dev.off()
+
+pdf("among_pop_diversity_old.pdf")
 
 ### treating suspect and everything else as two populations (ignore hier)
 overall %>% filter(sourceA!="CTRL") %>% group_by(pairing, sourceA, sourceB, num.parents, gen.feral) %>% summarise(overallFst=mean(overallFst)) %>%
